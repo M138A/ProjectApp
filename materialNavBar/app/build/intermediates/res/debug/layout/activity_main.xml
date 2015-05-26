@@ -29,4 +29,4 @@
     tools:layout="@layout/fragment_navigation_drawer"
     android:id="@+id/drawer_fragment" />
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/home/mark/AndroidStudioProjects/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
