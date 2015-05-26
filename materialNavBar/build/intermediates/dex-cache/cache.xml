@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\exploded-aar\com.balysv\material-ripple\1.0.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="aba9317bc403d69d8a571c0a72acfe95698a5db0">
+        <dex dex="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-ccb75ce26b413b2827a633ec505a72b440a105b0.jar" />
+    </item>
+    <item
+        jar="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-20c2cf8249798d62b9a892869d99c91dd7ea35b7.jar" />
+    </item>
+    <item
+        jar="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-257e2b39624d90a8923625e800d7aa00cd42ce68.jar" />
+    </item>
+    <item
+        jar="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-7f36364a2cf6365c9aa5ba0b5b6f4ff14eb3ba57.jar" />
+    </item>
+    <item
+        jar="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\exploded-aar\it.neokree\MaterialNavigationDrawer\1.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0640bc34b0f25196f82fe1e707a437bd4a405933">
+        <dex dex="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-638c3df6407807c2896ef18004d396abe6f74718.jar" />
+    </item>
+    <item
+        jar="C:\Users\bart\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="C:\Users\bart\Downloads\materialNavBar\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-bae22287650a468651602bb6fa98a21f57e51c56.jar" />
+    </item>
+
+</items>
