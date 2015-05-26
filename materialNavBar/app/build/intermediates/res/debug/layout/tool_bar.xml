@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:elevation="4dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Application_title"
+        android:layout_gravity="center"
+        android:textSize="9pt"
+        android:textColor="#FFF"
+        android:id="@+id/toolbar_title" />
+
+
+</android.support.v7.widget.Toolbar><!-- From: file:/home/mark/AndroidStudioProjects/ProjectApp/materialNavBar/app/src/main/res/layout/tool_bar.xml -->
