@@ -2,13 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEE"
+    android:background="@color/ColorPrimaryDark"
     tools:context="info.androidhive.materialnavbar.NavigationDrawerFragment">
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+    <LinearLayout
+        android:id="@+id/containerDrawerImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="280dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/ImageNav"
+            android:contentDescription="@string/none" />
+    </LinearLayout>
 </RelativeLayout>
-<!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/src/main/res/layout/fragment_navigation_drawer.xml -->
+<!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/fragment_navigation_drawer.xml -->

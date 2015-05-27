@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
-    private  JSON jsonObject = null;
+    private JSON jsonObject = null;
     private ArrayList<Fact> facts = null;
 
     @Override
@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
-                                                   getSupportFragmentManager()
-                                                   .findFragmentById(R.id.drawer_fragment);
-        drawerFragment.setUp(R.id.drawer_fragment,(DrawerLayout)findViewById(R.id.drawer_layout), toolbar);
+                getSupportFragmentManager()
+                        .findFragmentById(R.id.drawer_fragment);
+        drawerFragment.setUp(R.id.drawer_fragment, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
 
         StrictMode.ThreadPolicy old = StrictMode.getThreadPolicy();
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(old)
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     private void testJSON() throws JSONException, ExecutionException, InterruptedException {
         jsonObject = new JSON(getBaseContext(), findViewById(R.id.progressBar));
         facts = jsonObject.getFactAllList();
@@ -74,21 +75,20 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     private void fillLayout() {
 
-        LinearLayout ll =(LinearLayout) findViewById(R.id.linearFactLayout);
-        if(facts != null) {
+        LinearLayout ll = (LinearLayout) findViewById(R.id.linearFactLayout);
+        if (facts != null) {
             for (Fact fact : facts) {
                 TextView x = new TextView(findViewById(R.id.linearFactLayout).getContext());
                 String name = fact.getName();
                 String description = fact.getDescription();
                 x.setText(name + "\n" + description + "\n");
                 ll.addView(x);
-                Log.i("Fact",name);
+                Log.i("Fact", name);
             }
-        }
-        else
-        {
+        } else {
             Log.e("ERROR", "Factslist is empty");
             try {
                 facts = jsonObject.getFactsList();

@@ -27,14 +27,13 @@
     <ScrollView
         android:orientation="vertical"
         android:layout_width="match_parent"
-
         android:layout_height="match_parent">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:id="@+id/linearFactLayout"
-            android:layout_height="fill_parent"></LinearLayout>
+            android:layout_height="wrap_content"/>
     </ScrollView>
 
 </LinearLayout>
@@ -49,4 +48,4 @@
     tools:layout="@layout/fragment_navigation_drawer"
     android:id="@+id/drawer_fragment" />
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/src/main/res/layout/activity_main.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
