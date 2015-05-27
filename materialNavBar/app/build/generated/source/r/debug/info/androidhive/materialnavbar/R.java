@@ -1550,8 +1550,8 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09003d;
         public static final int action_mode_bar_stub=0x7f09003c;
         public static final int action_mode_close_button=0x7f090025;
-        public static final int action_setdtings=0x7f090054;
-        public static final int action_settings=0x7f090053;
+        public static final int action_setdtings=0x7f090056;
+        public static final int action_settings=0x7f090055;
         public static final int activity_chooser_view_content=0x7f090026;
         public static final int alertTitle=0x7f090030;
         public static final int always=0x7f090016;
@@ -1566,7 +1566,7 @@ containing a value of this type.
         public static final int default_activity_button=0x7f090029;
         public static final int dialog=0x7f09001b;
         public static final int disableHome=0x7f09000c;
-        public static final int drawer_fragment=0x7f090051;
+        public static final int drawer_fragment=0x7f090053;
         public static final int drawer_layout=0x7f09004f;
         public static final int dropdown=0x7f09001c;
         public static final int edit_query=0x7f090042;
@@ -1578,6 +1578,7 @@ containing a value of this type.
         public static final int icon=0x7f09002b;
         public static final int ifRoom=0x7f090018;
         public static final int image=0x7f090028;
+        public static final int linearFactLayout=0x7f090052;
         public static final int listMode=0x7f090009;
         public static final int list_item=0x7f09002a;
         public static final int middle=0x7f090015;
@@ -1586,6 +1587,7 @@ containing a value of this type.
         public static final int none=0x7f09000e;
         public static final int normal=0x7f09000a;
         public static final int parentPanel=0x7f09002d;
+        public static final int progressBar=0x7f090051;
         public static final int progress_circular=0x7f090005;
         public static final int progress_horizontal=0x7f090006;
         public static final int radio=0x7f09003a;
@@ -1616,7 +1618,7 @@ containing a value of this type.
         public static final int title=0x7f09002c;
         public static final int title_template=0x7f09002f;
         public static final int tool_bar=0x7f090050;
-        public static final int toolbar_title=0x7f090052;
+        public static final int toolbar_title=0x7f090054;
         public static final int topPanel=0x7f09002e;
         public static final int up=0x7f090008;
         public static final int useLogo=0x7f090012;

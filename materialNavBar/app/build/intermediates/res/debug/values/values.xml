@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -13,12 +13,12 @@
     <bool name="abc_config_allowActionMenuItemTextWithIcon">false</bool>
     <bool name="abc_config_closeDialogWhenTouchOutside">true</bool>
     <bool name="abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/src/main/res/values/color.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="AppBackgroundColor">#29b6f6</color>
     <color name="ColorPrimary">#29b6f6</color>
     <color name="ColorPrimaryDark">#0277BD</color>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="abc_input_method_navigation_guard">@android:color/black</color>
     <color name="abc_search_url_text_normal">#7fa87f</color>
@@ -156,11 +156,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
@@ -168,10 +168,10 @@
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="nav_drawer_width">280dp</dimen>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -185,12 +185,12 @@
     <integer name="abc_config_activityDefaultDur">220</integer>
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="abc_max_action_buttons">2</integer>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="Application_title">Factorial</string>
     <string name="Search">Search</string>
     <string name="User">User</string>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -209,7 +209,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="app_name">Factorial</string>
@@ -219,20 +219,20 @@
     <string name="hello_world">Hello world!</string>
     <string name="mediumtext">Medium Text</string>
     <string name="none">none</string>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="AppThemeBase"/>
     <style name="AppThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:colorPrimary">@color/ColorPrimary</item>
         <item name="android:colorPrimaryDark">@color/ColorPrimaryDark</item>
     </style>
-    <!-- From: file:/C:/Users/MarkGame/Desktop/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
+    <!-- From: file:/home/mark/Desktop/OP4App/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
