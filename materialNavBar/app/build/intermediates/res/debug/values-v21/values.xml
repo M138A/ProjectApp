@@ -3,14 +3,14 @@
     <!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/values-v21/dimens.xml -->
     <eat-comment/>
     <dimen name="ImageNav">48dp</dimen>
-    <dimen name="tool_bar_padding">24dp</dimen>
+    <dimen name="app_bar_top_padding">24dp</dimen>
+    <dimen name="drawer_margin_top">48dp</dimen>
     <!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="AppThemeBase">
         <item name="android:colorPrimary">@color/ColorPrimary</item>
         <item name="android:colorPrimaryDark">@color/ColorPrimary</item>
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:fitsSystemWindows">true</item>
     </style>
     <!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values-v21/values.xml -->
     <eat-comment/>

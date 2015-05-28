@@ -11,8 +11,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-
-
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="160dp">
@@ -20,7 +18,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:contentDescription="@string/none"
-            android:background="@drawable/header_juli"/>
+            android:background="@drawable/header_juli" />
 
             <TextView
                 android:id="@+id/textView_imageOverlay_day"
@@ -54,7 +52,7 @@
             android:dividerHeight="10.0sp"
             android:id="@+id/listViewId"
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:divider="#00000000"
             >
 

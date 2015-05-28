@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:elevation="4dp">
+    android:elevation="4dp"
+    android:fitsSystemWindows="true">
 
 
     <TextView
