@@ -1561,8 +1561,8 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09003e;
         public static final int action_mode_bar_stub=0x7f09003d;
         public static final int action_mode_close_button=0x7f090026;
-        public static final int action_setdtings=0x7f09005a;
-        public static final int action_settings=0x7f090059;
+        public static final int action_setdtings=0x7f09005c;
+        public static final int action_settings=0x7f09005b;
         public static final int activity_chooser_view_content=0x7f090027;
         public static final int alertTitle=0x7f090031;
         public static final int always=0x7f090017;
@@ -1592,7 +1592,7 @@ containing a value of this type.
         public static final int image=0x7f090029;
         public static final int linearFactLayout=0x7f090053;
         public static final int listMode=0x7f09000a;
-        public static final int listViewId=0x7f090057;
+        public static final int listViewId=0x7f090059;
         public static final int list_icon=0x7f090005;
         public static final int list_item=0x7f09002b;
         public static final int list_title=0x7f090055;
@@ -1630,10 +1630,12 @@ containing a value of this type.
         public static final int submit_area=0x7f09004c;
         public static final int tabMode=0x7f09000c;
         public static final int textSpacerNoButtons=0x7f090034;
+        public static final int textView_imageOverlay_day=0x7f090057;
+        public static final int textView_imageOverlay_month=0x7f090058;
         public static final int title=0x7f09002d;
         public static final int title_template=0x7f090030;
         public static final int tool_bar=0x7f090051;
-        public static final int toolbar_title=0x7f090058;
+        public static final int toolbar_title=0x7f09005a;
         public static final int topPanel=0x7f09002f;
         public static final int up=0x7f090009;
         public static final int useLogo=0x7f090013;

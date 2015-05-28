@@ -11,11 +11,42 @@
         android:orientation="vertical"
         android:background="#FFF">
 
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="160dp">
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:contentDescription="@string/none"
             android:background="@drawable/header_juli"/>
+
+            <TextView
+                android:id="@+id/textView_imageOverlay_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="22dp"
+                android:textSize="8pt"
+                android:textColor="#FFF"
+                android:layout_marginBottom="24dp"
+                android:text="May 2015">
+                </TextView>
+
+            <TextView
+                android:id="@+id/textView_imageOverlay_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="22dp"
+                android:layout_marginBottom="45dp"
+                android:textColor="#FFF"
+                android:textSize="9pt"
+                android:text="Tuesday 26th"
+                />
+
+        </RelativeLayout>
+
 
         <ListView
             android:layout_marginTop="8dp"
@@ -29,6 +60,7 @@
 
 
         </ListView>
+
     </LinearLayout>
 
 </RelativeLayout>
