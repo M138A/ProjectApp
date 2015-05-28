@@ -20,6 +20,7 @@ import info.androidhive.materialnavbar.R;
 /**
  * Created by bart on 28-5-2015
  * 2015 - 05
+ * Adapter for the ListView, 
  */
 
 
@@ -34,11 +35,11 @@ public class ListViewMenuAdapter extends BaseAdapter {
      * @return the List with MenuList objects
      */
     public List<MenuList> getDataForMenu() {
-        String[] category = {"Today", "Facts", "History", "Birthdays", "Lifehacks", "Quotes"}; //List of categories
-        int[] icons = {R.drawable.ic_birthdays, R.drawable.ic_facts, R.drawable.ic_history, R.drawable.ic_birthdays, R.drawable.ic_quotes, R.drawable.ic_quotes}; //List of Menu icons
+        String[] category = {"Today", "Facts", "History", "Birthdays", "Lifehacks", "Quotes","Favorites"}; //List of categories
+        int[] icons = {R.drawable.ic_birthdays, R.drawable.ic_facts, R.drawable.ic_history, R.drawable.ic_birthdays, R.drawable.ic_quotes, R.drawable.ic_quotes,R.drawable.ic_favorites}; //List of Menu icons
 
         List<MenuList> menuItems = new ArrayList<MenuList>();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             MenuList m = new MenuList();
             m.setIcon(icons[i]);
             m.setCategory(category[i]);

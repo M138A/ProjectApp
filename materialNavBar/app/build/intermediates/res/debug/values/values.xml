@@ -16,7 +16,6 @@
     <!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="AppBackgroundColor">#29b6f6</color>
-    <color name="BaseWhite">#FFF</color>
     <color name="ColorPrimary">#29b6f6</color>
     <color name="ColorPrimaryDark">#0277BD</color>
     <color name="NavDrawColor">#ff0c00ff</color>

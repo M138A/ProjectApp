@@ -5,6 +5,5 @@
     <color name="ColorPrimaryDark">#0277BD</color>
     <color name="AppBackgroundColor">#29b6f6</color>
     <color name="NavDrawColor">#ff0c00ff</color>
-    <color name="BaseWhite">#FFF</color>
 
 </resources>
