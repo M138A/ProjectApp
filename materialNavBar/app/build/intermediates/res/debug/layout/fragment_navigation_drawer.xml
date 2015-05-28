@@ -2,19 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ColorPrimaryDark"
-    tools:context="info.androidhive.materialnavbar.NavigationDrawerFragment">
+    tools:context="info.androidhive.materialnavbar.Activity.NavigationDrawerFragment">
 
     <LinearLayout
         android:id="@+id/containerDrawerImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFF">
 
         <ImageView
-            android:layout_width="280dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="@dimen/ImageNav"
-            android:contentDescription="@string/none" />
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:contentDescription="@string/none"
+            android:background="@drawable/header_juli"/>
+
+        <ListView
+            android:layout_marginTop="8dp"
+            android:dividerHeight="10.0sp"
+            android:id="@+id/listViewId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:divider="#00000000"
+            android:background="@color/BaseWhite"
+            >
+
+
+        </ListView>
     </LinearLayout>
+
 </RelativeLayout>
 <!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/fragment_navigation_drawer.xml -->

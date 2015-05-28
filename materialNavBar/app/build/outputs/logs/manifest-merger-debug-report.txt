@@ -45,7 +45,7 @@ MERGED from com.android.support:support-v4:22.1.1:22:5
 		ADDED from AndroidManifest.xml:11:9
 	android:theme
 		ADDED from AndroidManifest.xml:13:9
-activity#info.androidhive.materialnavbar.MainActivity
+activity#info.androidhive.materialnavbar.Activity.MainActivity
 ADDED from AndroidManifest.xml:14:9
 	android:theme
 		ADDED from AndroidManifest.xml:16:13

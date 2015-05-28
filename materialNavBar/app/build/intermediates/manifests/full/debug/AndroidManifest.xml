@@ -16,7 +16,7 @@
         android:label=""
         android:theme="@style/AppTheme" >
         <activity
-            android:name="info.androidhive.materialnavbar.MainActivity"
+            android:name="info.androidhive.materialnavbar.Activity.MainActivity"
             android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

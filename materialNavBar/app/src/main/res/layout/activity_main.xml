@@ -44,7 +44,7 @@
     android:layout_width="@dimen/nav_drawer_width"
     android:layout_height="match_parent"
     app:layout="@layout/fragment_navigation_drawer"
-    android:name="info.androidhive.materialnavbar.NavigationDrawerFragment"
+    android:name="info.androidhive.materialnavbar.Activity.NavigationDrawerFragment"
     tools:layout="@layout/fragment_navigation_drawer"
     android:id="@+id/drawer_fragment" />
 
