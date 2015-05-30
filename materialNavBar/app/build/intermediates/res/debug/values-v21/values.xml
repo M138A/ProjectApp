@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/values-v21/dimens.xml -->
+    <!-- From: file:/C:/Users/Indi/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/values-v21/dimens.xml -->
     <eat-comment/>
     <dimen name="ImageNav">48dp</dimen>
     <dimen name="app_bar_top_padding">24dp</dimen>
     <dimen name="drawer_margin_top">48dp</dimen>
-    <!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/values-v21/styles.xml -->
+    <!-- From: file:/C:/Users/Indi/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="AppThemeBase">
         <item name="android:colorPrimary">@color/ColorPrimary</item>
         <item name="android:colorPrimaryDark">@color/ColorPrimary</item>
         <item name="android:windowTranslucentStatus">true</item>
     </style>
-    <!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values-v21/values.xml -->
+    <!-- From: file:/C:/Users/Indi/Documents/GitHub/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values-v21/values.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance.Material"/>
     <style name="Base.TextAppearance.AppCompat.Body1" parent="android:TextAppearance.Material.Body1"/>
