@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
+        jar="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-e277646a53f40dac481b3e9d2ac4013cd54f1411.jar" />
+        <dex dex="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-9af690157032119a724619a3541c32c221f3f986.jar" />
     </item>
     <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-fae2ea36a98dce7cb2922e0ad17dc6ee84f79129.jar" />
-    </item>
-    <item
-        jar="C:\Users\Indi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jar="C:\Users\bart\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-d42c11bcb3c6e19006632ce0a76ff72ec1bb716e.jar" />
+        <dex dex="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-bae22287650a468651602bb6fa98a21f57e51c56.jar" />
     </item>
     <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.0.0\classes.jar"
+        jar="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="c6d79137693d494dee16372d3921f919eb724ced">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-4cd42d17d58b9382f941342f5505e06ee0529d66.jar" />
+        <dex dex="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-5a7ce8675c7744ef762237ddc3f0b4cfe5465106.jar" />
     </item>
     <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
+        jar="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-c0dbd5c3f27be61c84b4dcc60e4fbd717b18b138.jar" />
+        <dex dex="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-23b2e7fec84b967e3483e86b19c6ed7efef6d90c.jar" />
+    </item>
+    <item
+        jar="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-0d740a73985bbe43bff2aa225b86af95a1bb66e4.jar" />
     </item>
 
 </items>

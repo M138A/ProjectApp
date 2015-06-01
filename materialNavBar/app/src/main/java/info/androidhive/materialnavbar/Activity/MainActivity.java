@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -55,9 +57,24 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ListView codeLearnLessons = (ListView)findViewById(R.id.listViewId);
+        ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
         codeLearnLessons.setAdapter(adapter);
+        onClickMenuItem(codeLearnLessons);
     }
+
+
+
+    public void onClickMenuItem(ListView codeLearnLessons) {
+        codeLearnLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int position,
+                                    long id) {
+                String b = String.valueOf(adapter.getItem(position));
+                System.out.println(b);
+            }
+        });
+    }
+
 
     private void testJSON() throws JSONException, ExecutionException, InterruptedException {
         jsonObject = new JSON(getBaseContext(), findViewById(R.id.progressBar));
