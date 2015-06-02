@@ -1,5 +1,7 @@
 package info.androidhive.materialnavbar.Activity;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.widget.DrawerLayout;
@@ -25,6 +27,7 @@ import info.androidhive.materialnavbar.JSON;
 import info.androidhive.materialnavbar.MenuList;
 import info.androidhive.materialnavbar.R;
 import info.androidhive.materialnavbar.ViewAdapters.ListViewMenuAdapter;
+import info.androidhive.materialnavbar.fragment.ContentFragment;
 
 public class MainActivity extends AppCompatActivity {
     private JSON jsonObject = null;
@@ -56,12 +59,10 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
         codeLearnLessons.setAdapter(adapter);
         onClickMenuItem(codeLearnLessons);
     }
-
 
 
     public void onClickMenuItem(ListView codeLearnLessons) {
@@ -71,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
                                     long id) {
                 String b = String.valueOf(adapter.getItem(position));
                 System.out.println(b);
+
+                //todo
+               /** FragmentManager fragmentManager = getFragmentManager();
+                ContentFragment contentFragment = new ContentFragment();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+// work here to change Activity fragments (add, remove, etc.).  Example here of adding.
+                fragmentTransaction.add(R.layout.fragment_test, contentFragment);
+                fragmentTransaction.commit();**/
             }
         });
     }
