@@ -20,6 +20,11 @@ public class Fact {
         Description = description;
         date = factDate;
     }
+    public Fact(String description)
+    {
+        Description = description;
+    }
+
 
     public String getName() {
         return Name;

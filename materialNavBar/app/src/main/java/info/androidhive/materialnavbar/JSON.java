@@ -23,10 +23,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -69,7 +66,17 @@ public class JSON {
         for (int i = 0; i < arrayLength; i++) {
             JSONObject y = json.getJSONObject(i);
             Fact JSONextractedFact = null;
-            JSONextractedFact = new Fact(y.get("author").toString(), y.get("content").toString());
+            switch(type)
+            {
+                case "facts":
+                    JSONextractedFact = new Fact(y.get("content").toString());
+                    break;
+                default:
+                    JSONextractedFact = new Fact(y.get("author").toString(), y.get("content").toString());
+                    break;
+
+            }
+
             allFacts.add(JSONextractedFact);
         }
 
@@ -82,15 +89,27 @@ public class JSON {
         HttpPost httppost = new HttpPost("http://www.bartfokker.nl/factorial/");
         String respJSON = null;
         try {
+            List<NameValuePair> nameValuePairs;
             AndroidDate y = new AndroidDate();
             String date = "0004-";
             date += y.getMonthNumber() + "-";
             date += y.getDayNumber();
             // Add your data
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-            nameValuePairs.add(new BasicNameValuePair("table", type));
-            nameValuePairs.add(new BasicNameValuePair("datum", date.toString()));
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+            switch (type) {
+                case "facts":
+                    nameValuePairs = new ArrayList<NameValuePair>(3);
+                    nameValuePairs.add(new BasicNameValuePair("table", type));
+                    nameValuePairs.add(new BasicNameValuePair("datum", date.toString()));
+                    nameValuePairs.add(new BasicNameValuePair("categorie", "random"));
+                    httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+                    break;
+                default:
+                    nameValuePairs = new ArrayList<NameValuePair>(2);
+                    nameValuePairs.add(new BasicNameValuePair("table", type));
+                    nameValuePairs.add(new BasicNameValuePair("datum", date.toString()));
+                    httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+                    break;
+            }
             // Execute HTTP Post Request
             response = httpclient.execute(httppost);
 

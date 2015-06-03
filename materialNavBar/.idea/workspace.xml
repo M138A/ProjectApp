@@ -18,17 +18,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a39cd5eb-3c38-4783-82f8-e2795dfd7277" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/AndroidDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/FactsLoader.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/FactsLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Fact.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Fact.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/JSON.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/JSON.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_22_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_22_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_1_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="materialNavBar.iws" />
@@ -52,26 +44,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.148149" vertical-offset="758" max-vertical-offset="1845">
-              <caret line="98" column="85" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
+            <state vertical-scroll-proportion="0.47483587" vertical-offset="1388" max-vertical-offset="1845">
+              <caret line="138" column="16" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JSON.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JSON.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/JSON.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30991736" vertical-offset="675" max-vertical-offset="2370">
-              <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="769" max-vertical-offset="2700">
+              <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
               <folding>
-                <element signature="e#1255#1256#0" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
-                <element signature="e#1936#1942#0" expanded="true" />
-                <element signature="e#2809#2824#0" expanded="true" />
+                <element signature="e#1168#1169#0" expanded="true" />
+                <element signature="e#1202#1203#0" expanded="true" />
+                <element signature="e#1849#1855#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fact.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Fact.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+              <folding>
+                <element signature="e#506#507#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1381,9 +1385,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/fragment/ContentFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Date.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/AndroidDate.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/FactsLoader.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/JSON.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/FactsLoader.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Fact.java" />
       </list>
     </option>
   </component>
@@ -1503,7 +1508,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
   </component>
   <component name="RecentsManager">
@@ -1682,7 +1687,11 @@
       <created>1433323198216</created>
       <updated>1433323198216</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added type parameter JSON">
+      <created>1433361175096</created>
+      <updated>1433361175096</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1737,7 +1746,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Removed empty textfiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed empty textfiles" />
+    <MESSAGE value="Added type parameter JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added type parameter JSON" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1774,10 +1784,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2295">
           <caret line="114" column="25" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
           <folding>
-            <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1936#1942#0" expanded="true" />
-            <element signature="e#2809#2824#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1202#1203#0" expanded="true" />
+            <element signature="e#1849#1855#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1946,11 +1955,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/JSON.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.148149" vertical-offset="758" max-vertical-offset="1845">
-          <caret line="98" column="85" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="454" max-vertical-offset="2700">
+          <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
+          <folding>
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1202#1203#0" expanded="true" />
+            <element signature="e#1849#1855#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1962,16 +1975,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/JSON.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Fact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30991736" vertical-offset="675" max-vertical-offset="2370">
-          <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
           <folding>
-            <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1936#1942#0" expanded="true" />
-            <element signature="e#2809#2824#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47483587" vertical-offset="1388" max-vertical-offset="1845">
+          <caret line="138" column="16" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
