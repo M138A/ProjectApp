@@ -36,36 +36,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    //Teset push
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        setSupportActionBar(toolbar);
-        // Setting toolbar as the ActionBar with setSupportActionBar() call
-        NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager()
-                        .findFragmentById(R.id.drawer_fragment);
-        drawerFragment.setUp(R.id.drawer_fragment, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
-
-        StrictMode.ThreadPolicy old = StrictMode.getThreadPolicy();
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(old)
-                .permitAll()
-                .build());
-        try {
-
-            testJSON();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
-        codeLearnLessons.setAdapter(adapter);
-        onClickMenuItem(codeLearnLessons);
+        //Initialize the toolbar
+        initToolbar();
+        //Initialize the Frontpage with JSON formatted information
+        initFrontPageInformation();
+        ///Set categories for the navigation drawer in a listview
+        setListMenuItems();
     }
 
-
-    public void onClickMenuItem(ListView codeLearnLessons) {
+    private void setListMenuItems() {
+        ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
+        codeLearnLessons.setAdapter(adapter);
         codeLearnLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position,
@@ -74,14 +58,40 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(b);
 
                 //todo
-               /** FragmentManager fragmentManager = getFragmentManager();
-                ContentFragment contentFragment = new ContentFragment();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-// work here to change Activity fragments (add, remove, etc.).  Example here of adding.
-                fragmentTransaction.add(R.layout.fragment_test, contentFragment);
-                fragmentTransaction.commit();**/
+                /** FragmentManager fragmentManager = getFragmentManager();
+                 ContentFragment contentFragment = new ContentFragment();
+                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                 // work here to change Activity fragments (add, remove, etc.).  Example here of adding.
+                 fragmentTransaction.add(R.layout.fragment_test, contentFragment);
+                 fragmentTransaction.commit();**/
             }
         });
+    }
+
+    private void initFrontPageInformation() {
+        StrictMode.ThreadPolicy old = StrictMode.getThreadPolicy();
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(old)
+                .permitAll()
+                .build());
+        try {
+            testJSON();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Set the Toolbar as Actionbar
+     */
+    private void initToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        // Setting toolbar as the ActionBar with setSupportActionBar() call
+        setSupportActionBar(toolbar);
+        NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
+                getSupportFragmentManager()
+                        .findFragmentById(R.id.drawer_fragment);
+        drawerFragment.setUp(R.id.drawer_fragment, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
     }
 
 
