@@ -13,12 +13,14 @@ public class FactsLoader extends AsyncTask<Integer, Integer, Integer> {
     private View y = null;
     private ProgressBar mProgress;
     private JSON json = null;
-    public FactsLoader(Context c, View v, JSON j)
+    private String type;
+    public FactsLoader(Context c, View v, JSON j, String t)
     {
         this.x = c;
         this.y = v;
         this.json = j;
         mProgress = (ProgressBar) y;
+        this.type = t;
     }
     @Override
     protected void onPreExecute() {
@@ -28,7 +30,7 @@ public class FactsLoader extends AsyncTask<Integer, Integer, Integer> {
 
     @Override
     protected Integer doInBackground(Integer... integers) {
-       json.setJsonString(json.requestJSON());
+       json.setJsonString(json.requestJSON(type));
 
         return 1;
     }

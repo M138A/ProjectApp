@@ -23,7 +23,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -36,7 +39,9 @@ public class JSON {
     private JSONArray json = null;
     private StringBuilder builder = new StringBuilder();
 
-    public ArrayList<Fact> getFactAllList() {return factAllList;}
+    public ArrayList<Fact> getFactAllList() {
+        return factAllList;
+    }
 
     public ArrayList<Fact> factAllList = null;
 
@@ -45,14 +50,12 @@ public class JSON {
     }
 
 
+    public JSON(Context con, View vw, String type) throws JSONException, ExecutionException, InterruptedException {
 
-
-    public JSON(Context con, View vw) throws JSONException, ExecutionException, InterruptedException {
-
-            new FactsLoader(con,vw,this).execute().get();
+        new FactsLoader(con, vw, this, type).execute().get();
 
         json = getQuoteArray(jsonString);
-        factAllList = getFactsList();
+        factAllList = getFactsList(type);
     }
 
     public JSONArray getFacts() {
@@ -60,7 +63,7 @@ public class JSON {
         return json;
     }
 
-    public ArrayList<Fact> getFactsList() throws JSONException {
+    public ArrayList<Fact> getFactsList(String type) throws JSONException {
         int arrayLength = json.length();
         ArrayList<Fact> allFacts = new ArrayList<Fact>(arrayLength);
         for (int i = 0; i < arrayLength; i++) {
@@ -73,20 +76,23 @@ public class JSON {
         return allFacts;
     }
 
-    public String requestJSON()
-    {
+    public String requestJSON(String type) {
         HttpResponse response = null;
         HttpClient httpclient = new DefaultHttpClient();
         HttpPost httppost = new HttpPost("http://www.bartfokker.nl/factorial/");
         String respJSON = null;
         try {
+            AndroidDate y = new AndroidDate();
+            String date = "0004-";
+            date += y.getMonthNumber() + "-";
+            date += y.getDayNumber();
             // Add your data
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-            nameValuePairs.add(new BasicNameValuePair("table", "quote"));
-            nameValuePairs.add(new BasicNameValuePair("datum", "0004-01-01"));
+            nameValuePairs.add(new BasicNameValuePair("table", type));
+            nameValuePairs.add(new BasicNameValuePair("datum", date.toString()));
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             // Execute HTTP Post Request
-            response  = httpclient.execute(httppost);
+            response = httpclient.execute(httppost);
 
             respJSON = inputStreamToString(response.getEntity().getContent()).toString();
 
@@ -94,10 +100,10 @@ public class JSON {
 
         } catch (IOException e) {
 
-          if(respJSON == null)
-        {
-            throw new NullPointerException("jsonString is null");
-        }      }
+            if (respJSON == null) {
+                throw new NullPointerException("jsonString is null");
+            }
+        }
 
         return respJSON;
     }
@@ -108,11 +114,13 @@ public class JSON {
         return JSONArray;
 
     }
+
     private JSONArray getQuoteArray(String JSON) throws JSONException {
         JSONArray x = new JSONArray(JSON);
-        Log.d("JSONARRAY",x.toString());
+        Log.d("JSONARRAY", x.toString());
         return x;
     }
+
     private StringBuilder inputStreamToString(InputStream is) throws IOException {
         String line = "";
         StringBuilder total = new StringBuilder();
@@ -130,6 +138,7 @@ public class JSON {
     /**
      * OLD METHOD, SHOULD NOT BE USED
      * Replaced by requestJSON()
+     *
      * @param url String containing the URL
      * @return JSONArray
      */

@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void testJSON() throws JSONException, ExecutionException, InterruptedException {
-        jsonObject = new JSON(getBaseContext(), findViewById(R.id.progressBar));
+        jsonObject = new JSON(getBaseContext(), findViewById(R.id.progressBar),"quote");
         facts = jsonObject.getFactAllList();
         fillLayout();
     }
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Log.e("ERROR", "Factslist is empty");
             try {
-                facts = jsonObject.getFactsList();
+                facts = jsonObject.getFactsList("quote");
                 Log.d("facts", facts.get(0).getName());
             } catch (JSONException e) {
                 e.printStackTrace();
