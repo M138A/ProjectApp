@@ -1,11 +1,11 @@
 package info.androidhive.materialnavbar.Activity;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -24,16 +24,17 @@ import java.util.concurrent.ExecutionException;
 
 import info.androidhive.materialnavbar.Fact;
 import info.androidhive.materialnavbar.JSON;
-import info.androidhive.materialnavbar.MenuList;
+import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
 import info.androidhive.materialnavbar.ViewAdapters.ListViewMenuAdapter;
-import info.androidhive.materialnavbar.fragment.ContentFragment;
+import info.androidhive.materialnavbar.ViewAdapters.RVAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private JSON jsonObject = null;
     private ArrayList<Fact> facts = null;
     private ListViewMenuAdapter adapter = new ListViewMenuAdapter();
-
+    private List<CardItem> cardItems;
+    private RecyclerView rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
         initFrontPageInformation();
         ///Set categories for the navigation drawer in a listview
         setListMenuItems();
+        //recycl.
+        RecyclerPart();
+
     }
+
 
     // slide menu items
     private void setListMenuItems() {
@@ -102,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     private void testJSON() throws JSONException, ExecutionException, InterruptedException {
         jsonObject = new JSON(getBaseContext(), findViewById(R.id.progressBar),"facts");
         facts = jsonObject.getFactAllList();
-        fillLayout();
+      //  fillLayout();
     }
 
 
@@ -128,7 +133,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void fillLayout() {
+/* Old imports
+   private void fillLayout() {
 
         LinearLayout ll = (LinearLayout) findViewById(R.id.linearFactLayout);
         if (facts != null) {
@@ -148,6 +154,37 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }
+      */
+
+    // Recycler cards part
+
+    private void RecyclerPart(){
+
+        rv=(RecyclerView)findViewById(R.id.rv);
+
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        rv.setLayoutManager(llm);
+        rv.setHasFixedSize(true);
+
+        initializeData();
+        initializeAdapter();
+
+    }
+
+    private void initializeData(){
+        cardItems = new ArrayList<>();
+        cardItems.add(new CardItem("John Smith", "23 years old", R.drawable.ic_birthdays));
+        cardItems.add(new CardItem("In 1942", "Stuff Stuff Stuff Stuff Stuff", R.drawable.ic_history));
+        cardItems.add(new CardItem("Lifehack #2423", "Iets slims wat tijd bespaart.", R.drawable.ic_lifehacks));
+        cardItems.add(new CardItem("Lifehack #1342", "Iets slims wat geld bespaart.", R.drawable.ic_lifehacks));
+        cardItems.add(new CardItem("Mike Smith", "27 years old", R.drawable.ic_birthdays));
+        cardItems.add(new CardItem("In 42BC", "Fire was first invented.", R.drawable.ic_history));
+        cardItems.add(new CardItem("Quote #253", "Hmm Hmmm Hmmm", R.drawable.ic_quotes));
+
+    }
+
+    private void initializeAdapter(){
+        RVAdapter adapter = new RVAdapter(cardItems);
+        rv.setAdapter(adapter);
     }
 }
