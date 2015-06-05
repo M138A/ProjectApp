@@ -171,15 +171,40 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void initializeData(){
+    private void initializeData() {
         cardItems = new ArrayList<>();
-        cardItems.add(new CardItem("John Smith", "23 years old", R.drawable.ic_birthdays));
-        cardItems.add(new CardItem("In 1942", "Stuff Stuff Stuff Stuff Stuff", R.drawable.ic_history));
-        cardItems.add(new CardItem("Lifehack #2423", "Iets slims wat tijd bespaart.", R.drawable.ic_lifehacks));
-        cardItems.add(new CardItem("Lifehack #1342", "Iets slims wat geld bespaart.", R.drawable.ic_lifehacks));
-        cardItems.add(new CardItem("Mike Smith", "27 years old", R.drawable.ic_birthdays));
-        cardItems.add(new CardItem("In 42BC", "Fire was first invented.", R.drawable.ic_history));
-        cardItems.add(new CardItem("Quote #253", "Hmm Hmmm Hmmm", R.drawable.ic_quotes));
+
+        //
+        if (facts != null) {
+            for (Fact fact : facts) {
+                //TextView x = new TextView(findViewById(R.id.RelaListCard).getContext());
+                String name = fact.getName();
+                String description = fact.getDescription();
+                // x.setText(name + "\n" + description + "\n");
+                //  ll.addView(x);
+                //  Log.i("Fact", name);
+                cardItems.add(new CardItem(name, description, R.drawable.ic_facts));
+
+            }
+        } else {
+            Log.e("ERROR", "Factslist is empty");
+            try {
+                facts = jsonObject.getFactsList("facts");
+                Log.d("facts", facts.get(0).getName());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+            //
+            cardItems.add(new CardItem("John Smith", "23 years old", R.drawable.ic_birthdays));
+            cardItems.add(new CardItem("Today in 1942", "Stuff War Stuff War Stuff", R.drawable.ic_history));
+            cardItems.add(new CardItem("Lifehack #2423", "Iets slims wat tijd bespaart.", R.drawable.ic_lifehacks));
+            cardItems.add(new CardItem("Lifehack #1342", "Iets slims wat geld bespaart.", R.drawable.ic_lifehacks));
+            cardItems.add(new CardItem("Mike Smith", "27 years old", R.drawable.ic_birthdays));
+            cardItems.add(new CardItem("Today in 42BC", "Fire was first invented.", R.drawable.ic_history));
+            cardItems.add(new CardItem("Quote #253", "Hmm Hmmm Hmmm", R.drawable.ic_quotes));
+
 
     }
 
