@@ -47,13 +47,16 @@ public class MainActivity extends AppCompatActivity {
         setListMenuItems();
     }
 
+    // slide menu items
     private void setListMenuItems() {
+        // zet de list item naar die van het slide menu
         ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
         codeLearnLessons.setAdapter(adapter);
         codeLearnLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position,
                                     long id) {
+                // test menu click items
                 String b = String.valueOf(adapter.getItem(position));
                 System.out.println(b);
 
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
+
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager()
                         .findFragmentById(R.id.drawer_fragment);

@@ -36,7 +36,7 @@ public class ListViewMenuAdapter extends BaseAdapter {
      */
     public List<MenuList> getDataForMenu() {
         String[] category = {"Today", "Facts", "History", "Birthdays", "Lifehacks", "Quotes","Favorites"}; //List of categories
-        int[] icons = {R.drawable.ic_birthdays, R.drawable.ic_facts, R.drawable.ic_history, R.drawable.ic_birthdays, R.drawable.ic_quotes, R.drawable.ic_quotes,R.drawable.ic_favorites}; //List of Menu icons
+        int[] icons = {R.drawable.ic_today, R.drawable.ic_facts, R.drawable.ic_history, R.drawable.ic_birthdays, R.drawable.ic_lifehacks, R.drawable.ic_quotes,R.drawable.ic_favorites}; //List of Menu icons
 
         List<MenuList> menuItems = new ArrayList<MenuList>();
         for (int i = 0; i < 7; i++) {
