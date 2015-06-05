@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     // slide menu items
     private void setListMenuItems() {
-        // zet de list item naar die van het slide menu
+        // zet de list carditem naar die van het slide menu
         ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
         codeLearnLessons.setAdapter(adapter);
         codeLearnLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
+        // Handle action bar carditem clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
@@ -158,23 +158,26 @@ public class MainActivity extends AppCompatActivity {
 
     // Recycler cards part
 
+    //
     private void RecyclerPart(){
-
+        // referenties recycler
         rv=(RecyclerView)findViewById(R.id.rv);
-
+        // refereerd naar de Linear Layout waar hij in staat.
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
-
+        // pakt de data om hem te vullen, zie onder
         initializeData();
         initializeAdapter();
 
     }
 
+    // nieuwe list/data/recyclercard methode
+
     private void initializeData() {
         cardItems = new ArrayList<>();
-
-        //
+        // array voor card items
+        // Mark Json methode
         if (facts != null) {
             for (Fact fact : facts) {
                 //TextView x = new TextView(findViewById(R.id.RelaListCard).getContext());
@@ -196,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-            //
+            // wat standaard items / template
             cardItems.add(new CardItem("John Smith", "23 years old", R.drawable.ic_birthdays));
             cardItems.add(new CardItem("Today in 1942", "Stuff War Stuff War Stuff", R.drawable.ic_history));
             cardItems.add(new CardItem("Lifehack #2423", "Iets slims wat tijd bespaart.", R.drawable.ic_lifehacks));

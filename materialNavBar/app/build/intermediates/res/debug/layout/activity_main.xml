@@ -5,11 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    card_view:cardCornerRadius="@dimen/card_corner_radius"
-    card_view:cardElevation="@dimen/card_elevation"
-    card_view:cardPreventCornerOverlap="false"
-    card_view:cardUseCompatPadding="true">
+>
 
 <!-- MAIN CONTENT -->
 <LinearLayout
@@ -23,29 +19,29 @@
         layout="@layout/tool_bar"
 
         />
+    <!--                        VV  1dp < wrap_content - testing, kan progressbar weg na het laden ?                        -->
+           <ProgressBar
+               android:layout_width="1dp"
+               android:layout_height="1dp"
+               android:id="@+id/progressBar"
+               android:layout_gravity="center_horizontal" />
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:layout_gravity="center_horizontal" />
+        <!-- Old stuff
 
+            <ScrollView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="557dp">
 
-    <!-- Old stuff
-    <ScrollView
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="557dp">
+                <LinearLayout
 
-        <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/linearFactLayout"
+                    android:layout_height="wrap_content"/>
+            </ScrollView>
 
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:id="@+id/linearFactLayout"
-            android:layout_height="wrap_content"/>
-    </ScrollView>
-
-  End old stuff-->
+          End old stuff-->
 
 
 
@@ -68,12 +64,12 @@
 
     <!-- RecyclerView AKA listview voor cards  -->
     <android.support.v7.widget.RecyclerView
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_width="match_parent"
         android:id="@+id/rv"
         android:paddingLeft="14dp"
         android:paddingRight="14dp"
-        card_view:cardCornerRadius="5dp"
+
 
         >
     </android.support.v7.widget.RecyclerView>
@@ -87,9 +83,7 @@
         android:layout_marginTop="4dp"
         android:layout_gravity="center"
         android:paddingBottom="4dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardPreventCornerOverlap="false"
-        card_view:cardUseCompatPadding="true"
+
     >
     <!-- dit ^^ zou spacing moeten oplossen.. helaas -->
 
@@ -98,8 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            card_view:cardPreventCornerOverlap="false"
-            card_view:cardUseCompatPadding="true"
+     
             android:id="@+id/RelaListCard"
 
 
@@ -133,7 +126,12 @@
                 android:layout_below="@+id/person_name"
                 android:text="Content-temp"
                 />
-
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:padding="16dp"
+                android:background="#29b6f6"
+                />
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
@@ -156,4 +154,4 @@
     tools:layout="@layout/fragment_navigation_drawer"
     android:id="@+id/drawer_fragment" />
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/lappie/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/Indi/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
