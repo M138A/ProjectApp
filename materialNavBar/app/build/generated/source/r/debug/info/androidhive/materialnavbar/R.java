@@ -1676,12 +1676,12 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f090025;
         public static final int action_bar_title=0x7f090024;
         public static final int action_context_bar=0x7f090042;
+        public static final int action_exit=0x7f090064;
         public static final int action_menu_divider=0x7f090002;
         public static final int action_menu_presenter=0x7f090003;
         public static final int action_mode_bar=0x7f09003e;
         public static final int action_mode_bar_stub=0x7f09003d;
         public static final int action_mode_close_button=0x7f090026;
-        public static final int action_setdtings=0x7f090064;
         public static final int action_settings=0x7f090063;
         public static final int activity_chooser_view_content=0x7f090027;
         public static final int alertTitle=0x7f090031;
@@ -1839,14 +1839,15 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with=0x7f0b0012;
         public static final int abc_shareactionprovider_share_with_application=0x7f0b0013;
         public static final int abc_toolbar_collapse_description=0x7f0b0014;
-        public static final int action_settings=0x7f0b0015;
-        public static final int app_name=0x7f0b0016;
-        public static final int drawer_close=0x7f0b0017;
-        public static final int drawer_open=0x7f0b0018;
-        public static final int hello_blank_fragment=0x7f0b0019;
-        public static final int hello_world=0x7f0b001a;
-        public static final int mediumtext=0x7f0b001b;
-        public static final int none=0x7f0b001c;
+        public static final int action_Exit=0x7f0b0015;
+        public static final int action_settings=0x7f0b0016;
+        public static final int app_name=0x7f0b0017;
+        public static final int drawer_close=0x7f0b0018;
+        public static final int drawer_open=0x7f0b0019;
+        public static final int hello_blank_fragment=0x7f0b001a;
+        public static final int hello_world=0x7f0b001b;
+        public static final int mediumtext=0x7f0b001c;
+        public static final int none=0x7f0b001d;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0c0000;

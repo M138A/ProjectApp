@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
         initFrontPageInformation();
         ///Set categories for the navigation drawer in a listview
         setListMenuItems();
-        //recycl.
-        RecyclerPart();
+
 
     }
 
@@ -64,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
                 // test menu click items
                 String b = String.valueOf(adapter.getItem(position));
                 System.out.println(b);
+                int listitemid = (int) adapter.getItemId(position);
+                if (listitemid == 0) {
+                    // 0 = today
+                    /**
+                     * TODO vervang door switch & scene changes
+                     */
+                    moveTaskToBack(true);
+
+                }
 
                 //todo
                 /** FragmentManager fragmentManager = getFragmentManager();
@@ -107,7 +115,9 @@ public class MainActivity extends AppCompatActivity {
     private void testJSON() throws JSONException, ExecutionException, InterruptedException {
         jsonObject = new JSON(getBaseContext(), findViewById(R.id.progressBar),"facts");
         facts = jsonObject.getFactAllList();
-      //  fillLayout();
+        //fillLayout();
+        //recycl.
+        RecyclerPart();
     }
 
 
@@ -116,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+
     }
 
     @Override
@@ -128,12 +139,17 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+            /**
+             * TODO settings
+             */
+        } else if (id == R.id.action_exit) {
+            moveTaskToBack(true);
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-/* Old imports
+/* Old imports vervangen / copy in de recycler, zie onderaan
    private void fillLayout() {
 
         LinearLayout ll = (LinearLayout) findViewById(R.id.linearFactLayout);

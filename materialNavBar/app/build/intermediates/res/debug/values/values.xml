@@ -244,6 +244,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <!-- From: file:/C:/Users/Indi/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="action_Exit">Exit</string>
     <string name="action_settings">Settings</string>
     <string name="app_name">Factorial</string>
     <string name="drawer_close">Close</string>
