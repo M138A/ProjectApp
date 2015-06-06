@@ -265,6 +265,9 @@
     <style name="AppThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/ColorPrimary</item>
         <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
+
+        <!-- animations -->
+
     </style>
     <!-- From: file:/C:/Users/Indi/Documents/GitHub/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>

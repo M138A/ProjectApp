@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                      * TODO vervang door switch & scene changes
                      */
                     moveTaskToBack(true);
-
+                    // als clicked dan app naar achtergrond als proof of concept
                 }
 
                 //todo
@@ -199,9 +199,7 @@ public class MainActivity extends AppCompatActivity {
                 //TextView x = new TextView(findViewById(R.id.RelaListCard).getContext());
                 String name = fact.getName();
                 String description = fact.getDescription();
-                // x.setText(name + "\n" + description + "\n");
-                //  ll.addView(x);
-                //  Log.i("Fact", name);
+
                 cardItems.add(new CardItem(name, description, R.drawable.ic_facts));
 
             }
@@ -230,5 +228,9 @@ public class MainActivity extends AppCompatActivity {
     private void initializeAdapter(){
         RVAdapter adapter = new RVAdapter(cardItems);
         rv.setAdapter(adapter);
+    }
+
+    public void RunSomeMethod(View view) {
+        // onclick
     }
 }

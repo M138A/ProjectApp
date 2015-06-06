@@ -1855,6 +1855,8 @@ containing a value of this type.
         public static final int Animation_AppCompat_Dialog=0x7f0c0002;
         public static final int Animation_AppCompat_DropDownUp=0x7f0c0003;
         public static final int AppTheme=0x7f0c0004;
+        /**  animations 
+         */
         public static final int AppThemeBase=0x7f0c0005;
         public static final int Base_AlertDialog_AppCompat=0x7f0c0006;
         public static final int Base_AlertDialog_AppCompat_Light=0x7f0c0007;
