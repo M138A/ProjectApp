@@ -52,13 +52,14 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         return pvh;
     }
 
+
+    // de ''oncreate''
     @Override
     public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
         personViewHolder.personName.setText(cardItems.get(i).name);
         personViewHolder.personAge.setText(cardItems.get(i).age);
         personViewHolder.personPhoto.setImageResource(cardItems.get(i).photoId);
-        AnimationUtils.animate(personViewHolder,true);
-
+        AnimationUtils.animateScatter(personViewHolder, true);
 
 
     }
