@@ -5,11 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
+import info.androidhive.materialnavbar.Activity.DownloadImageTask;
 import info.androidhive.materialnavbar.Animations;
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
@@ -23,6 +25,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         TextView personName;
         TextView personAge;
         ImageView personPhoto;
+        ImageButton FavBut;
+        ImageButton ReportBut;
 
         PersonViewHolder(View itemView) {
             super(itemView);
@@ -30,6 +34,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
             personName = (TextView)itemView.findViewById(R.id.person_name);
             personAge = (TextView)itemView.findViewById(R.id.person_age);
             personPhoto = (ImageView)itemView.findViewById(R.id.person_photo);
+            FavBut = (ImageButton)itemView.findViewById(R.id.FavBut);
+            ReportBut = (ImageButton)itemView.findViewById(R.id.ReportBut);
+     
         }
     }
 
@@ -59,6 +66,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         personViewHolder.personName.setText(cardItems.get(i).name);
         personViewHolder.personAge.setText(cardItems.get(i).age);
         personViewHolder.personPhoto.setImageResource(cardItems.get(i).photoId);
+        //fav
+        personViewHolder.FavBut.setImageResource(cardItems.get(i).favId);
+        //report
+        personViewHolder.ReportBut.setImageResource(cardItems.get(i).reportId);
+
         //zet animation op dit object/element
         Animations.animateScatter(personViewHolder, true);
 

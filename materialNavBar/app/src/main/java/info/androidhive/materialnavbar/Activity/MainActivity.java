@@ -192,16 +192,20 @@ public class MainActivity extends AppCompatActivity {
     // nieuwe list/data/recyclercard methode
 
     private void initializeData() {
-        cardItems = new ArrayList<>();
         // array voor card items
+        cardItems = new ArrayList<>();
+        // report en fav referenties
+        int report = R.drawable.reporttemp;
+        int fav = R.drawable.favotemp;
         // Mark Json methode
+
         if (facts != null) {
             for (Fact fact : facts) {
                 //TextView x = new TextView(findViewById(R.id.RelaListCard).getContext());
                 String name = fact.getName();
                 String description = fact.getDescription();
 
-                cardItems.add(new CardItem(name, description, R.drawable.ic_facts));
+                cardItems.add(new CardItem(name, description, R.drawable.ic_facts, report,fav));
 
             }
         } else {
@@ -215,13 +219,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
             // wat standaard items / template
-            cardItems.add(new CardItem("John Smith", "23 years old", R.drawable.ic_birthdays));
-            cardItems.add(new CardItem("Today in 1942", "Stuff War Stuff War Stuff", R.drawable.ic_history));
-            cardItems.add(new CardItem("Lifehack #2423", "Iets slims wat tijd bespaart.", R.drawable.ic_lifehacks));
-            cardItems.add(new CardItem("Lifehack #1342", "Iets slims wat geld bespaart.", R.drawable.ic_lifehacks));
-            cardItems.add(new CardItem("Mike Smith", "27 years old", R.drawable.ic_birthdays));
-            cardItems.add(new CardItem("Today in 42BC", "Fire was first invented.", R.drawable.ic_history));
-            cardItems.add(new CardItem("Quote #253", "Hmm Hmmm Hmmm", R.drawable.ic_quotes));
+            cardItems.add(new CardItem("John Smith", "23 years old", R.drawable.ic_birthdays, report,fav));
+            cardItems.add(new CardItem("Today in 1942", "Stuff War Stuff War Stuff", R.drawable.ic_history, report,fav));
+            cardItems.add(new CardItem("Lifehack #2423", "Iets slims wat tijd bespaart.", R.drawable.ic_lifehacks, report,fav));
+            cardItems.add(new CardItem("Lifehack #1342", "Iets slims wat geld bespaart.", R.drawable.ic_lifehacks, report,fav));
+            cardItems.add(new CardItem("Mike Smith", "27 years old", R.drawable.ic_birthdays, report,fav));
+            cardItems.add(new CardItem("Today in 42BC", "Fire was first invented.", R.drawable.ic_history, report,fav));
+            cardItems.add(new CardItem("Quote #253", "Hmm Hmmm Hmmm", R.drawable.ic_quotes, report,fav));
 
 
     }

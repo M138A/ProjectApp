@@ -1667,6 +1667,8 @@ containing a value of this type.
         public static final int reporttemp=0x7f02005c;
     }
     public static final class id {
+        public static final int FavBut=0x7f090059;
+        public static final int ReportBut=0x7f09005a;
         public static final int action_bar=0x7f090041;
         public static final int action_bar_activity_content=0x7f090000;
         public static final int action_bar_container=0x7f090040;
@@ -1710,8 +1712,6 @@ containing a value of this type.
         public static final int icon=0x7f09002c;
         public static final int ifRoom=0x7f090019;
         public static final int image=0x7f090029;
-        public static final int imageButton=0x7f090059;
-        public static final int imageButton2=0x7f09005a;
         public static final int listMode=0x7f09000a;
         public static final int listViewId=0x7f09005f;
         public static final int list_icon=0x7f090005;

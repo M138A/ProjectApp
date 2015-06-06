@@ -466,6 +466,8 @@ int drawable ic_quotes 0x7f020059
 int drawable ic_settings 0x7f02005a
 int drawable ic_today 0x7f02005b
 int drawable reporttemp 0x7f02005c
+int id FavBut 0x7f090059
+int id ReportBut 0x7f09005a
 int id action_bar 0x7f090041
 int id action_bar_activity_content 0x7f090000
 int id action_bar_container 0x7f090040
@@ -509,8 +511,6 @@ int id homeAsUp 0x7f09000e
 int id icon 0x7f09002c
 int id ifRoom 0x7f090019
 int id image 0x7f090029
-int id imageButton 0x7f090059
-int id imageButton2 0x7f09005a
 int id listMode 0x7f09000a
 int id listViewId 0x7f09005f
 int id list_icon 0x7f090005
