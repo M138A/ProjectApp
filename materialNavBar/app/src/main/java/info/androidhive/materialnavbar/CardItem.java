@@ -13,5 +13,6 @@ public class CardItem {
         this.name = name;
         this.age = age;
         this.photoId = photoId;
+
     }
 }
