@@ -1,5 +1,6 @@
 package info.androidhive.materialnavbar.ViewAdapters;
 
+import android.animation.ObjectAnimator;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import info.androidhive.materialnavbar.AnimationUtils;
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
 
@@ -55,10 +57,15 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         personViewHolder.personName.setText(cardItems.get(i).name);
         personViewHolder.personAge.setText(cardItems.get(i).age);
         personViewHolder.personPhoto.setImageResource(cardItems.get(i).photoId);
+        AnimationUtils.animate(personViewHolder,true);
+
+
+
     }
 
     @Override
     public int getItemCount() {
         return cardItems.size();
     }
+
 }

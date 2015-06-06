@@ -44,24 +44,6 @@
           End old stuff-->
 
 
-
-
-  <!-- Simple card voorbeeld
-  betere oplossing denk ik is :
-  http://developer.android.com/training/material/lists-cards.html
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/Card_View"
-        android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        card_view:cardCornerRadius="1dp">
-
-
-    </android.support.v7.widget.CardView>    -->
-
-
-
     <!-- RecyclerView AKA listview voor cards  -->
     <android.support.v7.widget.RecyclerView
         android:layout_height="fill_parent"
@@ -69,75 +51,8 @@
         android:id="@+id/rv"
         android:paddingLeft="14dp"
         android:paddingRight="14dp"
-
-
         >
     </android.support.v7.widget.RecyclerView>
-    <!-- Nieuwe cardview -->
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="150dp"
-        android:id="@+id/cv"
-        android:layout_marginTop="4dp"
-        android:layout_gravity="center"
-        android:paddingBottom="4dp"
-
-    >
-    <!-- dit ^^ zou spacing moeten oplossen.. helaas -->
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-
-            android:id="@+id/RelaListCard"
-
-
-            >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/person_photo"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="16dp"
-                android:src="@drawable/ic_birthdays"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/person_name"
-                android:layout_toRightOf="@+id/person_photo"
-                android:layout_alignParentTop="true"
-                android:textSize="30sp"
-                android:text="Headline-temp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/person_age"
-                android:layout_toRightOf="@+id/person_photo"
-                android:layout_below="@+id/person_name"
-                android:text="Content-temp"
-                />
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:padding="16dp"
-                android:background="#29b6f6"
-                />
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <!-- Einde Nieuwe cardview -->
-
 
 
 
