@@ -1707,6 +1707,8 @@ containing a value of this type.
         public static final int end=0x7f090015;
         public static final int expand_activities_button=0x7f090028;
         public static final int expanded_menu=0x7f090038;
+        public static final int fragment_category=0x7f090053;
+        public static final int fragmentinformation=0x7f090060;
         public static final int home=0x7f090004;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f09002c;
@@ -1730,7 +1732,6 @@ containing a value of this type.
         public static final int progress_circular=0x7f090006;
         public static final int progress_horizontal=0x7f090007;
         public static final int radio=0x7f09003b;
-        public static final int rv=0x7f090053;
         public static final int screen=0x7f090020;
         public static final int scrollView=0x7f090033;
         public static final int search_badge=0x7f090045;
@@ -1755,7 +1756,6 @@ containing a value of this type.
         public static final int submit_area=0x7f09004c;
         public static final int tabMode=0x7f09000c;
         public static final int textSpacerNoButtons=0x7f090034;
-        public static final int textView=0x7f090060;
         public static final int textView_imageOverlay_day=0x7f09005d;
         public static final int textView_imageOverlay_month=0x7f09005e;
         public static final int title=0x7f09002d;

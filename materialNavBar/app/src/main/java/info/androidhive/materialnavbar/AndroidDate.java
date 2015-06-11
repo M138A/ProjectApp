@@ -37,7 +37,7 @@ public class AndroidDate {
     {
         dateObject = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd");
-        DateFormat monthFormat = new SimpleDateFormat("MM");
+        DateFormat monthFormat = new SimpleDateFormat("MMMM");
         DateFormat yearFormat = new SimpleDateFormat("y");
         DateFormat dayNameFormat = new SimpleDateFormat("E");
 

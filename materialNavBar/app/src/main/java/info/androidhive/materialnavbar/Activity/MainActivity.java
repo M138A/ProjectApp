@@ -1,58 +1,54 @@
 package info.androidhive.materialnavbar.Activity;
 
 import android.os.Bundle;
-import android.os.StrictMode;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import org.json.JSONException;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
-import info.androidhive.materialnavbar.Fact;
-import info.androidhive.materialnavbar.JSON;
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
 import info.androidhive.materialnavbar.ViewAdapters.ListViewMenuAdapter;
-import info.androidhive.materialnavbar.ViewAdapters.RVAdapter;
+import info.androidhive.materialnavbar.fragment.InformationFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private JSON jsonObject = null;
-    private ArrayList<Fact> facts = null;
     private ListViewMenuAdapter adapter = new ListViewMenuAdapter();
     private List<CardItem> cardItems;
-    private RecyclerView rv;
+    private DrawerLayout mDrawerLayout;
+    private InformationFragment informationFragment = new InformationFragment();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Create fragment and give it an argument specifying the article it should show
         //Initialize the toolbar
+        setFragmentInfo(informationFragment);
         initToolbar();
-        //Initialize the Frontpage with JSON formatted information
-        initFrontPageInformation();
         ///Set categories for the navigation drawer in a listview
         setListMenuItems();
 
+    }
 
+    private void setFragmentInfo(InformationFragment f) {
+        // Begin the transaction
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        // Replace the contents of the container with the new fragment
+        ft.replace(R.id.fragment_category, f);
+        // or ft.add(R.id.your_placeholder, new FooFragment());
+        // Complete the changes added above
+        ft.commit();
     }
 
 
-    // slide menu items
     private void setListMenuItems() {
         // zet de list carditem naar die van het slide menu
         ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
@@ -61,40 +57,38 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position,
                                     long id) {
-                // test menu click items
-                String b = String.valueOf(adapter.getItem(position));
-                System.out.println(b);
-                int listitemid = (int) adapter.getItemId(position);
-                if (listitemid == 0) {
-                    // 0 = today
-                    /**
-                     * TODO vervang door switch & scene changes
-                     */
-                    moveTaskToBack(true);
-                    // als clicked dan app naar achtergrond als proof of concept
+                long menulist = a.getAdapter().getItemId(position);
+                switch ((int) menulist) {
+                    case 0:
+                        informationFragment.setText("Today");
+                        break;
+                    case 1:
+                        informationFragment.setText("Facts");
+                        break;
+                    case 2:
+                        informationFragment.setText("History");
+                        break;
+                    case 3:
+                        informationFragment.setText("Birthdays");
+                        break;
+                    case 4:
+                        informationFragment.setText("Lifehacks");
+                        break;
+                    case 5:
+                        informationFragment.setText("Quotes");
+                        break;
+                    case 6:
+                        informationFragment.setText("Today");
+                        break;
                 }
-
-                //todo
-                /** FragmentManager fragmentManager = getFragmentManager();
-                 ContentFragment contentFragment = new ContentFragment();
-                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                 // work here to change Activity fragments (add, remove, etc.).  Example here of adding.
-                 fragmentTransaction.add(R.layout.fragment_test, contentFragment);
-                 fragmentTransaction.commit();**/
+                closeDrawer();
             }
         });
     }
 
-    private void initFrontPageInformation() {
-        StrictMode.ThreadPolicy old = StrictMode.getThreadPolicy();
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(old)
-                .permitAll()
-                .build());
-        try {
-            testJSON();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    private void closeDrawer() {
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout.closeDrawers();
     }
 
 
@@ -110,15 +104,6 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager()
                         .findFragmentById(R.id.drawer_fragment);
         drawerFragment.setUp(R.id.drawer_fragment, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
-    }
-
-
-    private void testJSON() throws JSONException, ExecutionException, InterruptedException {
-        jsonObject = new JSON(getBaseContext(), findViewById(R.id.progressBar),"facts");
-        facts = jsonObject.getFactAllList();
-        //fillLayout();
-        //recycl.
-        RecyclerPart();
     }
 
 
@@ -150,93 +135,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-/* Old imports vervangen / copy in de recycler, zie onderaan
-   private void fillLayout() {
-
-        LinearLayout ll = (LinearLayout) findViewById(R.id.linearFactLayout);
-        if (facts != null) {
-            for (Fact fact : facts) {
-                TextView x = new TextView(findViewById(R.id.linearFactLayout).getContext());
-                String name = fact.getName();
-                String description = fact.getDescription();
-                x.setText(name + "\n" + description + "\n");
-                ll.addView(x);
-                Log.i("Fact", name);
-            }
-        } else {
-            Log.e("ERROR", "Factslist is empty");
-            try {
-                facts = jsonObject.getFactsList("facts");
-                Log.d("facts", facts.get(0).getName());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-      */
-
-    // Recycler cards part
-
-    //
-    private void RecyclerPart(){
-        // referenties recycler
-        rv=(RecyclerView)findViewById(R.id.rv);
-        // refereerd naar de Linear Layout waar hij in staat.
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        rv.setLayoutManager(llm);
-        rv.setHasFixedSize(true);
-        // pakt de data om hem te vullen, zie onder
-        initializeData();
-        initializeAdapter();
-
-    }
-
-    // nieuwe list/data/recyclercard methode
-
-    private void initializeData() {
-        // array voor card items
-        cardItems = new ArrayList<>();
-        // report en fav referenties
-        int report = R.drawable.reporttemp;
-        int fav = R.drawable.favotemp;
-        // Mark Json methode
-
-        if (facts != null) {
-            for (Fact fact : facts) {
-                //TextView x = new TextView(findViewById(R.id.RelaListCard).getContext());
-                String name = fact.getName();
-                String description = fact.getDescription();
-
-                cardItems.add(new CardItem(name, description, R.drawable.ic_facts, report,fav));
-
-            }
-        } else {
-            Log.e("ERROR", "Factslist is empty");
-            try {
-                facts = jsonObject.getFactsList("facts");
-                Log.d("facts", facts.get(0).getName());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-            // wat standaard items / template
-            cardItems.add(new CardItem("John Smith", "23 years old", R.drawable.ic_birthdays, report,fav));
-            cardItems.add(new CardItem("Today in 1942", "Stuff War Stuff War Stuff", R.drawable.ic_history, report,fav));
-            cardItems.add(new CardItem("Lifehack #2423", "Iets slims wat tijd bespaart.", R.drawable.ic_lifehacks, report,fav));
-            cardItems.add(new CardItem("Lifehack #1342", "Iets slims wat geld bespaart.", R.drawable.ic_lifehacks, report,fav));
-            cardItems.add(new CardItem("Mike Smith", "27 years old", R.drawable.ic_birthdays, report,fav));
-            cardItems.add(new CardItem("Today in 42BC", "Fire was first invented.", R.drawable.ic_history, report,fav));
-            cardItems.add(new CardItem("Quote #253", "Hmm Hmmm Hmmm", R.drawable.ic_quotes, report,fav));
-
-
-    }
-
-    private void initializeAdapter(){
-        RVAdapter adapter = new RVAdapter(cardItems);
-        rv.setAdapter(adapter);
-    }
-
-    public void RunSomeMethod(View view) {
-        // onclick
-    }
 }
 

@@ -506,6 +506,8 @@ int id edit_query 0x7f090043
 int id end 0x7f090015
 int id expand_activities_button 0x7f090028
 int id expanded_menu 0x7f090038
+int id fragment_category 0x7f090053
+int id fragmentinformation 0x7f090060
 int id home 0x7f090004
 int id homeAsUp 0x7f09000e
 int id icon 0x7f09002c
@@ -529,7 +531,6 @@ int id progressBar 0x7f090052
 int id progress_circular 0x7f090006
 int id progress_horizontal 0x7f090007
 int id radio 0x7f09003b
-int id rv 0x7f090053
 int id screen 0x7f090020
 int id scrollView 0x7f090033
 int id search_badge 0x7f090045
@@ -554,7 +555,6 @@ int id src_over 0x7f090023
 int id submit_area 0x7f09004c
 int id tabMode 0x7f09000c
 int id textSpacerNoButtons 0x7f090034
-int id textView 0x7f090060
 int id textView_imageOverlay_day 0x7f09005d
 int id textView_imageOverlay_month 0x7f09005e
 int id title 0x7f09002d

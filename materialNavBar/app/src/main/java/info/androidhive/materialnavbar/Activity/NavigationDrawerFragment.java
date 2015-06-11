@@ -14,10 +14,14 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import info.androidhive.materialnavbar.AndroidDate;
 import info.androidhive.materialnavbar.R;
 
 /**
@@ -30,6 +34,9 @@ public class NavigationDrawerFragment extends Fragment {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private View containerView;
+    private AndroidDate date = new AndroidDate();
+    private TextView day_intday;
+    private TextView month_year;
 
     private boolean mUserLearnedDrawer;
     private boolean mFromSavedInstanceState;
@@ -47,10 +54,43 @@ public class NavigationDrawerFragment extends Fragment {
         }
     }
 
+
+    //todo
+    public void setMonthImg() {
+
+    }
+
+    //todo
+    public void setDate() {
+        day_intday.setText(date.getDayName()+" "+date.getDayNumber()+getSecondOrNot());
+        month_year.setText(date.getMonthNumber()+" "+date.getYearNumber());
+    }
+
+    public String getSecondOrNot()  {
+        int i = Integer.parseInt(date.getDayNumber());
+        if(i == 1 || i == 21 || i == 31) {
+            return "st";
+        }
+        else if(i == 2 || i == 22){
+            return "nd";
+        }
+        else if(i == 3 || i == 23){
+            return "rd";
+        }
+        else {
+            return "th";
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+        View inflate = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        day_intday = (TextView) inflate.findViewById(R.id.textView_imageOverlay_month);
+        month_year = (TextView) inflate.findViewById(R.id.textView_imageOverlay_day);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        setDate();
+
+        return inflate;
     }
 
 

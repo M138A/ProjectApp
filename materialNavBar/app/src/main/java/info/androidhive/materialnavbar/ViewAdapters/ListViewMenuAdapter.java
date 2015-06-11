@@ -29,6 +29,8 @@ public class ListViewMenuAdapter extends BaseAdapter {
 
     private List<MenuList> codeLearnChapterList = getDataForMenu();
 
+
+
     /**
      * Passes the MenuList object to a List
      *
