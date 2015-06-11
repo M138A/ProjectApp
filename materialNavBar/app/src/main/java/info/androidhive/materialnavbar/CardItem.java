@@ -8,16 +8,13 @@ public class CardItem {
     public int photoId;
     public int reportId;
     public int favId;
-
+    public int iconId;
     public String placeholder;
-
-    //overloading methinks is best ?
-    public CardItem(String name, String age, int photoId,int reportId,int favId) {
+    public CardItem(String name, String age, int photoId) {
         this.name = name;
         this.age = age;
         this.photoId = photoId;
-        this.reportId = reportId;
-        this.favId = favId;
+
 
     }
 }

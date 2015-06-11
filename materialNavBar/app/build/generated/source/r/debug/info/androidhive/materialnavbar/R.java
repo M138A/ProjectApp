@@ -1668,6 +1668,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int FavBut=0x7f090059;
+        public static final int RecyclerCardList=0x7f090060;
         public static final int ReportBut=0x7f09005a;
         public static final int action_bar=0x7f090041;
         public static final int action_bar_activity_content=0x7f090000;
@@ -1677,13 +1678,13 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f090025;
         public static final int action_bar_title=0x7f090024;
         public static final int action_context_bar=0x7f090042;
-        public static final int action_exit=0x7f090063;
+        public static final int action_exit=0x7f090064;
         public static final int action_menu_divider=0x7f090002;
         public static final int action_menu_presenter=0x7f090003;
         public static final int action_mode_bar=0x7f09003e;
         public static final int action_mode_bar_stub=0x7f09003d;
         public static final int action_mode_close_button=0x7f090026;
-        public static final int action_settings=0x7f090062;
+        public static final int action_settings=0x7f090063;
         public static final int activity_chooser_view_content=0x7f090027;
         public static final int alertTitle=0x7f090031;
         public static final int always=0x7f090017;
@@ -1708,7 +1709,7 @@ containing a value of this type.
         public static final int expand_activities_button=0x7f090028;
         public static final int expanded_menu=0x7f090038;
         public static final int fragment_category=0x7f090053;
-        public static final int fragmentinformation=0x7f090060;
+        public static final int fragmentinformation=0x7f090061;
         public static final int home=0x7f090004;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f09002c;
@@ -1761,7 +1762,7 @@ containing a value of this type.
         public static final int title=0x7f09002d;
         public static final int title_template=0x7f090030;
         public static final int tool_bar=0x7f090051;
-        public static final int toolbar_title=0x7f090061;
+        public static final int toolbar_title=0x7f090062;
         public static final int topPanel=0x7f09002f;
         public static final int up=0x7f090009;
         public static final int useLogo=0x7f090013;

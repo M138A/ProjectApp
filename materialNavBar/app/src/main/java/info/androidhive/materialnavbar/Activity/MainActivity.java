@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private List<CardItem> cardItems;
     private DrawerLayout mDrawerLayout;
     private InformationFragment informationFragment = new InformationFragment();
+    public static int cardcounter = 0;
 
 
     @Override
@@ -60,10 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 long menulist = a.getAdapter().getItemId(position);
                 switch ((int) menulist) {
                     case 0:
-                        informationFragment.setText("Today");
+                        informationFragment.haalData(0);
+                        setTitle("Today");// tijdelijk om te checken of kaarten refreshen
                         break;
                     case 1:
-                        informationFragment.setText("Facts");
+                        informationFragment.haalData(1);
+                        setTitle("Facts");// tijdelijk om te checken of kaarten refreshen
                         break;
                     case 2:
                         informationFragment.setText("History");
@@ -135,5 +138,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void RunSomeMethod(View view) {
+        // even hier laten staan, voor click effects testen
+    }
 }
 
