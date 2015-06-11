@@ -36,7 +36,6 @@
 
     <!-- DRAWER CONTENT -->
     <fragment
-
         android:id="@+id/drawer_fragment"
         android:name="info.androidhive.materialnavbar.Activity.NavigationDrawerFragment"
         android:layout_width="@dimen/nav_drawer_width"

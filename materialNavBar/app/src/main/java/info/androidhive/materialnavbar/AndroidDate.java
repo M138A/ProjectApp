@@ -5,6 +5,7 @@ import android.util.Log;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by mark on 3-6-15.
@@ -36,10 +37,10 @@ public class AndroidDate {
 
     {
         dateObject = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("dd");
-        DateFormat monthFormat = new SimpleDateFormat("MMMM");
-        DateFormat yearFormat = new SimpleDateFormat("y");
-        DateFormat dayNameFormat = new SimpleDateFormat("E");
+        DateFormat dateFormat = new SimpleDateFormat("dd",Locale.ENGLISH);
+        DateFormat monthFormat = new SimpleDateFormat("MMMM",Locale.ENGLISH);
+        DateFormat yearFormat = new SimpleDateFormat("y", Locale.ENGLISH);
+        DateFormat dayNameFormat = new SimpleDateFormat("E",Locale.ENGLISH);
 
         dayNumber = dateFormat.format(dateObject);
         monthNumber = monthFormat.format(dateObject);

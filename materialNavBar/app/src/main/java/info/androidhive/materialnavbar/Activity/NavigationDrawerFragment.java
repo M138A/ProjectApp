@@ -35,8 +35,6 @@ public class NavigationDrawerFragment extends Fragment {
     private DrawerLayout mDrawerLayout;
     private View containerView;
     private AndroidDate date = new AndroidDate();
-    private TextView day_intday;
-    private TextView month_year;
 
     private boolean mUserLearnedDrawer;
     private boolean mFromSavedInstanceState;
@@ -62,35 +60,28 @@ public class NavigationDrawerFragment extends Fragment {
 
     //todo
     public void setDate() {
-        day_intday.setText(date.getDayName()+" "+date.getDayNumber()+getSecondOrNot());
-        month_year.setText(date.getMonthNumber()+" "+date.getYearNumber());
+        TextView day_intday = (TextView) getActivity().findViewById(R.id.textView_imageOverlay_month);
+        TextView month_year = (TextView) getActivity().findViewById(R.id.textView_imageOverlay_day);
+        day_intday.setText(date.getDayName() + " " + date.getDayNumber() + getSecondOrNot());
+        month_year.setText(date.getMonthNumber() + " " + date.getYearNumber());
     }
 
-    public String getSecondOrNot()  {
+    public String getSecondOrNot() {
         int i = Integer.parseInt(date.getDayNumber());
-        if(i == 1 || i == 21 || i == 31) {
+        if (i == 1 || i == 21 || i == 31) {
             return "st";
-        }
-        else if(i == 2 || i == 22){
+        } else if (i == 2 || i == 22) {
             return "nd";
-        }
-        else if(i == 3 || i == 23){
+        } else if (i == 3 || i == 23) {
             return "rd";
-        }
-        else {
+        } else {
             return "th";
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
-        day_intday = (TextView) inflate.findViewById(R.id.textView_imageOverlay_month);
-        month_year = (TextView) inflate.findViewById(R.id.textView_imageOverlay_day);
-        // Inflate the layout for this fragment
-        setDate();
-
-        return inflate;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
     }
 
 
@@ -101,6 +92,7 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
+                setDate();
                 if (!mUserLearnedDrawer) {
                     mUserLearnedDrawer = true;
                     SaveToPreferences(getActivity(), KEY_USER_LEARNED_DRAWER, mUserLearnedDrawer + "");

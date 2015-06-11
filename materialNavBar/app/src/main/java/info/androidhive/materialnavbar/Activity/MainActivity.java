@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         informationFragment.setText("Quotes");
                         break;
                     case 6:
-                        informationFragment.setText("Today");
+                        informationFragment.setText("Favorites");
                         break;
                 }
                 closeDrawer();
