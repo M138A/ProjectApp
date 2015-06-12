@@ -1668,7 +1668,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int FavBut=0x7f090059;
-        public static final int RecyclerCardList=0x7f090060;
+        public static final int RecyclerCardList=0x7f09005c;
         public static final int ReportBut=0x7f09005a;
         public static final int action_bar=0x7f090041;
         public static final int action_bar_activity_content=0x7f090000;
@@ -1678,13 +1678,11 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f090025;
         public static final int action_bar_title=0x7f090024;
         public static final int action_context_bar=0x7f090042;
-        public static final int action_exit=0x7f090064;
         public static final int action_menu_divider=0x7f090002;
         public static final int action_menu_presenter=0x7f090003;
         public static final int action_mode_bar=0x7f09003e;
         public static final int action_mode_bar_stub=0x7f09003d;
         public static final int action_mode_close_button=0x7f090026;
-        public static final int action_settings=0x7f090063;
         public static final int activity_chooser_view_content=0x7f090027;
         public static final int alertTitle=0x7f090031;
         public static final int always=0x7f090017;
@@ -1692,7 +1690,7 @@ containing a value of this type.
         public static final int buttonPanel=0x7f090037;
         public static final int checkbox=0x7f090039;
         public static final int collapseActionView=0x7f090018;
-        public static final int containerDrawerImage=0x7f09005c;
+        public static final int containerDrawerImage=0x7f09005d;
         public static final int contentPanel=0x7f090032;
         public static final int custom=0x7f090036;
         public static final int customPanel=0x7f090035;
@@ -1709,14 +1707,13 @@ containing a value of this type.
         public static final int expand_activities_button=0x7f090028;
         public static final int expanded_menu=0x7f090038;
         public static final int fragment_category=0x7f090053;
-        public static final int fragmentinformation=0x7f090061;
         public static final int home=0x7f090004;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f09002c;
         public static final int ifRoom=0x7f090019;
         public static final int image=0x7f090029;
         public static final int listMode=0x7f09000a;
-        public static final int listViewId=0x7f09005f;
+        public static final int listViewId=0x7f090060;
         public static final int list_icon=0x7f090005;
         public static final int list_item=0x7f09002b;
         public static final int list_title=0x7f09005b;
@@ -1757,12 +1754,12 @@ containing a value of this type.
         public static final int submit_area=0x7f09004c;
         public static final int tabMode=0x7f09000c;
         public static final int textSpacerNoButtons=0x7f090034;
-        public static final int textView_imageOverlay_day=0x7f09005d;
-        public static final int textView_imageOverlay_month=0x7f09005e;
+        public static final int textView_imageOverlay_day=0x7f09005e;
+        public static final int textView_imageOverlay_month=0x7f09005f;
         public static final int title=0x7f09002d;
         public static final int title_template=0x7f090030;
         public static final int tool_bar=0x7f090051;
-        public static final int toolbar_title=0x7f090062;
+        public static final int toolbar_title=0x7f090061;
         public static final int topPanel=0x7f09002f;
         public static final int up=0x7f090009;
         public static final int useLogo=0x7f090013;
@@ -1803,16 +1800,13 @@ containing a value of this type.
         public static final int activity_main=0x7f040019;
         public static final int carditem=0x7f04001a;
         public static final int custom_row=0x7f04001b;
-        public static final int fragment_navigation_drawer=0x7f04001c;
-        public static final int fragment_test=0x7f04001d;
+        public static final int fragment_content=0x7f04001c;
+        public static final int fragment_navigation_drawer=0x7f04001d;
         public static final int select_dialog_item_material=0x7f04001e;
         public static final int select_dialog_multichoice_material=0x7f04001f;
         public static final int select_dialog_singlechoice_material=0x7f040020;
         public static final int support_simple_spinner_dropdown_item=0x7f040021;
         public static final int tool_bar=0x7f040022;
-    }
-    public static final class menu {
-        public static final int menu_main=0x7f0d0000;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;

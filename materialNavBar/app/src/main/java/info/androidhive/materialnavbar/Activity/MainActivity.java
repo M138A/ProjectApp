@@ -1,15 +1,20 @@
 package info.androidhive.materialnavbar.Activity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -19,6 +24,17 @@ import info.androidhive.materialnavbar.ViewAdapters.ListViewMenuAdapter;
 import info.androidhive.materialnavbar.fragment.InformationFragment;
 
 public class MainActivity extends AppCompatActivity {
+
+    //ez toast
+    Context context = this;
+    CharSequence text = "Clicked";
+    int duration = Toast.LENGTH_SHORT;
+
+    /* als je iets wilt ''toasten'' :
+       Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+     */
+    //
     private ListViewMenuAdapter adapter = new ListViewMenuAdapter();
     private List<CardItem> cardItems;
     private DrawerLayout mDrawerLayout;
@@ -62,34 +78,40 @@ public class MainActivity extends AppCompatActivity {
                 switch ((int) menulist) {
                     case 0:
                         InformationFragment.refresh = false;
-                        informationFragment.haalData(0);
+                        informationFragment.getCardData(0);
                         adapter.notifyDataSetChanged();
-
                         setTitle("Today");// tijdelijk om te checken of kaarten refreshen
                         break;
                     case 1:
                         InformationFragment.refresh = false;
-                        informationFragment.haalData(1);
+                        informationFragment.getCardData(1);
                         adapter.notifyDataSetChanged();
-
                         setTitle("Facts");// tijdelijk om te checken of kaarten refreshen
-
-
                         break;
                     case 2:
-                        informationFragment.setText("History");
+                        InformationFragment.refresh = false;
+                        informationFragment.getCardData(2);
+                        adapter.notifyDataSetChanged();
                         break;
                     case 3:
-                        informationFragment.setText("Birthdays");
+                        InformationFragment.refresh = false;
+                        informationFragment.getCardData(3);
+                        adapter.notifyDataSetChanged();
                         break;
                     case 4:
-                        informationFragment.setText("Lifehacks");
+                        InformationFragment.refresh = false;
+                        informationFragment.getCardData(4);
+                        adapter.notifyDataSetChanged();
                         break;
                     case 5:
-                        informationFragment.setText("Quotes");
+                        InformationFragment.refresh = false;
+                        informationFragment.getCardData(5);
+                        adapter.notifyDataSetChanged();
                         break;
                     case 6:
-                        informationFragment.setText("Favorites");
+                        InformationFragment.refresh = false;
+                        informationFragment.getCardData(6);
+                        adapter.notifyDataSetChanged();
                         break;
                 }
                 closeDrawer();
@@ -117,37 +139,32 @@ public class MainActivity extends AppCompatActivity {
         drawerFragment.setUp(R.id.drawer_fragment, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
     }
 
+    // report button
+    public void ReportAction(View view) {
+        // nieuwe ''alert dialog/aka popup ezmode''
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Report Article"); // title
+        alert.setMessage("Comment :"); // content
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar carditem clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-            /**
-             * TODO settings
-             */
-        } else if (id == R.id.action_exit) {
-            moveTaskToBack(true);
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void RunSomeMethod(View view) {
-        // even hier laten staan, voor click effects testen
+        // nieuwe text area
+        final EditText input = new EditText(this);
+        // zet text area in alert
+        alert.setView(input);
+        // send button
+        alert.setPositiveButton("Send", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String value = input.getText().toString();
+                return;
+            }
+        });
+        // cancel button
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+                return;
+            }
+        }); // show allert
+        alert.show();
     }
 }
 
