@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import info.androidhive.materialnavbar.Activity.MainActivity;
 import info.androidhive.materialnavbar.CardItem;
@@ -30,17 +31,29 @@ public class InformationFragment extends Fragment {
     private RVAdapter mRecyclerViewAdapter;
     private View containerView;
     private static List<CardItem>  KaartItems;
+    private Map<Integer, String> mFragmentTags;
+    public static boolean refresh = false;
 
-    public InformationFragment() {
-        // Required empty public constructor
-    }
+
 
     //haalt list leeg
     public void refreshlist(){
-        // werkt nog niet.
+            Fragment frg = null;
+            frg = getFragmentManager().findFragmentById(2131296339);
+            final FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.detach(frg);
+            ft.attach(frg);
+            ft.commit();
+
         List<Fragment> allFragments = getFragmentManager().getFragments();
         for(int z =0; z< allFragments.size();z++){
+            System.out.println("tags");
             System.out.println(allFragments.get(z).getTag());
+            System.out.println("ids");
+            System.out.println(allFragments.get(z).getId());
+            System.out.println("hashstuff");
+            System.out.println(allFragments.get(z).toString());
+
         }
         System.out.println("zzzzzzzzzzz");
         System.out.println(MainActivity.cardcounter);
@@ -55,14 +68,22 @@ public class InformationFragment extends Fragment {
                 KaartItems.add(new CardItem("A", "string a", R.drawable.ic_facts));
 
                 MainActivity.cardcounter = 0;
+                if (!refresh){
                 refreshlist();
+                    refresh = true;
+                }
+
                 break;
             case 1:
                 KaartItems.add(new CardItem("B", "string a", R.drawable.ic_birthdays));
                 KaartItems.add(new CardItem("B", "string a", R.drawable.ic_birthdays));
 
                 MainActivity.cardcounter = 1;
-                refreshlist();
+                if (!refresh){
+                    refreshlist();
+                    refresh = true;
+
+                }
                 break;
             case 2:
                 KaartItems.add(new CardItem("C", "string a", R.drawable.ic_history));
@@ -94,17 +115,17 @@ public class InformationFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        // Inflate the layout for this fragment * iets aangepast, return onderaan voor recycler drawer
-        View layout = inflater.inflate(R.layout.fragment_test, container, false);
-        // pak het id van de recycler uit xml
-        recyclerView = (RecyclerView) layout.findViewById(R.id.RecyclerCardList);
-        // haal de data  op uit de return/switch hier boven
-        //
-        mRecyclerViewAdapter = new RVAdapter(haalData(MainActivity.cardcounter));
-        //
-        recyclerView.setAdapter(mRecyclerViewAdapter);
-        // zet hem als dit op deze activity
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+            // Inflate the layout for this fragment * iets aangepast, return onderaan voor recycler drawer
+            View layout = inflater.inflate(R.layout.fragment_test, container, false);
+            // pak het id van de recycler uit xml
+            recyclerView = (RecyclerView) layout.findViewById(R.id.RecyclerCardList);
+            // haal de data  op uit de return/switch hier boven
+            //
+            mRecyclerViewAdapter = new RVAdapter(haalData(MainActivity.cardcounter));
+            //
+            recyclerView.setAdapter(mRecyclerViewAdapter);
+            // zet hem als dit op deze activity
+            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         return layout;
     }
 

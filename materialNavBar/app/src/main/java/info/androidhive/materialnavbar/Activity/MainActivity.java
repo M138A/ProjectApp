@@ -61,12 +61,20 @@ public class MainActivity extends AppCompatActivity {
                 long menulist = a.getAdapter().getItemId(position);
                 switch ((int) menulist) {
                     case 0:
+                        InformationFragment.refresh = false;
                         informationFragment.haalData(0);
+                        adapter.notifyDataSetChanged();
+
                         setTitle("Today");// tijdelijk om te checken of kaarten refreshen
                         break;
                     case 1:
+                        InformationFragment.refresh = false;
                         informationFragment.haalData(1);
+                        adapter.notifyDataSetChanged();
+
                         setTitle("Facts");// tijdelijk om te checken of kaarten refreshen
+
+
                         break;
                     case 2:
                         informationFragment.setText("History");

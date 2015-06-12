@@ -41,7 +41,8 @@
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:tag="menu_fragment"
         app:layout="@layout/fragment_navigation_drawer"
         tools:layout="@layout/fragment_navigation_drawer" />
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/lappie/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/Indi/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
