@@ -1,26 +1,35 @@
 package info.androidhive.materialnavbar.Activity;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewParent;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
+import info.androidhive.materialnavbar.ReportDialog;
 import info.androidhive.materialnavbar.ViewAdapters.ListViewMenuAdapter;
+import info.androidhive.materialnavbar.ViewAdapters.RVAdapter;
 import info.androidhive.materialnavbar.fragment.InformationFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -141,11 +150,20 @@ public class MainActivity extends AppCompatActivity {
 
     // report button
     public void ReportAction(View view) {
+        View view1 = (View) view.findViewById(R.id.ReportBut).getParent();
+        TextView t1 = (TextView) view1.findViewById(R.id.person_name);
+        TextView t2 = (TextView) view1.findViewById(R.id.person_age);
+
+        Toast toast = Toast.makeText(context, t1.getText() + " " + t2.getText(), duration);
+        toast.show();
+
+        /*
         // nieuwe ''alert dialog/aka popup ezmode''
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Report Article"); // title
         alert.setMessage("Comment :"); // content
-
+        //todo ReportDialog report = new ReportDialog();
+        //todo report.reportFact();
         // nieuwe text area
         final EditText input = new EditText(this);
         // zet text area in alert
@@ -154,17 +172,17 @@ public class MainActivity extends AppCompatActivity {
         alert.setPositiveButton("Send", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String value = input.getText().toString();
-                return;
             }
         });
         // cancel button
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 // TODO Auto-generated method stub
-                return;
             }
         }); // show allert
-        alert.show();
+        alert.show();*/
+
+
     }
 }
 

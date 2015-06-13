@@ -1,13 +1,16 @@
 package info.androidhive.materialnavbar.ViewAdapters;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -17,6 +20,7 @@ import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
+
 
     // Recycler View Adapter
     public static class PersonViewHolder extends RecyclerView.ViewHolder {
@@ -30,20 +34,29 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
 
         PersonViewHolder(View itemView) {
             super(itemView);
-            cv = (CardView)itemView.findViewById(R.id.cv);
-            personName = (TextView)itemView.findViewById(R.id.person_name);
-            personAge = (TextView)itemView.findViewById(R.id.person_age);
-            personPhoto = (ImageView)itemView.findViewById(R.id.person_photo);
-            FavBut = (ImageButton)itemView.findViewById(R.id.FavBut);
-            ReportBut = (ImageButton)itemView.findViewById(R.id.ReportBut);
-     
+            cv = (CardView) itemView.findViewById(R.id.cv);
+            personName = (TextView) itemView.findViewById(R.id.person_name);
+            personAge = (TextView) itemView.findViewById(R.id.person_age);
+            personPhoto = (ImageView) itemView.findViewById(R.id.person_photo);
+            FavBut = (ImageButton) itemView.findViewById(R.id.FavBut);
+            ReportBut = (ImageButton) itemView.findViewById(R.id.ReportBut);
+
         }
     }
 
     List<CardItem> cardItems;
 
-    public RVAdapter(List<CardItem> cardItems){
+    public RVAdapter(List<CardItem> cardItems) {
         this.cardItems = cardItems;
+    }
+
+
+    public Object getCard(int position) {
+        return cardItems.get(position);
+    }
+
+    public List<CardItem> getCardItems() {
+        return cardItems;
     }
 
     @Override
@@ -59,7 +72,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
     }
 
 
-    // de ''oncreate''
+    // de 'onCreate'
     @Override
     public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
         // vult het object/element met
@@ -76,6 +89,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
 
 
     }
+
 
     @Override
     public int getItemCount() {

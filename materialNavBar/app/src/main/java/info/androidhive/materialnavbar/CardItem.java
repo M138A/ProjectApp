@@ -10,12 +10,13 @@ public class CardItem {
     public int favId;
     public int iconId;
     public String placeholder;
+
     public CardItem(String name, String age, int photoId,int reportId) {
         this.name = name;
         this.age = age;
         this.photoId = photoId;
         this.reportId = reportId;
-
-
     }
+
+
 }

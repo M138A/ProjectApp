@@ -50,11 +50,16 @@ public class InformationFragment extends Fragment {
     public List<CardItem> getCardData(int type) {
         CardEntry = new ArrayList<>();
         // tijdelijk knop voor testing
-        int reporticon = R.drawable.reporttemp;
+        int reporticon = R.drawable.ic_sim_alert_black_18dp;
         switch (type) {
             case 0:
                 // Vull kaartjes met volgende items :
                 CardEntry.add(new CardItem("Today", "string a", R.drawable.ic_facts,reporticon));
+                CardEntry.add(new CardItem("Today", "string da", R.drawable.ic_facts,reporticon));
+                CardEntry.add(new CardItem("Today", "string fa", R.drawable.ic_facts,reporticon));
+                CardEntry.add(new CardItem("Today", "string ga", R.drawable.ic_facts,reporticon));
+                CardEntry.add(new CardItem("Today", "string ha", R.drawable.ic_facts,reporticon));
+                CardEntry.add(new CardItem("Today", "string qa", R.drawable.ic_facts,reporticon));
                 //workaround
                 //zet case type om naar cardcounter > inflater > refresh
                 MainActivity.cardcounter = 0;
@@ -122,6 +127,9 @@ public class InformationFragment extends Fragment {
     }
 
 
+    public List<CardItem> getCardEntry() {
+        return CardEntry;
+    }
     // end recycler
 
 

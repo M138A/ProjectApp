@@ -67,7 +67,7 @@
             android:layout_alignTop="@+id/FavBut"
             android:layout_toLeftOf="@+id/FavBut"
             android:layout_toStartOf="@+id/FavBut"
-            android:src="@drawable/reporttemp"
+            android:src="@drawable/ic_sim_alert_black_18dp"
             android:onClick="ReportAction" />
 
     </RelativeLayout>
