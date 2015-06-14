@@ -7,6 +7,7 @@ import android.widget.Toast;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
@@ -27,7 +28,6 @@ public class ReportDialog extends Activity {
     public void reportFact(String content, String datum, String category, String report) {
 
         try {
-            HttpResponse response = null;
             HttpClient httpclient = new DefaultHttpClient();
             HttpPost httppost = new HttpPost("http://www.bartfokker.nl/factorial/email.php");
 
@@ -37,20 +37,18 @@ public class ReportDialog extends Activity {
             nameValuePairs.add(new BasicNameValuePair("datum", datum));
             nameValuePairs.add(new BasicNameValuePair("category", category));
             nameValuePairs.add(new BasicNameValuePair("report", report));
+            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
             // Execute HTTP Post Request
-            response = httpclient.execute(httppost);
+            httpclient.execute(httppost);
 
         }catch(Exception e){
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
-
-
         //todo Get information from Textfield
         //todo create POST request and send to URL
     }
-
 
 
 

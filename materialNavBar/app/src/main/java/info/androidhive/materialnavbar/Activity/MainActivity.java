@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import info.androidhive.materialnavbar.AndroidDate;
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
 import info.androidhive.materialnavbar.ReportDialog;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     //ez toast
     Context context = this;
     CharSequence text = "Clicked";
-    int duration = Toast.LENGTH_SHORT;
+    int duration = Toast.LENGTH_LONG;
 
     /* als je iets wilt ''toasten'' :
        Toast toast = Toast.makeText(context, text, duration);
@@ -150,28 +151,37 @@ public class MainActivity extends AppCompatActivity {
 
     // report button
     public void ReportAction(View view) {
-        View view1 = (View) view.findViewById(R.id.ReportBut).getParent();
-        TextView t1 = (TextView) view1.findViewById(R.id.person_name);
-        TextView t2 = (TextView) view1.findViewById(R.id.person_age);
+        View view1 = (View) view.findViewById(R.id.ReportBut).getParent(); //Get the Parent(CardView) from the clicked button
+        final TextView t1 = (TextView) view1.findViewById(R.id.person_age);
+        final TextView t2 = (TextView) view1.findViewById(R.id.person_name);
 
-        Toast toast = Toast.makeText(context, t1.getText() + " " + t2.getText(), duration);
-        toast.show();
-
-        /*
-        // nieuwe ''alert dialog/aka popup ezmode''
+        // Alert dialog/PopUp
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Report Article"); // title
         alert.setMessage("Comment :"); // content
-        //todo ReportDialog report = new ReportDialog();
-        //todo report.reportFact();
         // nieuwe text area
         final EditText input = new EditText(this);
         // zet text area in alert
         alert.setView(input);
         // send button
+        /**
+         * Create onclicklistener for the pop up
+         * Send starts new Thread which sends the comment including the whole fact to PHP script
+         */
         alert.setPositiveButton("Send", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                String value = input.getText().toString();
+                final String value = input.getText().toString();
+                final AndroidDate date = new AndroidDate();
+                final ReportDialog report = new ReportDialog();
+                new Thread(new Runnable() {
+                    public void run() {
+                        report.reportFact(String.valueOf(t1.getText()),
+                                String.valueOf(date.getDayNumber() + "-" + date.getFullmonthNumber()),
+                                String.valueOf(t2.getText()), value);
+                    }
+                }).start();
+                Toast toast = Toast.makeText(context, "Thanks for your Feedback!", duration);
+                toast.show();
             }
         });
         // cancel button
@@ -180,9 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
             }
         }); // show allert
-        alert.show();*/
-
-
+        alert.show();
     }
 }
 
