@@ -1,9 +1,7 @@
 package info.androidhive.materialnavbar.ViewAdapters;
 
-import android.content.Context;
-import android.util.Log;
+import android.graphics.Color;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -11,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import info.androidhive.materialnavbar.MenuList;
@@ -82,7 +79,7 @@ public class ListViewMenuAdapter extends BaseAdapter {
         //this is for the performance of the MenuList
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) LayoutInflater.from(parent.getContext()); //Inflate the layout if there is no convertView
-            convertView = inflater.inflate(R.layout.custom_row, parent, false); //set the contertView to the infalte layout with XML custom_row
+            convertView = inflater.inflate(R.layout.custom_row, parent, false); //set the convertView to the inflate layout with XML custom_row
         }
         ImageView icon = (ImageView) convertView.findViewById(R.id.list_icon); //findTheElementById
         TextView category = (TextView) convertView.findViewById(R.id.list_title); //findTheElementById
@@ -90,7 +87,10 @@ public class ListViewMenuAdapter extends BaseAdapter {
 
         icon.setImageResource(chapter.getIcon());
         category.setText(chapter.getCategory());
+        convertView.setBackgroundColor(Color.TRANSPARENT);
+
 
         return convertView; //return the content view with the object
     }
+
 }

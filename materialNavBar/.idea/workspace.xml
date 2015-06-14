@@ -18,15 +18,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1308fcb7-559e-44f6-b6ff-f26710659532" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\.idea\libraries\appcompat_v7_22_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\.idea\libraries\support_annotations_22_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bart\Documents\GitHub\ProjectApp\materialNavBar\.idea\libraries\support_v4_22_1_1.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/ListViewMenuAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/ListViewMenuAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ReportDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ReportDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/NavigationDrawerFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/NavigationDrawerFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_drawer.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_drawer.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="materialNavBar.iws" />
@@ -72,7 +69,110 @@
     <favorites_list name="materialNavBar" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="InformationFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/fragment/InformationFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3500">
+              <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="3920">
+              <caret line="120" column="66" selection-start-line="120" selection-start-column="58" selection-end-line="120" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2689#5076#0" expanded="true" />
+                <element signature="e#5065#5066#0" expanded="true" />
+                <element signature="e#6723#7553#0" expanded="true" />
+                <element signature="e#7054#7395#0" expanded="true" />
+                <element signature="e#7376#7377#0" expanded="true" />
+                <element signature="e#7542#7543#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.74074" vertical-offset="0" max-vertical-offset="1060">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_navigation_drawer.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_drawer.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.57416266" vertical-offset="840" max-vertical-offset="1420">
+              <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="color.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NavigationDrawerFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/NavigationDrawerFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="2360">
+              <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+              <folding>
+                <element signature="e#3705#3842#0" expanded="true" />
+                <element signature="e#3831#3832#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListViewMenuAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/ListViewMenuAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1268" max-vertical-offset="1720">
+              <caret line="95" column="1" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+              <folding>
+                <element signature="e#1517#1518#0" expanded="true" />
+                <element signature="e#1567#1568#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RVAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/RVAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
+              <caret line="94" column="31" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
+              <folding>
+                <element signature="e#3022#3023#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1361,7 +1461,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/ListViewMenuAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/CardItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/RVAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/carditem.xml" />
@@ -1370,8 +1469,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/AndroidDate.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/JSON.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ReportDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/NavigationDrawerFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/ListViewMenuAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_drawer.xml" />
       </list>
     </option>
   </component>
@@ -1417,6 +1520,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="materialNavBar" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1505,6 +1626,28 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ViewAdapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="materialNavBar" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="materialnavbar" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="fragment" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1561,8 +1704,8 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="fd1204ea" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_10_API_21" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
@@ -1778,8 +1921,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1794,7 +1937,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32480535" sideWeight="0.49832553" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47385985" sideWeight="0.49631613" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47385985" sideWeight="0.49631613" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4743758" sideWeight="0.5030141" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21428572" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1833,28 +1976,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/JSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3060" max-vertical-offset="3150">
-          <caret line="204" column="1" selection-start-line="204" selection-start-column="1" selection-end-line="204" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/carditem.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
-          <caret line="69" column="58" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="58" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/fragment/InformationFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2100">
@@ -1883,12 +2008,13 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
           <folding>
-            <element signature="e#6833#7663#0" expanded="true" />
-            <element signature="e#7164#7505#0" expanded="true" />
-            <element signature="e#7486#7487#0" expanded="true" />
-            <element signature="e#7652#7653#0" expanded="true" />
-            <element signature="e#7733#7916#0" expanded="true" />
-            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2689#5076#0" expanded="true" />
+            <element signature="e#5065#5066#0" expanded="true" />
+            <element signature="e#6723#7553#0" expanded="true" />
+            <element signature="e#7054#7395#0" expanded="true" />
+            <element signature="e#7376#7377#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1915,12 +2041,13 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="201" column="45" selection-start-line="201" selection-start-column="45" selection-end-line="201" selection-end-column="45" />
           <folding>
-            <element signature="e#6833#7663#0" expanded="true" />
-            <element signature="e#7164#7505#0" expanded="true" />
-            <element signature="e#7486#7487#0" expanded="true" />
-            <element signature="e#7652#7653#0" expanded="true" />
-            <element signature="e#7733#7916#0" expanded="true" />
-            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2689#5076#0" expanded="true" />
+            <element signature="e#5065#5066#0" expanded="true" />
+            <element signature="e#6723#7553#0" expanded="true" />
+            <element signature="e#7054#7395#0" expanded="true" />
+            <element signature="e#7376#7377#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2080,20 +2207,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/RVAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1136" max-vertical-offset="1620">
-          <caret line="94" column="31" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/ListViewMenuAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2273781" vertical-offset="0" max-vertical-offset="1620">
-          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_birthdays.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -2176,33 +2289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/NavigationDrawerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4269663" vertical-offset="1775" max-vertical-offset="2280">
-          <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_drawer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.37037" vertical-offset="120" max-vertical-offset="1400">
-          <caret line="20" column="53" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/fragment/InformationFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3500">
-          <caret line="70" column="60" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/JSON.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52517986" vertical-offset="2501" max-vertical-offset="3700">
@@ -2219,25 +2305,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/RVAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
+          <caret line="94" column="31" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
+          <folding>
+            <element signature="e#3022#3023#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/fragment/InformationFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3500">
+          <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/NavigationDrawerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="2360">
+          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+          <folding>
+            <element signature="e#3705#3842#0" expanded="true" />
+            <element signature="e#3831#3832#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/info/androidhive/materialnavbar/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34814814" vertical-offset="29432" max-vertical-offset="125900">
+          <caret line="1486" column="36" selection-start-line="1486" selection-start-column="36" selection-end-line="1486" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/ViewAdapters/ListViewMenuAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1268" max-vertical-offset="1720">
+          <caret line="95" column="1" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+          <folding>
+            <element signature="e#1517#1518#0" expanded="true" />
+            <element signature="e#1567#1568#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/materialnavbar/Activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3340">
-          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="3920">
+          <caret line="120" column="66" selection-start-line="120" selection-start-column="58" selection-end-line="120" selection-end-column="66" />
           <folding>
-            <element signature="e#6833#7663#0" expanded="true" />
-            <element signature="e#7164#7505#0" expanded="true" />
-            <element signature="e#7486#7487#0" expanded="true" />
-            <element signature="e#7652#7653#0" expanded="true" />
-            <element signature="e#7733#7916#0" expanded="true" />
-            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2689#5076#0" expanded="true" />
+            <element signature="e#5065#5066#0" expanded="true" />
+            <element signature="e#6723#7553#0" expanded="true" />
+            <element signature="e#7054#7395#0" expanded="true" />
+            <element signature="e#7376#7377#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6220096" vertical-offset="300" max-vertical-offset="1060">
+        <state vertical-scroll-proportion="-20.74074" vertical-offset="0" max-vertical-offset="1060">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_drawer.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57416266" vertical-offset="840" max-vertical-offset="1420">
+          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
           <folding />
         </state>
       </provider>

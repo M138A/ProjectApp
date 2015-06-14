@@ -1,24 +1,17 @@
 package info.androidhive.materialnavbar.Activity;
 
-import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.os.Build;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewParent;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +23,6 @@ import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
 import info.androidhive.materialnavbar.ReportDialog;
 import info.androidhive.materialnavbar.ViewAdapters.ListViewMenuAdapter;
-import info.androidhive.materialnavbar.ViewAdapters.RVAdapter;
 import info.androidhive.materialnavbar.fragment.InformationFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // Create fragment and give it an argument specifying the article it should show
         //Initialize the toolbar
         setFragmentInfo(informationFragment);
@@ -78,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListMenuItems() {
         // zet de list carditem naar die van het slide menu
-        ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
+        final ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
         codeLearnLessons.setAdapter(adapter);
         codeLearnLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -124,6 +117,9 @@ public class MainActivity extends AppCompatActivity {
                         adapter.notifyDataSetChanged();
                         break;
                 }
+                //codeLearnLessons.setItemChecked(position, true);
+               // v.setBackgroundColor(Color.parseColor("#27000000"));
+                //adapter.notifyDataSetChanged();
                 closeDrawer();
             }
         });

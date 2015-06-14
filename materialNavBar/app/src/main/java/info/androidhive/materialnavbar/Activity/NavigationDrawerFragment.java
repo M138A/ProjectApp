@@ -27,7 +27,6 @@ public class NavigationDrawerFragment extends Fragment {
     private DrawerLayout mDrawerLayout;
     private View containerView;
     private AndroidDate date = new AndroidDate();
-
     private boolean mUserLearnedDrawer;
     private boolean mFromSavedInstanceState;
 
