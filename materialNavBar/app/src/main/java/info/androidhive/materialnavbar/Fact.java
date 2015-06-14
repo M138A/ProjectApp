@@ -1,11 +1,12 @@
 package info.androidhive.materialnavbar;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by mark on 21-5-15.
  */
-public class Fact {
+public class Fact implements Serializable{
     String Name = "";
     String Description = "";
     Date date = null;
