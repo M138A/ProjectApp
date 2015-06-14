@@ -2,9 +2,8 @@ package info.androidhive.materialnavbar;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
-import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -18,7 +17,7 @@ import java.util.ArrayList;
 public class FavoriteManager implements Serializable {
     private ArrayList<Fact> Favorites;
     private Context MainContext;
-    private final String FILENAME = "/favorites.fav";
+    private final String FILENAME = "favorites.fav";
 
     public ArrayList<Fact> getFavorites() {
         return Favorites;
@@ -28,17 +27,21 @@ public class FavoriteManager implements Serializable {
         Favorites = new ArrayList<Fact>();
 
         MainContext = x;
+
         serializeRead();
-       // Test();
+
+        Test();
     }
-    private void Test()
-    {
+
+    private void Test() {
         Log.i("TEST : ", String.valueOf(Favorites.size()));
     }
 
     public void addFact(Fact f) {
+        serializeRead();
         if (!removeExistingFact(f)) {
             Favorites.add(f);
+            Test();
             serializeWrite();
 
 
@@ -59,6 +62,7 @@ public class FavoriteManager implements Serializable {
             if (description.equals(factFromList.getDescription())) {
                 Favorites.remove(i);
                 serializeWrite();
+                Test();
                 return true;
 
             }
@@ -67,29 +71,29 @@ public class FavoriteManager implements Serializable {
     }
 
     private void serializeWrite() {
+
         try {
-            FileOutputStream fos = new FileOutputStream(MainContext.getFilesDir() + FILENAME);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(Favorites);
-            oos.close();
+            FileOutputStream fos = MainContext.openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            ObjectOutputStream os = new ObjectOutputStream(fos);
+            os.writeObject(Favorites);
+            os.close();
 
         } catch (IOException e) {
             Log.e("SER ERROR", e.toString());
         }
+
+
     }
 
     private void serializeRead() {
         try {
-            File x = new File(MainContext.getFilesDir() + FILENAME);
-            if(x.exists()  || x.isDirectory()) {
-                ObjectInputStream ois = new ObjectInputStream(MainContext.openFileInput(FILENAME));
-                ArrayList<Fact> facts = (ArrayList<Fact>) ois.readObject();
-                ois.close();
-                Favorites = facts;
-            }
-            else{
-                Log.i("test", "No Favorites yet");
-            }
+
+            FileInputStream fis = MainContext.openFileInput(FILENAME);
+            ObjectInputStream is = new ObjectInputStream(fis);
+            ArrayList<Fact> facts = (ArrayList<Fact>) is.readObject();
+            is.close();
+            Favorites = facts;
+
         } catch (IOException e) {
             Log.e("ERROR : ", e.toString());
         } catch (ClassNotFoundException e) {

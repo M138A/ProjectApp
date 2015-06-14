@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         initToolbar();
         ///Set categories for the navigation drawer in a listview
         setListMenuItems();
-        initializeFavorites();
+
 
     }
     private void initializeFavorites()
@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListMenuItems() {
         // zet de list carditem naar die van het slide menu
+        initializeFavorites();
         ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
         codeLearnLessons.setAdapter(adapter);
         codeLearnLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -95,39 +96,39 @@ public class MainActivity extends AppCompatActivity {
                 switch ((int) menulist) {
                     case 0:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(0);
+                        informationFragment.getCardData(0,favoriteManager);
                         adapter.notifyDataSetChanged();
                         setTitle("Today");// tijdelijk om te checken of kaarten refreshen
                         break;
                     case 1:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(1);
+                        informationFragment.getCardData(1,favoriteManager);
                         adapter.notifyDataSetChanged();
                         setTitle("Facts");// tijdelijk om te checken of kaarten refreshen
                         break;
                     case 2:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(2);
+                        informationFragment.getCardData(2,favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                     case 3:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(3);
+                        informationFragment.getCardData(3,favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                     case 4:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(4);
+                        informationFragment.getCardData(4, favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                     case 5:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(5);
+                        informationFragment.getCardData(5,favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                     case 6:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(6);
+                        informationFragment.getCardData(6,favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                 }
