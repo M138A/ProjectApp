@@ -68,18 +68,21 @@ public class JSON {
             Fact JSONextractedFact = null;
             switch(type)
             {
-                case "facts":
-                    JSONextractedFact = new Fact(y.get("content").toString());
+                case "history":
+                    JSONextractedFact = new Fact(y.get("year").toString(), y.get("content").toString());
+                    break;
+                case "birthday":
+                    JSONextractedFact = new Fact(y.get("fullname").toString(), y.get("age").toString());
                     break;
                 default:
-                    JSONextractedFact = new Fact(y.get("author").toString(), y.get("content").toString());
+                    JSONextractedFact = new Fact(y.get("content").toString());
                     break;
 
             }
 
             allFacts.add(JSONextractedFact);
         }
-
+        Log.d("allFacts : ", allFacts.toString());
         return allFacts;
     }
 
@@ -99,14 +102,15 @@ public class JSON {
                 case "facts":
                     nameValuePairs = new ArrayList<NameValuePair>(3);
                     nameValuePairs.add(new BasicNameValuePair("table", type));
-                    nameValuePairs.add(new BasicNameValuePair("datum", date.toString()));
+                    nameValuePairs.add(new BasicNameValuePair("datum", "0004-01-01"));
                     nameValuePairs.add(new BasicNameValuePair("categorie", "random"));
                     httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     break;
                 default:
                     nameValuePairs = new ArrayList<NameValuePair>(2);
                     nameValuePairs.add(new BasicNameValuePair("table", type));
-                    nameValuePairs.add(new BasicNameValuePair("datum", date.toString()));
+                    //nameValuePairs.add(new BasicNameValuePair("datum", date.toString()));
+                    nameValuePairs.add(new BasicNameValuePair("datum", "0004-01-01"));
                     httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     break;
             }
@@ -123,7 +127,7 @@ public class JSON {
                 throw new NullPointerException("jsonString is null");
             }
         }
-
+        Log.e("JSON Response: ", respJSON);
         return respJSON;
     }
 
