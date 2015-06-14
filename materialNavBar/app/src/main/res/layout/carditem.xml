@@ -62,7 +62,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/ReportBut"
             android:background="#00000000"
-            android:layout_weight="1"
             android:layout_gravity="bottom|right"
             android:layout_alignTop="@+id/FavBut"
             android:layout_toLeftOf="@+id/FavBut"
@@ -72,19 +71,24 @@
             android:maxWidth="16dp"
             android:minHeight="16dp" />
 
+
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/favButton"
-            android:src="@drawable/favotemp"
-            android:layout_alignTop="@+id/ReportBut"
+            android:background="#00000000"
+            android:layout_marginTop="5dp"
             android:layout_toLeftOf="@+id/ReportBut"
             android:layout_toStartOf="@+id/ReportBut"
-            android:layout_alignBottom="@+id/ReportBut"
-            android:onClick="ManageFavorites" />
+            android:src="@drawable/ic_heart_outline_black_36dp"
+            android:layout_marginRight="8dp"
+            android:onClick="ManageFavorites"
+            android:layout_alignTop="@+id/ReportBut"
+            />
 
     </RelativeLayout>
     <!-- V lelijke spacing tussen de kaartjes oplossing V
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="8dp"

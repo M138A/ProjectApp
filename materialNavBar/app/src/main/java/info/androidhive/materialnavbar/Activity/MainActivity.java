@@ -3,6 +3,7 @@ package info.androidhive.materialnavbar.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -11,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     public static int cardcounter = 0;
     private FavoriteManager favoriteManager = null;
     private Toolbar toolbar;
+    private boolean isLoved = false;
 
 
     @Override
@@ -79,9 +82,11 @@ public class MainActivity extends AppCompatActivity {
     private void setListMenuItems() {
         // zet de list carditem naar die van het slide menu
         final ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
+
         initializeFavorites();
         codeLearnLessons.setAdapter(adapter);
         final TextView textView = (TextView) toolbar.findViewById(R.id.toolbar_title);
+
         codeLearnLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position,
@@ -200,11 +205,18 @@ public class MainActivity extends AppCompatActivity {
     public void ManageFavorites(View view) {
         View favButton = (View) view.findViewById(R.id.favButton).getParent();
 
+        //TODO
+        //ImageButton imgb = (ImageButton) view.findViewById(R.id.favButton);
+       /* if (isLoved) {
+            imgb.setImageResource(R.drawable.ic_heart_outline_black_36dp);
+            isLoved = false;
+        } else {
+            imgb.setImageResource(R.drawable.ic_heart_black_36dp);
+            isLoved = true;
+        }*/
         String Title = ((TextView) favButton.findViewById(R.id.person_name)).getText().toString();
         String description = ((TextView) favButton.findViewById(R.id.person_age)).getText().toString();
         favoriteManager.addFact(new Fact(Title, description));
-
-
     }
 }
 

@@ -22,14 +22,14 @@ import java.util.List;
 public class ReportDialog extends Activity {
     //ez toast
     Context context = this;
-    CharSequence text = "Can't connect to e-mail!";
-    int duration = Toast.LENGTH_SHORT;
+    CharSequence text = "Can't connect to report server!";
+    int duration = Toast.LENGTH_LONG;
 
     public void reportFact(String content, String datum, String category, String report) {
 
         try {
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://www.bartfokker.nl/factorial/email.php");
+            HttpPost httppost = new HttpPost("http://www.bartfokker.nl/factorial/emaijl.php");
 
             List<NameValuePair> nameValuePairs;
             nameValuePairs = new ArrayList<NameValuePair>(4);
@@ -46,8 +46,6 @@ public class ReportDialog extends Activity {
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
-        //todo Get information from Textfield
-        //todo create POST request and send to URL
     }
 
 
