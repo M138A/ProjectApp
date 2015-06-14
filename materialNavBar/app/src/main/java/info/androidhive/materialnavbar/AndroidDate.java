@@ -17,6 +17,12 @@ public class AndroidDate {
     private String yearNumber = null;
     private String dayName = null;
 
+    public String getFullmonthNumber() {
+        return fullmonthNumber;
+    }
+
+    private String fullmonthNumber = null;
+
     public String getDayName() {
         return dayName;
     }
@@ -29,7 +35,7 @@ public class AndroidDate {
         return dayNumber;
     }
 
-    public String getMonthNumber() {
+    public String getMonthName() {
         return monthNumber;
     }
 
@@ -41,7 +47,9 @@ public class AndroidDate {
         DateFormat monthFormat = new SimpleDateFormat("MMMM",Locale.ENGLISH);
         DateFormat yearFormat = new SimpleDateFormat("y", Locale.ENGLISH);
         DateFormat dayNameFormat = new SimpleDateFormat("E",Locale.ENGLISH);
+        DateFormat monthNumberFullFormat = new SimpleDateFormat("M");
 
+        fullmonthNumber = monthNumberFullFormat.format(dateObject);
         dayNumber = dateFormat.format(dateObject);
         monthNumber = monthFormat.format(dateObject);
         yearNumber = yearFormat.format(dateObject);

@@ -7,19 +7,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import info.androidhive.materialnavbar.AndroidDate;
 import info.androidhive.materialnavbar.R;
@@ -63,7 +55,7 @@ public class NavigationDrawerFragment extends Fragment {
         TextView day_intday = (TextView) getActivity().findViewById(R.id.textView_imageOverlay_month);
         TextView month_year = (TextView) getActivity().findViewById(R.id.textView_imageOverlay_day);
         day_intday.setText(date.getDayName() + " " + date.getDayNumber() + getSecondOrNot());
-        month_year.setText(date.getMonthNumber() + " " + date.getYearNumber());
+        month_year.setText(date.getMonthName() + " " + date.getYearNumber());
     }
 
     public String getSecondOrNot() {

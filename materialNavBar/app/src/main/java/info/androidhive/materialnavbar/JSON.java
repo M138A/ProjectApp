@@ -68,6 +68,9 @@ public class JSON {
             Fact JSONextractedFact = null;
             switch(type)
             {
+                case "quote":
+                    JSONextractedFact = new Fact(y.get("author").toString(), y.get("content").toString());
+                    break;
                 case "history":
                     JSONextractedFact = new Fact(y.get("year").toString(), y.get("content").toString());
                     break;
@@ -95,14 +98,15 @@ public class JSON {
             List<NameValuePair> nameValuePairs;
             AndroidDate y = new AndroidDate();
             String date = "0004-";
-            date += y.getMonthNumber() + "-";
+            date += y.getFullmonthNumber() + "-";
             date += y.getDayNumber();
+            Log.i("Date: ", date);
             // Add your data
             switch (type) {
                 case "facts":
                     nameValuePairs = new ArrayList<NameValuePair>(3);
                     nameValuePairs.add(new BasicNameValuePair("table", type));
-                    nameValuePairs.add(new BasicNameValuePair("datum", "0004-01-01"));
+                    nameValuePairs.add(new BasicNameValuePair("datum", date));
                     nameValuePairs.add(new BasicNameValuePair("categorie", "random"));
                     httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     break;
@@ -110,7 +114,7 @@ public class JSON {
                     nameValuePairs = new ArrayList<NameValuePair>(2);
                     nameValuePairs.add(new BasicNameValuePair("table", type));
                     //nameValuePairs.add(new BasicNameValuePair("datum", date.toString()));
-                    nameValuePairs.add(new BasicNameValuePair("datum", "0004-01-01"));
+                    nameValuePairs.add(new BasicNameValuePair("datum", date));
                     httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     break;
             }
