@@ -83,7 +83,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         personViewHolder.FavBut.setImageResource(cardItems.get(i).favId);
         //report
         personViewHolder.ReportBut.setImageResource(cardItems.get(i).reportId);
-
         //zet animation op dit object/element
         Animations.animateScatter(personViewHolder, true);
 

@@ -1,14 +1,13 @@
 package info.androidhive.materialnavbar;
 
-import android.util.Log;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by mark on 3-6-15.
+ * Class is responsible for the Date Object
+ * Based on the Java util Library
  */
 public class AndroidDate {
     private Date dateObject = null;

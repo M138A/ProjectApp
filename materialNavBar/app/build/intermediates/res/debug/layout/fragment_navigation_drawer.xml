@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF"
-    tools:context="info.androidhive.materialnavbar.Activity.NavigationDrawerFragment">
+    tools:context="info.androidhive.materialnavbar.fragment.NavigationDrawerFragment">
 
     <LinearLayout
         android:id="@+id/containerDrawerImage"

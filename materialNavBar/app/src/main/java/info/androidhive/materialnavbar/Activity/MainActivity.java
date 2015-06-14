@@ -3,7 +3,6 @@ package info.androidhive.materialnavbar.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -26,25 +25,26 @@ import info.androidhive.materialnavbar.R;
 import info.androidhive.materialnavbar.ReportDialog;
 import info.androidhive.materialnavbar.ViewAdapters.ListViewMenuAdapter;
 import info.androidhive.materialnavbar.fragment.InformationFragment;
+import info.androidhive.materialnavbar.fragment.NavigationDrawerFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     //ez toast
-    Context context = this;
-    CharSequence text = "Clicked";
-    int duration = Toast.LENGTH_LONG;
-
     /* als je iets wilt ''toasten'' :
        Toast toast = Toast.makeText(context, text, duration);
         toast.show();
      */
     //
+    private Context context = this;
+    private int duration = Toast.LENGTH_LONG;
     private ListViewMenuAdapter adapter = new ListViewMenuAdapter();
     private List<CardItem> cardItems;
     private DrawerLayout mDrawerLayout;
     private InformationFragment informationFragment = new InformationFragment();
     public static int cardcounter = 0;
     private FavoriteManager favoriteManager = null;
+    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    private void initializeFavorites()
-    {
+
+    private void initializeFavorites() {
         favoriteManager = new FavoriteManager(getBaseContext());
     }
 
@@ -78,13 +78,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListMenuItems() {
         // zet de list carditem naar die van het slide menu
-<<<<<<< HEAD
         final ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
-=======
         initializeFavorites();
-        ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
->>>>>>> origin/master
         codeLearnLessons.setAdapter(adapter);
+        final TextView textView = (TextView) toolbar.findViewById(R.id.toolbar_title);
         codeLearnLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position,
@@ -93,44 +90,43 @@ public class MainActivity extends AppCompatActivity {
                 switch ((int) menulist) {
                     case 0:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(0,favoriteManager);
-                        adapter.notifyDataSetChanged();
-                        setTitle("Today");// tijdelijk om te checken of kaarten refreshen
+                        informationFragment.getCardData(0, favoriteManager);
+                        textView.setText("Today");
                         break;
                     case 1:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(1,favoriteManager);
-                        adapter.notifyDataSetChanged();
-                        setTitle("Facts");// tijdelijk om te checken of kaarten refreshen
+                        informationFragment.getCardData(1, favoriteManager);
+                        textView.setText("Facts");
                         break;
                     case 2:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(2,favoriteManager);
-                        adapter.notifyDataSetChanged();
+                        informationFragment.getCardData(2, favoriteManager);
+                        textView.setText("History");
                         break;
                     case 3:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(3,favoriteManager);
-                        adapter.notifyDataSetChanged();
+                        informationFragment.getCardData(3, favoriteManager);
+                        textView.setText("Birthdays");
                         break;
                     case 4:
                         InformationFragment.refresh = false;
                         informationFragment.getCardData(4, favoriteManager);
-                        adapter.notifyDataSetChanged();
+                        textView.setText("Lifehacks");
                         break;
                     case 5:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(5,favoriteManager);
-                        adapter.notifyDataSetChanged();
+                        informationFragment.getCardData(5, favoriteManager);
+                        textView.setText("Quotes");
                         break;
                     case 6:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(6,favoriteManager);
-                        adapter.notifyDataSetChanged();
+                        informationFragment.getCardData(6, favoriteManager);
+                        textView.setText("Favorites");
                         break;
                 }
+                adapter.notifyDataSetChanged();
                 //codeLearnLessons.setItemChecked(position, true);
-               // v.setBackgroundColor(Color.parseColor("#27000000"));
+                // v.setBackgroundColor(Color.parseColor("#27000000"));
                 //adapter.notifyDataSetChanged();
                 closeDrawer();
             }
@@ -147,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
      * Set the Toolbar as Actionbar
      */
     private void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
 
@@ -200,8 +196,8 @@ public class MainActivity extends AppCompatActivity {
         }); // show allert
         alert.show();
     }
-    public void ManageFavorites(View view)
-    {
+
+    public void ManageFavorites(View view) {
         View favButton = (View) view.findViewById(R.id.favButton).getParent();
 
         String Title = ((TextView) favButton.findViewById(R.id.person_name)).getText().toString();

@@ -1,4 +1,4 @@
-package info.androidhive.materialnavbar.Activity;
+package info.androidhive.materialnavbar.fragment;
 
 
 import android.content.Context;

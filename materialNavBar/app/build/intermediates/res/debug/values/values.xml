@@ -221,7 +221,6 @@
     <eat-comment/>
     <string name="Application_title">Factorial</string>
     <string name="Search">Search</string>
-    <string name="Testtext">Test Text</string>
     <string name="User">User</string>
     <!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>
@@ -249,7 +248,6 @@
     <string name="app_name">Factorial</string>
     <string name="drawer_close">Close</string>
     <string name="drawer_open">Open</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="mediumtext">Medium Text</string>
     <string name="none">none</string>
