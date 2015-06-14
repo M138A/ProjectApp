@@ -20,6 +20,7 @@ import java.util.concurrent.ExecutionException;
 import info.androidhive.materialnavbar.Activity.MainActivity;
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.Fact;
+import info.androidhive.materialnavbar.FavoriteManager;
 import info.androidhive.materialnavbar.JSON;
 import info.androidhive.materialnavbar.R;
 import info.androidhive.materialnavbar.ViewAdapters.RVAdapter;
@@ -52,6 +53,19 @@ public class InformationFragment extends Fragment {
         ft.attach(frg);
         ft.commit();
     }
+    private void loadFavorites(FavoriteManager favoriteManager)
+    {
+       ArrayList<Fact> favorites = favoriteManager.getFavorites();
+        if (facts != null) {
+            CardEntry.removeAll(CardEntry);
+            for (Fact fact : favorites) {
+                String name = fact.getName();
+                String description = fact.getDescription();
+                // V title  Vcontent    V img
+                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon));
+            }
+        }
+    }
     private void fillCardList(String type)
     {
         try {
@@ -76,14 +90,14 @@ public class InformationFragment extends Fragment {
         }
     }
     // recycler list
-    public List<CardItem> getCardData(int type) {
+    public List<CardItem> getCardData(int type, FavoriteManager f) {
 
 
         // tijdelijk knop voor testing
 
         switch (type) {
             case 0:
-
+                CardEntry.removeAll(CardEntry);
                 // Vull kaartjes met volgende items :
                 CardEntry.add(new CardItem("Today", "string aaa", R.drawable.ic_facts, reporticon));
                 CardEntry.add(new CardItem("Today", "string da", R.drawable.ic_facts, reporticon));
@@ -156,7 +170,7 @@ public class InformationFragment extends Fragment {
                 break;
 
             case 6:
-                CardEntry.add(new CardItem("Favorites", "My Favorite Fact", R.drawable.ic_facts, reporticon));
+                loadFavorites(f);
                 //workaround
                 MainActivity.cardcounter = 6;
                 if (!refresh) {
@@ -183,7 +197,7 @@ public class InformationFragment extends Fragment {
         recyclerView = (RecyclerView) layout.findViewById(R.id.RecyclerCardList);
         // haal de data  op uit de return/switch hier boven
         //
-        mRecyclerViewAdapter = new RVAdapter(getCardData(MainActivity.cardcounter));
+        mRecyclerViewAdapter = new RVAdapter(getCardData(MainActivity.cardcounter, new FavoriteManager(layout.getContext())));
         //
         recyclerView.setAdapter(mRecyclerViewAdapter);
         // zet hem als dit op deze activity

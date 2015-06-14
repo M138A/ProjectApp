@@ -20,6 +20,8 @@ import java.util.List;
 
 import info.androidhive.materialnavbar.AndroidDate;
 import info.androidhive.materialnavbar.CardItem;
+import info.androidhive.materialnavbar.Fact;
+import info.androidhive.materialnavbar.FavoriteManager;
 import info.androidhive.materialnavbar.R;
 import info.androidhive.materialnavbar.ReportDialog;
 import info.androidhive.materialnavbar.ViewAdapters.ListViewMenuAdapter;
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private InformationFragment informationFragment = new InformationFragment();
     public static int cardcounter = 0;
-
+    private FavoriteManager favoriteManager = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
         ///Set categories for the navigation drawer in a listview
         setListMenuItems();
 
+
+    }
+    private void initializeFavorites()
+    {
+        favoriteManager = new FavoriteManager(getBaseContext());
     }
 
     private void setFragmentInfo(InformationFragment f) {
@@ -71,7 +78,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListMenuItems() {
         // zet de list carditem naar die van het slide menu
+<<<<<<< HEAD
         final ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
+=======
+        initializeFavorites();
+        ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
+>>>>>>> origin/master
         codeLearnLessons.setAdapter(adapter);
         codeLearnLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -81,39 +93,39 @@ public class MainActivity extends AppCompatActivity {
                 switch ((int) menulist) {
                     case 0:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(0);
+                        informationFragment.getCardData(0,favoriteManager);
                         adapter.notifyDataSetChanged();
                         setTitle("Today");// tijdelijk om te checken of kaarten refreshen
                         break;
                     case 1:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(1);
+                        informationFragment.getCardData(1,favoriteManager);
                         adapter.notifyDataSetChanged();
                         setTitle("Facts");// tijdelijk om te checken of kaarten refreshen
                         break;
                     case 2:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(2);
+                        informationFragment.getCardData(2,favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                     case 3:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(3);
+                        informationFragment.getCardData(3,favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                     case 4:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(4);
+                        informationFragment.getCardData(4, favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                     case 5:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(5);
+                        informationFragment.getCardData(5,favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                     case 6:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(6);
+                        informationFragment.getCardData(6,favoriteManager);
                         adapter.notifyDataSetChanged();
                         break;
                 }
@@ -187,6 +199,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }); // show allert
         alert.show();
+    }
+    public void ManageFavorites(View view)
+    {
+        View favButton = (View) view.findViewById(R.id.favButton).getParent();
+
+        String Title = ((TextView) favButton.findViewById(R.id.person_name)).getText().toString();
+        String description = ((TextView) favButton.findViewById(R.id.person_age)).getText().toString();
+        favoriteManager.addFact(new Fact(Title, description));
+
+
     }
 }
 

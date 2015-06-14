@@ -68,7 +68,20 @@
             android:layout_toLeftOf="@+id/FavBut"
             android:layout_toStartOf="@+id/FavBut"
             android:src="@drawable/ic_sim_alert_black_18dp"
-            android:onClick="ReportAction" />
+            android:onClick="ReportAction"
+            android:maxWidth="16dp"
+            android:minHeight="16dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/favButton"
+            android:src="@drawable/favotemp"
+            android:layout_alignTop="@+id/ReportBut"
+            android:layout_toLeftOf="@+id/ReportBut"
+            android:layout_toStartOf="@+id/ReportBut"
+            android:layout_alignBottom="@+id/ReportBut"
+            android:onClick="ManageFavorites" />
 
     </RelativeLayout>
     <!-- V lelijke spacing tussen de kaartjes oplossing V
