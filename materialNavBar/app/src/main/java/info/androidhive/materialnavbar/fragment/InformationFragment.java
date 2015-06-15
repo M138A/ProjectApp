@@ -102,7 +102,6 @@ public class InformationFragment extends Fragment {
 
         switch (type) {
             case 0:
-
                 CardEntry.removeAll(CardEntry);
                 // Vull kaartjes met volgende items :
                 CardEntry.add(new CardItem("Today", "string aaa", R.drawable.ic_facts, reporticon));

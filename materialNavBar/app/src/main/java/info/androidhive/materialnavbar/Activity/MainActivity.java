@@ -78,7 +78,16 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
     }
 
+    private void loadContent(int type)
 
+    {
+        final int t =  type;
+        new Thread(new Runnable() {
+            public void run() {
+                informationFragment.getCardData(t, favoriteManager);
+            }
+        }).start();
+    }
     private void setListMenuItems() {
         // zet de list carditem naar die van het slide menu
         final ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
@@ -95,37 +104,46 @@ public class MainActivity extends AppCompatActivity {
                 switch ((int) menulist) {
                     case 0:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(0, favoriteManager);
+//                        informationFragment.getCardData(0, favoriteManager);
+                        loadContent(0);
                         textView.setText("Today");
                         break;
                     case 1:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(1, favoriteManager);
+                        loadContent(1);
+//                        informationFragment.getCardData(1, favoriteManager);
                         textView.setText("Facts");
                         break;
                     case 2:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(2, favoriteManager);
+                        loadContent(2);
+//                        informationFragment.getCardData(2, favoriteManager);
                         textView.setText("History");
                         break;
                     case 3:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(3, favoriteManager);
+                        loadContent(3);
+//                        informationFragment.getCardData(3, favoriteManager);
                         textView.setText("Birthdays");
                         break;
                     case 4:
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(4, favoriteManager);
+                        loadContent(4);
+//                        informationFragment.getCardData(4, favoriteManager);
                         textView.setText("Lifehacks");
                         break;
                     case 5:
+
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(5, favoriteManager);
+                        loadContent(5);
+//                        informationFragment.getCardData(5, favoriteManager);
                         textView.setText("Quotes");
                         break;
                     case 6:
+
                         InformationFragment.refresh = false;
-                        informationFragment.getCardData(6, favoriteManager);
+                        loadContent(6);
+//                        informationFragment.getCardData(6, favoriteManager);
                         textView.setText("Favorites");
                         break;
                 }
