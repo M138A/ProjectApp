@@ -217,6 +217,9 @@ public class MainActivity extends AppCompatActivity {
         String Title = ((TextView) favButton.findViewById(R.id.person_name)).getText().toString();
         String description = ((TextView) favButton.findViewById(R.id.person_age)).getText().toString();
         favoriteManager.addFact(new Fact(Title, description));
+        if(informationFragment.getCurrentType() == 6) {
+            informationFragment.refreshFragment();
+        }
     }
 }
 

@@ -43,6 +43,11 @@ public class InformationFragment extends Fragment {
     private JSON jsonObject = null;
     private int reporticon = R.drawable.ic_sim_alert_black_18dp;
 
+    public int getCurrentType() {
+        return currentType;
+    }
+
+    private int currentType = 0;
     //haalt list leeg
     public void refreshFragment() {
         // zet fragment op null
@@ -56,8 +61,8 @@ public class InformationFragment extends Fragment {
     private void loadFavorites(FavoriteManager favoriteManager)
     {
        ArrayList<Fact> favorites = favoriteManager.getFavorites();
+        CardEntry.removeAll(CardEntry);
         if (facts != null) {
-            CardEntry.removeAll(CardEntry);
             for (Fact fact : favorites) {
                 String name = fact.getName();
                 String description = fact.getDescription();
@@ -92,11 +97,12 @@ public class InformationFragment extends Fragment {
     // recycler list
     public List<CardItem> getCardData(int type, FavoriteManager f) {
 
-
+        currentType = type;
         // tijdelijk knop voor testing
 
         switch (type) {
             case 0:
+
                 CardEntry.removeAll(CardEntry);
                 // Vull kaartjes met volgende items :
                 CardEntry.add(new CardItem("Today", "string aaa", R.drawable.ic_facts, reporticon));
