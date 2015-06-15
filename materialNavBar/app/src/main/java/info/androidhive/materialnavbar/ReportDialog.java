@@ -3,15 +3,12 @@ package info.androidhive.materialnavbar;
 import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
-
-import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +26,7 @@ public class ReportDialog extends Activity {
 
         try {
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://www.bartfokker.nl/factorial/emaijl.php");
+            HttpPost httppost = new HttpPost("http://www.bartfokker.nl/factorial/email.php");
 
             List<NameValuePair> nameValuePairs;
             nameValuePairs = new ArrayList<NameValuePair>(4);
