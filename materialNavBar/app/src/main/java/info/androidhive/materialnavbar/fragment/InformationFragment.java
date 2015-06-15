@@ -102,14 +102,7 @@ public class InformationFragment extends Fragment {
 
         switch (type) {
             case 0:
-                CardEntry.removeAll(CardEntry);
-                // Vull kaartjes met volgende items :
-                CardEntry.add(new CardItem("Today", "string aaa", R.drawable.ic_facts, reporticon));
-                CardEntry.add(new CardItem("Today", "string da", R.drawable.ic_facts, reporticon));
-                CardEntry.add(new CardItem("Today", "string fa", R.drawable.ic_facts, reporticon));
-                CardEntry.add(new CardItem("Today", "string ga", R.drawable.ic_facts, reporticon));
-                CardEntry.add(new CardItem("Today", "string ha", R.drawable.ic_facts, reporticon));
-                CardEntry.add(new CardItem("Today", "string qa", R.drawable.ic_facts, reporticon));
+                fillCardList("history");
                 //workaround
                 //zet case type om naar cardcounter > inflater > refresh
                 MainActivity.cardcounter = 0;

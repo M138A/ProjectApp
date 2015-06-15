@@ -72,10 +72,11 @@ public class JSON {
                     JSONextractedFact = new Fact(y.get("author").toString(), y.get("content").toString());
                     break;
                 case "history":
-                    JSONextractedFact = new Fact(y.get("year").toString(), y.get("content").toString());
+                    String year = "Today in the year " + y.get("year").toString();
+                    JSONextractedFact = new Fact(year, y.get("content").toString());
                     break;
                 case "birthday":
-                    JSONextractedFact = new Fact(y.get("fullname").toString(), y.get("age").toString());
+                    JSONextractedFact = new Fact(y.get("fullname").toString(), ageModifier(y.get("age").toString()));
                     break;
                 default:
                     JSONextractedFact = new Fact(y.get("content").toString());
@@ -87,6 +88,19 @@ public class JSON {
         }
         Log.d("allFacts : ", allFacts.toString());
         return allFacts;
+    }
+    private String ageModifier(String a)
+    {
+        if(!a.contains("-")) {
+            int age = Integer.parseInt(a);
+            int year = Integer.parseInt(new AndroidDate().getYearNumber());
+            int difference = age + ((year - 2015) + 1);
+            Log.d("Age after convertion", String.valueOf(difference));
+            return String.valueOf(difference);
+        }
+        else{
+            return a;
+        }
     }
 
     public String requestJSON(String type) {

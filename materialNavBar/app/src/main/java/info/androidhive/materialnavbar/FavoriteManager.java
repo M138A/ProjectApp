@@ -2,6 +2,7 @@ package info.androidhive.materialnavbar;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -18,6 +19,7 @@ public class FavoriteManager implements Serializable {
     private ArrayList<Fact> Favorites;
     private Context MainContext;
     private final String FILENAME = "favorites.fav";
+    private int duration = Toast.LENGTH_LONG;
 
     public ArrayList<Fact> getFavorites() {
         return Favorites;
@@ -63,6 +65,8 @@ public class FavoriteManager implements Serializable {
                 Favorites.remove(i);
                 serializeWrite();
                 Test();
+                Toast toast = Toast.makeText(MainContext,"Removed" , duration);
+                toast.show();
                 return true;
 
             }

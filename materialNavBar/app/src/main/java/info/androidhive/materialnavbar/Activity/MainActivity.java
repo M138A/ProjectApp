@@ -232,6 +232,8 @@ public class MainActivity extends AppCompatActivity {
             imgb.setImageResource(R.drawable.ic_heart_black_36dp);
             isLoved = true;
         }*/
+        Toast toast = Toast.makeText(context,"Added" , duration);
+        toast.show();
         String Title = ((TextView) favButton.findViewById(R.id.person_name)).getText().toString();
         String description = ((TextView) favButton.findViewById(R.id.person_age)).getText().toString();
         favoriteManager.addFact(new Fact(Title, description));
