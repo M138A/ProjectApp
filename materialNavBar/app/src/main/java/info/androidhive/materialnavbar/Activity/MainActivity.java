@@ -4,19 +4,26 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.media.Image;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 
 import info.androidhive.materialnavbar.AndroidDate;
@@ -60,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
         initToolbar();
         ///Set categories for the navigation drawer in a listview
         setListMenuItems();
-
-
     }
 
     private void initializeFavorites() {
@@ -81,13 +86,14 @@ public class MainActivity extends AppCompatActivity {
     private void loadContent(int type)
 
     {
-        final int t =  type;
+        final int t = type;
         new Thread(new Runnable() {
             public void run() {
                 informationFragment.getCardData(t, favoriteManager);
             }
         }).start();
     }
+
     private void setListMenuItems() {
         // zet de list carditem naar die van het slide menu
         final ListView codeLearnLessons = (ListView) findViewById(R.id.listViewId);
@@ -133,14 +139,12 @@ public class MainActivity extends AppCompatActivity {
                         textView.setText("Lifehacks");
                         break;
                     case 5:
-
                         InformationFragment.refresh = false;
                         loadContent(5);
 //                        informationFragment.getCardData(5, favoriteManager);
                         textView.setText("Quotes");
                         break;
                     case 6:
-
                         InformationFragment.refresh = false;
                         loadContent(6);
 //                        informationFragment.getCardData(6, favoriteManager);
@@ -161,6 +165,16 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout.closeDrawers();
     }
 
+    /**
+     * Check if there is a Internet Connection available
+     */
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null;
+    }
+
 
     /**
      * Set the Toolbar as Actionbar
@@ -178,9 +192,10 @@ public class MainActivity extends AppCompatActivity {
 
     // report button
     public void ReportAction(View view) {
-        View view1 = (View) view.findViewById(R.id.ReportBut).getParent(); //Get the Parent(CardView) from the clicked button
-        final TextView t1 = (TextView) view1.findViewById(R.id.person_age);
-        final TextView t2 = (TextView) view1.findViewById(R.id.person_name);
+        View view1 = view.getRootView(); //Get the Parent(CardView) from the clicked button
+        RelativeLayout rv = (RelativeLayout) view1.findViewById(R.id.cardInfo);
+        final TextView t1 = (TextView) rv.findViewById(R.id.person_age);
+        final TextView t2 = (TextView) rv.findViewById(R.id.person_name);
 
         // Alert dialog/PopUp
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -232,12 +247,12 @@ public class MainActivity extends AppCompatActivity {
             imgb.setImageResource(R.drawable.ic_heart_black_36dp);
             isLoved = true;
         }*/
-        Toast toast = Toast.makeText(context,"Added" , duration);
+        Toast toast = Toast.makeText(context, "Added", duration);
         toast.show();
         String Title = ((TextView) favButton.findViewById(R.id.person_name)).getText().toString();
         String description = ((TextView) favButton.findViewById(R.id.person_age)).getText().toString();
         favoriteManager.addFact(new Fact(Title, description));
-        if(informationFragment.getCurrentType() == 6) {
+        if (informationFragment.getCurrentType() == 6) {
             informationFragment.refreshFragment();
         }
     }
