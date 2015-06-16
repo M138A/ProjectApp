@@ -10,13 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.json.JSONException;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 import info.androidhive.materialnavbar.Activity.MainActivity;
 import info.androidhive.materialnavbar.CardItem;
@@ -34,21 +30,21 @@ import info.androidhive.materialnavbar.ViewAdapters.RVAdapter;
  */
 
 public class InformationFragment extends Fragment {
+    public static boolean refresh = false;
+    private static List<CardItem> CardEntry = new ArrayList<>();
     private RecyclerView recyclerView;
     private RVAdapter mRecyclerViewAdapter;
     private View containerView;
-    private static List<CardItem> CardEntry = new ArrayList<>();
     private Map<Integer, String> mFragmentTags;
-    public static boolean refresh = false;
     private ArrayList<Fact> facts = null;
     private JSON jsonObject = null;
     private int reporticon = R.drawable.ic_sim_alert_black_18dp;
+    private int currentType = 0;
 
     public int getCurrentType() {
         return currentType;
     }
 
-    private int currentType = 0;
     //haalt list leeg
     public void refreshFragment() {
         // zet fragment op null
@@ -59,8 +55,8 @@ public class InformationFragment extends Fragment {
         ft.attach(frg);
         ft.commit();
     }
-    private void loadFavorites(FavoriteManager favoriteManager)
-    {
+
+    private void loadFavorites(FavoriteManager favoriteManager) {
         ArrayList<Fact> favorites = favoriteManager.getFavorites();
         CardEntry.removeAll(CardEntry);
         if (facts != null) {
@@ -72,8 +68,8 @@ public class InformationFragment extends Fragment {
             }
         }
     }
-    private void loadFactsToFragment()
-    {
+
+    private void loadFactsToFragment() {
         if (facts != null) {
             CardEntry.removeAll(CardEntry);
             for (Fact fact : facts) {
@@ -84,13 +80,12 @@ public class InformationFragment extends Fragment {
                 // V title  Vcontent    V img
                 CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon));
             }
-        }
-        else {
+        } else {
             Log.e("ERROR:", "FACTSLIST IS EMPTY");
         }
     }
-    private void fillCardList(String type)
-    {
+
+    private void fillCardList(String type) {
         try {
             jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), type);
             facts = jsonObject.getFactAllList();
@@ -111,17 +106,15 @@ public class InformationFragment extends Fragment {
                 // V title  Vcontent    V img
                 CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon));
             }
-        }
-        else {
+        } else {
             Log.e("ERROR:", "FACTSLIST IS EMPTY");
         }
     }
 
-    private void generateGeneral()
-    {
+    private void generateGeneral() {
         CardEntry.removeAll(CardEntry);
-        String[] Categories = new String[]{"history", "lifehacks","quote","facts", "birthday"};
-        for(int i = 0; i < Categories.length; i++) {
+        String[] Categories = new String[]{"history", "lifehacks", "quote", "facts", "birthday"};
+        for (int i = 0; i < Categories.length; i++) {
             try {
                 jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), Categories[i]);
                 facts = jsonObject.getGeneralFact();

@@ -48,7 +48,6 @@ public class JSON {
     }
 
     public JSON(Context con, View vw, String type) throws JSONException, ExecutionException, InterruptedException {
-
         new FactsLoader(con, vw, this, type).execute().get();
         c = con;
         v = vw;
@@ -57,8 +56,8 @@ public class JSON {
     }
     public ArrayList<Fact> getGeneralFact() {
         ArrayList<Fact> x = new ArrayList<Fact>();
-        x.add(factAllList.get(randInt(0, factAllList.size())));
-        x.add(factAllList.get(randInt(0, factAllList.size())));
+        x.add(factAllList.get(randInt(0, factAllList.size() - 1)));
+        x.add(factAllList.get(randInt(0, factAllList.size() - 1)));
         return x;
     }
     public ArrayList<Fact> getFactAllList() {

@@ -34,6 +34,18 @@ public class NavigationDrawerFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static void SaveToPreferences(Context context, String preferences, String preferencesValue) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString(preferences, preferencesValue);
+        edit.apply();
+    }
+
+    public static String readFromPreferences(Context context, String preferenceName, String defaultValue) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(preferenceName, defaultValue);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +54,6 @@ public class NavigationDrawerFragment extends Fragment {
             mFromSavedInstanceState = true;
         }
     }
-
 
     //todo
     public void setMonthImg() {
@@ -74,7 +85,6 @@ public class NavigationDrawerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
     }
-
 
     public void setUp(int fragmentId, DrawerLayout drawerLayout, final Toolbar toolbar) {
         containerView = getActivity().findViewById(fragmentId);
@@ -109,17 +119,5 @@ public class NavigationDrawerFragment extends Fragment {
                 mDrawerToggle.syncState();
             }
         });
-    }
-
-    public static void SaveToPreferences(Context context, String preferences, String preferencesValue) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putString(preferences, preferencesValue);
-        edit.apply();
-    }
-
-    public static String readFromPreferences(Context context, String preferenceName, String defaultValue) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(preferenceName, defaultValue);
     }
 }
