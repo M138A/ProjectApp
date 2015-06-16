@@ -23,11 +23,39 @@
         <dex dex="/home/mark/Desktop/ProjectApp/materialNavBar/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-ef292829a778a48a17d26ae46ed4ca1c72719720.jar" />
     </item>
     <item
+        jar="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/pre-dexed/debug/classes-c0d477398c29668d735dadd6fdb6dc057b286015.jar" />
+    </item>
+    <item
+        jar="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex dex="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/pre-dexed/debug/classes-889b05e219241d41632ea056059d6f1e7e4e85fb.jar" />
+    </item>
+    <item
         jar="/home/mark/Desktop/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
         <dex dex="/home/mark/Desktop/ProjectApp/materialNavBar/app/build/intermediates/pre-dexed/debug/classes-788c1576181dfadfac3cbe9f6e106b05555272c4.jar" />
+    </item>
+    <item
+        jar="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/pre-dexed/debug/classes-63aee2f622969f3f6f9c0bef432712b1c698aa43.jar" />
+    </item>
+    <item
+        jar="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/libs/internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-367ed20b17b4f9363c8fc971019684052cc8d72b.jar" />
     </item>
     <item
         jar="/home/mark/Desktop/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/classes.jar"
@@ -42,6 +70,13 @@
         revision="21.1.2"
         sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
         <dex dex="/home/mark/Desktop/ProjectApp/materialNavBar/app/build/intermediates/pre-dexed/debug/classes-b1bfaa03bf70e4c0d14bed290e795c354e2fbd5b.jar" />
+    </item>
+    <item
+        jar="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/home/mark/OP4Project/finalSprint3/ProjectApp/materialNavBar/app/build/intermediates/pre-dexed/debug/classes-6106012f9d3a1c7d5a5d365b137a3e343a22b11c.jar" />
     </item>
 
 </items>

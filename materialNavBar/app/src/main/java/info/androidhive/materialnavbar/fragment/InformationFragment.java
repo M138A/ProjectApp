@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import org.json.JSONException;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -60,7 +61,7 @@ public class InformationFragment extends Fragment {
     }
     private void loadFavorites(FavoriteManager favoriteManager)
     {
-       ArrayList<Fact> favorites = favoriteManager.getFavorites();
+        ArrayList<Fact> favorites = favoriteManager.getFavorites();
         CardEntry.removeAll(CardEntry);
         if (facts != null) {
             for (Fact fact : favorites) {
@@ -71,14 +72,8 @@ public class InformationFragment extends Fragment {
             }
         }
     }
-    private void fillCardList(String type)
+    private void loadFactsToFragment()
     {
-        try {
-            jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), type);
-            facts = jsonObject.getFactAllList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         if (facts != null) {
             CardEntry.removeAll(CardEntry);
             for (Fact fact : facts) {
@@ -94,6 +89,53 @@ public class InformationFragment extends Fragment {
             Log.e("ERROR:", "FACTSLIST IS EMPTY");
         }
     }
+    private void fillCardList(String type)
+    {
+        try {
+            jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), type);
+            facts = jsonObject.getFactAllList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        loadFactsToFragment();
+    }
+
+    private void loadFactsToFragmentWithoutRemoving() {
+        if (facts != null) {
+
+            for (Fact fact : facts) {
+
+                //TextView x = new TextView(findViewById(R.id.RelaListCard).getContext());
+                String name = fact.getName();
+                String description = fact.getDescription();
+                // V title  Vcontent    V img
+                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon));
+            }
+        }
+        else {
+            Log.e("ERROR:", "FACTSLIST IS EMPTY");
+        }
+    }
+
+    private void generateGeneral()
+    {
+        CardEntry.removeAll(CardEntry);
+        String[] Categories = new String[]{"history", "lifehacks","quote","facts", "birthday"};
+        for(int i = 0; i < Categories.length; i++) {
+            try {
+                jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), Categories[i]);
+                facts = jsonObject.getGeneralFact();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            loadFactsToFragmentWithoutRemoving();
+
+        }
+
+
+    }
+
     // recycler list
     public List<CardItem> getCardData(int type, FavoriteManager f) {
 
@@ -102,7 +144,7 @@ public class InformationFragment extends Fragment {
 
         switch (type) {
             case 0:
-                fillCardList("history");
+                generateGeneral();
                 //workaround
                 //zet case type om naar cardcounter > inflater > refresh
                 MainActivity.cardcounter = 0;

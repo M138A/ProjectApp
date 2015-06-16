@@ -25,34 +25,48 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ExecutionException;
+
+import info.androidhive.materialnavbar.Activity.MainActivity;
 
 
 /**
  * Created by mark on 21-5-15.
  */
 public class JSON {
+    public ArrayList<Fact> factAllList = null;
     private String jsonString = "";
     private JSONArray json = null;
     private StringBuilder builder = new StringBuilder();
-
-    public ArrayList<Fact> getFactAllList() {
-        return factAllList;
+    private Context c = null;
+    private View v = null;
+    public  int randInt(int min, int max) {
+        Random rand = new Random();
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
     }
-
-    public ArrayList<Fact> factAllList = null;
-
-    public void setJsonString(String jsonString) {
-        this.jsonString = jsonString;
-    }
-
 
     public JSON(Context con, View vw, String type) throws JSONException, ExecutionException, InterruptedException {
 
         new FactsLoader(con, vw, this, type).execute().get();
-
+        c = con;
+        v = vw;
         json = getQuoteArray(jsonString);
         factAllList = getFactsList(type);
+    }
+    public ArrayList<Fact> getGeneralFact() {
+        ArrayList<Fact> x = new ArrayList<Fact>();
+        x.add(factAllList.get(randInt(0, factAllList.size())));
+        x.add(factAllList.get(randInt(0, factAllList.size())));
+        return x;
+    }
+    public ArrayList<Fact> getFactAllList() {
+        return factAllList;
+    }
+
+    public void setJsonString(String jsonString) {
+        this.jsonString = jsonString;
     }
 
     public JSONArray getFacts() {
@@ -139,10 +153,10 @@ public class JSON {
 
         } catch (ClientProtocolException e) {
 
-        } catch (IOException e) {
+        }catch (IOException e) {
 
             if (respJSON == null) {
-                throw new NullPointerException("jsonString is null");
+
             }
         }
         Log.e("JSON Response: ", respJSON);
@@ -173,51 +187,5 @@ public class JSON {
         }
         // Return full string
         return total;
-    }
-
-
-    /**
-     * OLD METHOD, SHOULD NOT BE USED
-     * Replaced by requestJSON()
-     *
-     * @param url String containing the URL
-     * @return JSONArray
-     */
-    private JSONArray getJSONFromUrl(String url) {
-        JSONArray jarray = null;
-        HttpClient client = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet(url);
-        try {
-            HttpResponse response = client.execute(httpGet);
-            StatusLine statusLine = response.getStatusLine();
-            int statusCode = statusLine.getStatusCode();
-            if (statusCode == 200) {
-                HttpEntity entity = response.getEntity();
-                InputStream content = entity.getContent();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    builder.append(line);
-                }
-            } else {
-                Log.e("==>", "Failed to download file");
-            }
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        // Parse String to JSON object
-        try {
-            String builder2 = builder.toString();
-            // JSONObject myObject = new JSONObject(builder2);
-            json = convertStringToJSONarray(builder2);
-            //Log.d("JSON",json.toString());
-        } catch (JSONException e) {
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
-        }
-        // return JSON Object
-        return jarray;
-
     }
 }
