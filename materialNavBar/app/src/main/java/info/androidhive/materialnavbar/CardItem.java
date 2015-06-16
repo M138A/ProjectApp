@@ -11,11 +11,12 @@ public class CardItem {
     public int iconId;
     public String placeholder;
 
-    public CardItem(String name, String age, int photoId,int reportId) {
+    public CardItem(String name, String age, int photoId,int reportId, int favId) {
         this.name = name;
         this.age = age;
         this.photoId = photoId;
         this.reportId = reportId;
+        this.favId = favId;
     }
 
 

@@ -4,18 +4,18 @@
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:elevation="4dp"
-    android:fitsSystemWindows="true">
-
+    android:fitsSystemWindows="true"
+    android:elevation="1dp"
+    >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Application_title"
-        android:layout_gravity="center"
-        android:textSize="9pt"
-        android:textColor="#FFF"
-        android:id="@+id/toolbar_title" />
+        android:textSize="20sp"
+        android:textColor="#c8ffffff"
+        android:id="@+id/toolbar_title"
+        android:fontFamily="sans-serif-medium"
+        android:paddingLeft="8dp" />
 
-
-</android.support.v7.widget.Toolbar><!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/tool_bar.xml -->
+</android.support.v7.widget.Toolbar><!-- From: file:/Users/maartencorpel/AndroidStudioProjects/ProjectApp/materialNavBar/app/src/main/res/layout/tool_bar.xml -->

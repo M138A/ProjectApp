@@ -11,26 +11,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="160dp">
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:contentDescription="@string/none"
-            android:background="@drawable/header_juli" />
 
-            <TextView
-                android:id="@+id/textView_imageOverlay_day"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="22dp"
-                android:textSize="8pt"
-                android:textColor="#FFF"
-                android:layout_marginBottom="24dp"
-                android:text="May 2015">
-                </TextView>
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:contentDescription="@string/none"
+                android:id="@+id/nav_header"
+                android:src="@drawable/header_juli"
+                android:scaleType="centerCrop"
+                />
 
             <TextView
                 android:id="@+id/textView_imageOverlay_month"
@@ -38,18 +31,31 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="22dp"
-                android:layout_marginBottom="45dp"
+                android:layout_marginBottom="48dp"
+                android:textSize="22sp"
                 android:textColor="#FFF"
-                android:textSize="9pt"
-                android:text="Tuesday 26th"
+                android:fontFamily="sans-serif-light"
+                android:text=""
                 />
+
+            <TextView
+                android:id="@+id/textView_imageOverlay_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="22dp"
+                android:layout_marginBottom="24dp"
+                android:textSize="22sp"
+                android:textColor="#FFF"
+                android:fontFamily="sans-serif-light"
+                android:text="">
+            </TextView>
 
         </RelativeLayout>
 
 
         <ListView
             android:layout_marginTop="8dp"
-            android:dividerHeight="10.0sp"
             android:id="@+id/listViewId"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -63,4 +69,4 @@
     </LinearLayout>
 
 </RelativeLayout>
-<!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/fragment_navigation_drawer.xml -->
+<!-- From: file:/Users/maartencorpel/AndroidStudioProjects/ProjectApp/materialNavBar/app/src/main/res/layout/fragment_navigation_drawer.xml -->

@@ -3,6 +3,7 @@ package info.androidhive.materialnavbar.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -192,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
     // report button
     public void ReportAction(View view) {
-        View view1 = view.getRootView(); //Get the Parent(CardView) from the clicked button
+        View view1 = (View) view.getParent().getParent(); //Get the Parent(CardView) from the clicked button
         RelativeLayout rv = (RelativeLayout) view1.findViewById(R.id.cardInfo);
         final TextView t1 = (TextView) rv.findViewById(R.id.person_age);
         final TextView t2 = (TextView) rv.findViewById(R.id.person_name);
@@ -236,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ManageFavorites(View view) {
-        View favButton = (View) view.findViewById(R.id.favButton).getParent();
+        View favButton = (View) view.getParent().getParent();
 
         //TODO
         //ImageButton imgb = (ImageButton) view.findViewById(R.id.favButton);

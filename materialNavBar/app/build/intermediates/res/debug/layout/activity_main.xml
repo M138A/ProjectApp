@@ -6,31 +6,45 @@
     android:layout_height="match_parent"
     android:background="@color/AppBackgroundColor">
 
-    <!-- MAIN CONTENT -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <!-- TOOLBAR -->
         <include
             android:id="@+id/tool_bar"
             layout="@layout/tool_bar"
-
             />
-
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center_horizontal" />
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            style="@android:style/Widget.Material.ProgressBar.Small"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#42A5F5"
+            android:layout_marginTop="-100dp"/>
+
+    </LinearLayout>
+
+    <!-- MAIN CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
         <FrameLayout
             android:id="@+id/fragment_category"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            />
 
     </LinearLayout>
 
@@ -45,5 +59,4 @@
         app:layout="@layout/fragment_navigation_drawer"
         tools:layout="@layout/fragment_navigation_drawer" />
 
-</android.support.v4.widget.DrawerLayout>
-<!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/Users/maartencorpel/AndroidStudioProjects/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->

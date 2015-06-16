@@ -4,24 +4,20 @@
     android:layout_height="48dp">
 
     <ImageView
-        android:layout_marginLeft="16dp"
         android:id="@+id/list_icon"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:src="@drawable/ic_history"
-        android:contentDescription="@string/none"/>
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/ic_history"/>
 
     <TextView
         android:id="@+id/list_title"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_toRightOf="@+id/list_icon"
-        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="19dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="72dp"
         android:text="@string/app_name"
-        android:layout_alignBottom="@+id/list_icon"
-        android:fontFamily="sans-serif"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
-
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/primary_text_default_material_light"/>
 
 </RelativeLayout>

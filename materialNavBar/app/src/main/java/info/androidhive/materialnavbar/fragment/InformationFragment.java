@@ -38,8 +38,9 @@ public class InformationFragment extends Fragment {
     private Map<Integer, String> mFragmentTags;
     private ArrayList<Fact> facts = null;
     private JSON jsonObject = null;
-    private int reporticon = R.drawable.ic_sim_alert_black_18dp;
     private int currentType = 0;
+    private int reporticon = R.drawable.ic_report;
+    private int favicon = R.drawable.ic_favorites;
 
     public int getCurrentType() {
         return currentType;
@@ -64,7 +65,7 @@ public class InformationFragment extends Fragment {
                 String name = fact.getName();
                 String description = fact.getDescription();
                 // V title  Vcontent    V img
-                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon));
+                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, favicon));
             }
         }
     }
@@ -78,7 +79,7 @@ public class InformationFragment extends Fragment {
                 String name = fact.getName();
                 String description = fact.getDescription();
                 // V title  Vcontent    V img
-                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon));
+                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, favicon));
             }
         } else {
             Log.e("ERROR:", "FACTSLIST IS EMPTY");
@@ -104,7 +105,7 @@ public class InformationFragment extends Fragment {
                 String name = fact.getName();
                 String description = fact.getDescription();
                 // V title  Vcontent    V img
-                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon));
+                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, favicon));
             }
         } else {
             Log.e("ERROR:", "FACTSLIST IS EMPTY");
