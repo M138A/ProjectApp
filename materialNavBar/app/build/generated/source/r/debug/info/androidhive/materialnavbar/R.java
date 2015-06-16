@@ -1670,9 +1670,9 @@ containing a value of this type.
         public static final int reporttemp=0x7f02005f;
     }
     public static final class id {
-        public static final int FavBut=0x7f090059;
-        public static final int RecyclerCardList=0x7f09005d;
-        public static final int ReportBut=0x7f09005a;
+        public static final int FavBut=0x7f09005a;
+        public static final int RecyclerCardList=0x7f09005e;
+        public static final int ReportBut=0x7f09005b;
         public static final int action_bar=0x7f090041;
         public static final int action_bar_activity_content=0x7f090000;
         public static final int action_bar_container=0x7f090040;
@@ -1691,9 +1691,10 @@ containing a value of this type.
         public static final int always=0x7f090017;
         public static final int beginning=0x7f090014;
         public static final int buttonPanel=0x7f090037;
+        public static final int cardInfo=0x7f090056;
         public static final int checkbox=0x7f090039;
         public static final int collapseActionView=0x7f090018;
-        public static final int containerDrawerImage=0x7f09005e;
+        public static final int containerDrawerImage=0x7f09005f;
         public static final int contentPanel=0x7f090032;
         public static final int custom=0x7f090036;
         public static final int customPanel=0x7f090035;
@@ -1709,7 +1710,7 @@ containing a value of this type.
         public static final int end=0x7f090015;
         public static final int expand_activities_button=0x7f090028;
         public static final int expanded_menu=0x7f090038;
-        public static final int favButton=0x7f09005b;
+        public static final int favButton=0x7f09005c;
         public static final int fragment_category=0x7f090053;
         public static final int home=0x7f090004;
         public static final int homeAsUp=0x7f09000e;
@@ -1717,19 +1718,19 @@ containing a value of this type.
         public static final int ifRoom=0x7f090019;
         public static final int image=0x7f090029;
         public static final int listMode=0x7f09000a;
-        public static final int listViewId=0x7f090061;
+        public static final int listViewId=0x7f090062;
         public static final int list_icon=0x7f090005;
         public static final int list_item=0x7f09002b;
-        public static final int list_title=0x7f09005c;
+        public static final int list_title=0x7f09005d;
         public static final int middle=0x7f090016;
         public static final int multiply=0x7f09001f;
         public static final int never=0x7f09001a;
         public static final int none=0x7f09000f;
         public static final int normal=0x7f09000b;
         public static final int parentPanel=0x7f09002e;
-        public static final int person_age=0x7f090058;
-        public static final int person_name=0x7f090057;
-        public static final int person_photo=0x7f090056;
+        public static final int person_age=0x7f090059;
+        public static final int person_name=0x7f090058;
+        public static final int person_photo=0x7f090057;
         public static final int progressBar=0x7f090052;
         public static final int progress_circular=0x7f090006;
         public static final int progress_horizontal=0x7f090007;
@@ -1758,12 +1759,12 @@ containing a value of this type.
         public static final int submit_area=0x7f09004c;
         public static final int tabMode=0x7f09000c;
         public static final int textSpacerNoButtons=0x7f090034;
-        public static final int textView_imageOverlay_day=0x7f09005f;
-        public static final int textView_imageOverlay_month=0x7f090060;
+        public static final int textView_imageOverlay_day=0x7f090060;
+        public static final int textView_imageOverlay_month=0x7f090061;
         public static final int title=0x7f09002d;
         public static final int title_template=0x7f090030;
         public static final int tool_bar=0x7f090051;
-        public static final int toolbar_title=0x7f090062;
+        public static final int toolbar_title=0x7f090063;
         public static final int topPanel=0x7f09002f;
         public static final int up=0x7f090009;
         public static final int useLogo=0x7f090013;
