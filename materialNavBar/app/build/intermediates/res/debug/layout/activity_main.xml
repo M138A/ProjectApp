@@ -59,4 +59,4 @@
         app:layout="@layout/fragment_navigation_drawer"
         tools:layout="@layout/fragment_navigation_drawer" />
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/Users/maartencorpel/AndroidStudioProjects/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/bart/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
