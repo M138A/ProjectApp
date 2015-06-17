@@ -41,6 +41,8 @@ public class InformationFragment extends Fragment {
     private int currentType = 0;
     private int reporticon = R.drawable.ic_report;
     private int favicon = R.drawable.ic_favorites;
+    public String categoryName;
+
 
     public int getCurrentType() {
         return currentType;
@@ -65,12 +67,12 @@ public class InformationFragment extends Fragment {
                 String name = fact.getName();
                 String description = fact.getDescription();
                 // V title  Vcontent    V img
-                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, favicon));
+                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, favicon, categoryName));
             }
         }
     }
 
-    private void loadFactsToFragment(int i) {
+    private void loadFactsToFragment(int i, String u) {
         if (facts != null) {
             CardEntry.removeAll(CardEntry);
             for (Fact fact : facts) {
@@ -79,21 +81,21 @@ public class InformationFragment extends Fragment {
                 String name = fact.getName();
                 String description = fact.getDescription();
                 // V title  Vcontent    V img
-                CardEntry.add(new CardItem(name, description, i, reporticon, favicon));
+                CardEntry.add(new CardItem(name, description, i, reporticon, favicon, u));
             }
         } else {
             Log.e("ERROR:", "FACTSLIST IS EMPTY");
         }
     }
 
-    private void fillCardList(String type, int image) {
+    private void fillCardList(String type, int image, String catHeader) {
         try {
             jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), type);
             facts = jsonObject.getFactAllList();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        loadFactsToFragment(image);
+        loadFactsToFragment(image, catHeader);
     }
 
     private void loadFactsToFragmentWithoutRemoving() {
@@ -105,7 +107,7 @@ public class InformationFragment extends Fragment {
                 String name = fact.getName();
                 String description = fact.getDescription();
                 // V title  Vcontent    V img
-                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, favicon));
+                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, favicon, categoryName));
             }
         } else {
             Log.e("ERROR:", "FACTSLIST IS EMPTY");
@@ -133,6 +135,7 @@ public class InformationFragment extends Fragment {
     // recycler list
     public List<CardItem> getCardData(int type, FavoriteManager f) {
         int[] images = {R.drawable.ic_facts,R.drawable.ic_history,R.drawable.ic_birthdays,R.drawable.ic_lifehacks,R.drawable.ic_quotes};
+        String[] catHeaders = {"FACT", "TODAY IN HISTORY", "CELEBRITY BIRTHDAY", "LIFEHACK", "QUOTE"};
         currentType = type;
         // tijdelijk knop voor testing
 
@@ -149,7 +152,7 @@ public class InformationFragment extends Fragment {
                 break;
 
             case 1:
-                fillCardList("facts",images[0]);
+                fillCardList("facts", images[0], catHeaders[0]);
                 // CardEntry.add(new CardItem("Facts", "string a", R.drawable.ic_birthdays, reporticon));
                 //workaround
                 MainActivity.cardcounter = 1;
@@ -160,7 +163,7 @@ public class InformationFragment extends Fragment {
                 break;
 
             case 2:
-                fillCardList("history",images[1]);
+                fillCardList("history", images[1], catHeaders[1]);
                 //CardEntry.add(new CardItem("History", "string a", R.drawable.ic_history, reporticon));
                 //workaround
                 MainActivity.cardcounter = 2;
@@ -171,7 +174,7 @@ public class InformationFragment extends Fragment {
                 break;
 
             case 3:
-                fillCardList("birthday",images[2]);
+                fillCardList("birthday", images[2], catHeaders[2]);
                 //CardEntry.add(new CardItem("Birthday", "string a", R.drawable.ic_lifehacks, reporticon));
                 //workaround
                 MainActivity.cardcounter = 3;
@@ -182,7 +185,7 @@ public class InformationFragment extends Fragment {
                 break;
 
             case 4:
-                fillCardList("lifehacks",images[3]);
+                fillCardList("lifehacks", images[3], catHeaders[3]);
                 //CardEntry.add(new CardItem("Lifehacks", "string a", R.drawable.ic_facts, reporticon));
                 //workaround
                 MainActivity.cardcounter = 4;
@@ -193,7 +196,7 @@ public class InformationFragment extends Fragment {
                 break;
 
             case 5:
-                fillCardList("quote",images[4]);
+                fillCardList("quote", images[4], catHeaders[4]);
                 //CardEntry.add(new CardItem("Quotes", "string a", R.drawable.ic_facts, reporticon));
                 //workaround
                 MainActivity.cardcounter = 5;

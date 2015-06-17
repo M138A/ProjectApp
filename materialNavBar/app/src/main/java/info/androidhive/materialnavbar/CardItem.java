@@ -8,16 +8,15 @@ public class CardItem {
     public int photoId;
     public int reportId;
     public int favId;
-    public int iconId;
-    public String placeholder;
+    public String catId;
 
-    public CardItem(String name, String age, int photoId,int reportId, int favId) {
+    public CardItem(String name, String age, int photoId, int reportId, int favId, String catId) {
         this.name = name;
         this.age = age;
         this.photoId = photoId;
         this.reportId = reportId;
         this.favId = favId;
+        this.catId = catId;
     }
-
 
 }

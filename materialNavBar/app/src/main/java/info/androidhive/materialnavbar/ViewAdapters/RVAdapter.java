@@ -1,21 +1,16 @@
 package info.androidhive.materialnavbar.ViewAdapters;
 
-import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
-import info.androidhive.materialnavbar.Activity.DownloadImageTask;
-import info.androidhive.materialnavbar.Animations;
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
 
@@ -31,15 +26,18 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         ImageView personPhoto;
         ImageButton FavBut;
         ImageButton ReportBut;
+        TextView categoryHeader;
 
         PersonViewHolder(View itemView) {
             super(itemView);
             cv = (CardView) itemView.findViewById(R.id.cv);
-            personName = (TextView) itemView.findViewById(R.id.person_name);
-            personAge = (TextView) itemView.findViewById(R.id.person_age);
-            personPhoto = (ImageView) itemView.findViewById(R.id.person_photo);
+            personName = (TextView) itemView.findViewById(R.id.weetjeTitel);
+            personAge = (TextView) itemView.findViewById(R.id.weetjeContent);
+            personPhoto = (ImageView) itemView.findViewById(R.id.card_picture);
             FavBut = (ImageButton) itemView.findViewById(R.id.favButton);
             ReportBut = (ImageButton) itemView.findViewById(R.id.ReportBut);
+            ReportBut = (ImageButton) itemView.findViewById(R.id.ReportBut);
+            categoryHeader = (TextView) itemView.findViewById(R.id.category_name);
 
         }
     }
@@ -71,11 +69,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         return pvh;
     }
 
-
     // de 'onCreate'
     @Override
     public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
         // vult het object/element met
+        personViewHolder.categoryHeader.setText(cardItems.get(i).catId);
         personViewHolder.personName.setText(cardItems.get(i).name);
         personViewHolder.personAge.setText(cardItems.get(i).age);
         personViewHolder.personPhoto.setImageResource(cardItems.get(i).photoId);
@@ -83,12 +81,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         personViewHolder.FavBut.setImageResource(cardItems.get(i).favId);
         //report
         personViewHolder.ReportBut.setImageResource(cardItems.get(i).reportId);
-        //zet animation op dit object/element
-        Animations.animateScatter(personViewHolder, true);
 
+        //zet animation op dit object/element
+        //Animations.animateScatter(personViewHolder, true);
 
     }
-
 
     @Override
     public int getItemCount() {

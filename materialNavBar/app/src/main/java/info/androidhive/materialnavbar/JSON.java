@@ -85,7 +85,7 @@ public class JSON {
                     JSONextractedFact = new Fact(y.get("author").toString(), y.get("content").toString());
                     break;
                 case "history":
-                    String year = "Today in the year " + y.get("year").toString();
+                    String year = y.get("year").toString();
                     JSONextractedFact = new Fact(year, y.get("content").toString());
                     break;
                 case "birthday":

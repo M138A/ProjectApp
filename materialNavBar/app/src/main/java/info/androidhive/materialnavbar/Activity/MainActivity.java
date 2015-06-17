@@ -3,8 +3,6 @@ package info.androidhive.materialnavbar.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Typeface;
-import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -12,19 +10,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 
 import info.androidhive.materialnavbar.AndroidDate;
@@ -195,8 +188,8 @@ public class MainActivity extends AppCompatActivity {
     public void ReportAction(View view) {
         View view1 = (View) view.getParent().getParent(); //Get the Parent(CardView) from the clicked button
         RelativeLayout rv = (RelativeLayout) view1.findViewById(R.id.cardInfo);
-        final TextView t1 = (TextView) rv.findViewById(R.id.person_age);
-        final TextView t2 = (TextView) rv.findViewById(R.id.person_name);
+        final TextView t1 = (TextView) rv.findViewById(R.id.weetjeContent);
+        final TextView t2 = (TextView) rv.findViewById(R.id.weetjeTitel);
 
         // Alert dialog/PopUp
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -223,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
                                 String.valueOf(t2.getText()), value);
                     }
                 }).start();
-                Toast toast = Toast.makeText(context, "Thanks for your Feedback!", duration);
+                Toast toast = Toast.makeText(context, "Thanks for your feedback!", duration);
                 toast.show();
             }
         });
@@ -248,10 +241,10 @@ public class MainActivity extends AppCompatActivity {
             imgb.setImageResource(R.drawable.ic_heart_black_36dp);
             isLoved = true;
         }*/
-        Toast toast = Toast.makeText(context, "Added", duration);
+        Toast toast = Toast.makeText(context, "Added to favorites", duration);
         toast.show();
-        String Title = ((TextView) favButton.findViewById(R.id.person_name)).getText().toString();
-        String description = ((TextView) favButton.findViewById(R.id.person_age)).getText().toString();
+        String Title = ((TextView) favButton.findViewById(R.id.weetjeTitel)).getText().toString();
+        String description = ((TextView) favButton.findViewById(R.id.weetjeContent)).getText().toString();
         favoriteManager.addFact(new Fact(Title, description));
         if (informationFragment.getCurrentType() == 6) {
             informationFragment.refreshFragment();
