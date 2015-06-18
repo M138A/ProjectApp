@@ -69,7 +69,7 @@ public class InformationFragment extends Fragment {
                 String name = fact.getName();
                 String description = fact.getDescription();
                 // V title  Vcontent    V img
-                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, favicon, categoryName));
+                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, R.drawable.ic_fav_black, categoryName));
             }
         }
     }
