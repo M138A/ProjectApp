@@ -245,8 +245,7 @@ public class MainActivity extends AppCompatActivity {
             imgb.setImageResource(R.drawable.ic_heart_black_36dp);
             isLoved = true;
         }*/
-        Toast toast = Toast.makeText(context, "Added to favorites", duration);
-        toast.show();
+
         String Title = ((TextView) favButton.findViewById(R.id.weetjeTitel)).getText().toString();
         String description = ((TextView) favButton.findViewById(R.id.weetjeContent)).getText().toString();
         Fact fact = new Fact(Title, description);

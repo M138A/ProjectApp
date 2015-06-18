@@ -44,6 +44,8 @@ public class FavoriteManager implements Serializable {
         serializeRead();
         if (!removeExistingFact(f)) {
             Favorites.add(f);
+            Toast toast = Toast.makeText(MainContext, "Added to favorites", duration);
+            toast.show();
             Test();
             serializeWrite();
 
@@ -77,7 +79,7 @@ public class FavoriteManager implements Serializable {
                 Favorites.remove(i);
                 serializeWrite();
                 Test();
-                Toast toast = Toast.makeText(MainContext,"Removed" , duration);
+                Toast toast = Toast.makeText(MainContext,"Removed from favorites" , duration);
                 toast.show();
                 return true;
 
