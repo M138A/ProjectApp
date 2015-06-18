@@ -1635,13 +1635,14 @@ containing a value of this type.
         public static final int header_juli=0x7f02003c;
         public static final int ic_birthdays=0x7f02003d;
         public static final int ic_facts=0x7f02003e;
-        public static final int ic_favorites=0x7f02003f;
-        public static final int ic_history=0x7f020040;
-        public static final int ic_lifehacks=0x7f020041;
-        public static final int ic_quotes=0x7f020042;
-        public static final int ic_report=0x7f020043;
-        public static final int ic_settings=0x7f020044;
-        public static final int ic_today=0x7f020045;
+        public static final int ic_fav_black=0x7f02003f;
+        public static final int ic_favorites=0x7f020040;
+        public static final int ic_history=0x7f020041;
+        public static final int ic_lifehacks=0x7f020042;
+        public static final int ic_quotes=0x7f020043;
+        public static final int ic_report=0x7f020044;
+        public static final int ic_settings=0x7f020045;
+        public static final int ic_today=0x7f020046;
     }
     public static final class id {
         public static final int RecyclerCardList=0x7f09005e;
@@ -1686,7 +1687,7 @@ containing a value of this type.
         public static final int expand_activities_button=0x7f090028;
         public static final int expanded_menu=0x7f090038;
         public static final int favButton=0x7f09005b;
-        public static final int fragment_category=0x7f090051;
+        public static final int fragment_category=0x7f090053;
         public static final int home=0x7f090004;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f09002c;
@@ -1704,7 +1705,7 @@ containing a value of this type.
         public static final int none=0x7f09000f;
         public static final int normal=0x7f09000b;
         public static final int parentPanel=0x7f09002e;
-        public static final int progressBar=0x7f090053;
+        public static final int progressBar=0x7f090052;
         public static final int progress_circular=0x7f090006;
         public static final int progress_horizontal=0x7f090007;
         public static final int radio=0x7f09003b;
@@ -1736,7 +1737,7 @@ containing a value of this type.
         public static final int textView_imageOverlay_month=0x7f090061;
         public static final int title=0x7f09002d;
         public static final int title_template=0x7f090030;
-        public static final int tool_bar=0x7f090052;
+        public static final int tool_bar=0x7f090051;
         public static final int toolbar_title=0x7f090064;
         public static final int topPanel=0x7f09002f;
         public static final int up=0x7f090009;

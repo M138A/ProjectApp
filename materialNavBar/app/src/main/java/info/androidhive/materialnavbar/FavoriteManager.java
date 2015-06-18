@@ -2,6 +2,7 @@ package info.androidhive.materialnavbar;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import java.io.FileInputStream;
@@ -49,13 +50,24 @@ public class FavoriteManager implements Serializable {
 
         }
     }
+    public boolean isFavorite(Fact f) {
 
+        String description = f.getDescription();
+        for (int i = 0; i < Favorites.size(); i++) {
+            Fact factFromList = Favorites.get(i);
+            if (description.equals(factFromList.getDescription())) {
+                return true;
+            }
+        }
+        return false;
+    }
     /**
      * Checks if fact is already a favorite. If so, it removes it.
      *
      * @param f The fact in question
      * @return Returns true when the fact already exists
      */
+
     private boolean removeExistingFact(Fact f) {
         String description = f.getDescription();
 

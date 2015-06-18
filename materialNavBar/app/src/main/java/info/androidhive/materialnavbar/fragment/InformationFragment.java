@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,7 @@ public class InformationFragment extends Fragment {
     private int reporticon = R.drawable.ic_report;
     private int favicon = R.drawable.ic_favorites;
     public String categoryName;
+    private FavoriteManager favMan = null;
 
 
     public int getCurrentType() {
@@ -81,7 +83,13 @@ public class InformationFragment extends Fragment {
                 String name = fact.getName();
                 String description = fact.getDescription();
                 // V title  Vcontent    V img
-                CardEntry.add(new CardItem(name, description, i, reporticon, favicon, u));
+                if(favMan.isFavorite(fact)) {
+
+                    CardEntry.add(new CardItem(name, description, i, reporticon, R.drawable.ic_fav_black, u));
+                }
+                else{
+                    CardEntry.add(new CardItem(name, description, i, reporticon, R.drawable.ic_favorites, u));
+                }
             }
         } else {
             Log.e("ERROR:", "FACTSLIST IS EMPTY");
@@ -107,7 +115,13 @@ public class InformationFragment extends Fragment {
                 String name = fact.getName();
                 String description = fact.getDescription();
                 // V title  Vcontent    V img
-                CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, favicon, categoryName));
+                if(favMan.isFavorite(fact)) {
+                    CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, R.drawable.ic_fav_black, categoryName));
+                }
+                else
+                {
+                    CardEntry.add(new CardItem(name, description, R.drawable.ic_facts, reporticon, R.drawable.ic_favorites, categoryName));
+                }
             }
         } else {
             Log.e("ERROR:", "FACTSLIST IS EMPTY");
@@ -134,6 +148,7 @@ public class InformationFragment extends Fragment {
 
     // recycler list
     public List<CardItem> getCardData(int type, FavoriteManager f) {
+        favMan = f;
         int[] images = {R.drawable.ic_facts,R.drawable.ic_history,R.drawable.ic_birthdays,R.drawable.ic_lifehacks,R.drawable.ic_quotes};
         String[] catHeaders = {"FACT", "TODAY IN HISTORY", "CELEBRITY BIRTHDAY", "LIFEHACK", "QUOTE"};
         currentType = type;

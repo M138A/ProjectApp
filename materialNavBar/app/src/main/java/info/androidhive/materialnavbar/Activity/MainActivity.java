@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -231,9 +232,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void ManageFavorites(View view) {
         View favButton = (View) view.getParent().getParent();
-
+        if(favButton == null)
+        {
+            throw new NullPointerException("Favbutton is null");
+        }
         //TODO
-        //ImageButton imgb = (ImageButton) view.findViewById(R.id.favButton);
+        ImageButton imgb = (ImageButton) view.findViewById(R.id.favButton);
        /* if (isLoved) {
             imgb.setImageResource(R.drawable.ic_heart_outline_black_36dp);
             isLoved = false;
@@ -245,7 +249,16 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
         String Title = ((TextView) favButton.findViewById(R.id.weetjeTitel)).getText().toString();
         String description = ((TextView) favButton.findViewById(R.id.weetjeContent)).getText().toString();
-        favoriteManager.addFact(new Fact(Title, description));
+        Fact fact = new Fact(Title, description);
+        favoriteManager.addFact(fact);
+        if(favoriteManager.isFavorite(fact))
+        {
+            imgb.setImageResource(R.drawable.ic_fav_black);
+        }
+        else
+        {
+            imgb.setImageResource(R.drawable.ic_favorites);
+        }
         if (informationFragment.getCurrentType() == 6) {
             informationFragment.refreshFragment();
         }

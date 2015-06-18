@@ -1,5 +1,7 @@
 package info.androidhive.materialnavbar;
 
+import android.util.Log;
+
 public class CardItem {
 
     // dingen voor op de cards
