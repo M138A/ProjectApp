@@ -1,5 +1,8 @@
 package info.androidhive.materialnavbar.fragment;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,12 +49,16 @@ public class InformationFragment extends Fragment {
     public String categoryName;
     private FavoriteManager favMan = null;
 
-
+    /**
+     * @return The current type of fact loaded in the fragment
+     */
     public int getCurrentType() {
         return currentType;
     }
 
-    //haalt list leeg
+    /**
+     * Refresht the fragment
+     */
     public void refreshFragment() {
         // zet fragment op null
         Fragment frg = null;
@@ -61,8 +69,13 @@ public class InformationFragment extends Fragment {
         ft.commit();
     }
 
+    /**
+     * Loads the favorites into the fragment
+     * @param favoriteManager The current favorite manager
+     */
     private void loadFavorites(FavoriteManager favoriteManager) {
         ArrayList<Fact> favorites = favoriteManager.getFavorites();
+        favoriteManager.noInternetMessage();
         CardEntry.removeAll(CardEntry);
         if (facts != null) {
             for (Fact fact : favorites) {
@@ -74,6 +87,11 @@ public class InformationFragment extends Fragment {
         }
     }
 
+    /**
+     * Adds all the types of facts exept favorites to the fragment
+     * @param i Photo id
+     * @param u Catagory id
+     */
     private void loadFactsToFragment(int i, String u) {
         if (facts != null) {
             CardEntry.removeAll(CardEntry);
@@ -96,16 +114,40 @@ public class InformationFragment extends Fragment {
         }
     }
 
+    /**
+     * Get the list with all the facts from the JSON class
+     * @param type The type of facts
+     * @param image The image id of the fact
+     * @param catHeader The category of the facts
+     */
     private void fillCardList(String type, int image, String catHeader) {
-        try {
-            jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), type);
-            facts = jsonObject.getFactAllList();
-        } catch (Exception e) {
-            e.printStackTrace();
+        if(hasInternetConnection()) {
+            try {
+                jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), type);
+                facts = jsonObject.getFactAllList();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            loadFactsToFragment(image, catHeader);
         }
-        loadFactsToFragment(image, catHeader);
+        else
+        {
+           loadWithoutInternet();
+        }
+    }
+    private void loadWithoutInternet()
+    {
+        getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(getActivity(), "U heeft geen internetverbinding", Toast.LENGTH_SHORT).show();
+            }
+        });
+        loadFavorites(favMan);
     }
 
+    /**
+     * Loads the facts to the list and does not remove the facts already there.
+     */
     private void loadFactsToFragmentWithoutRemoving() {
         if (facts != null) {
 
@@ -124,24 +166,45 @@ public class InformationFragment extends Fragment {
                 }
             }
         } else {
-            Log.e("ERROR:", "FACTSLIST IS EMPTY");
+
+                Log.e("ERROR:", "NO INTERNET" );
+
         }
     }
-
+    private boolean hasInternetConnection() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
+    /**
+     * Generates the general secation of the app.
+     * And adds the facts to the fragment
+     */
     private void generateGeneral() {
-        CardEntry.removeAll(CardEntry);
-        String[] Categories = new String[]{"history", "lifehacks", "quote", "facts", "birthday"};
-        for (int i = 0; i < Categories.length; i++) {
-            try {
-                jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), Categories[i]);
-                facts = jsonObject.getGeneralFact();
+            if(hasInternetConnection()) {
+                CardEntry.removeAll(CardEntry);
+                String[] Categories = new String[]{"history", "lifehacks", "quote", "facts", "birthday"};
+                for (int i = 0; i < Categories.length; i++) {
+                    try {
+                        jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), Categories[i]);
+                        facts = jsonObject.getGeneralFact();
 
-            } catch (Exception e) {
-                e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    loadFactsToFragmentWithoutRemoving();
+
+                }
+
             }
-            loadFactsToFragmentWithoutRemoving();
+        else
+            {
+                loadWithoutInternet();
+            }
 
-        }
+
+
 
 
     }

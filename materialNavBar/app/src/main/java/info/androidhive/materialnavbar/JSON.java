@@ -1,17 +1,16 @@
 package info.androidhive.materialnavbar;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 import android.view.View;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
@@ -28,7 +27,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
-import info.androidhive.materialnavbar.Activity.MainActivity;
+import info.androidhive.materialnavbar.fragment.InformationFragment;
 
 
 /**
@@ -41,25 +40,42 @@ public class JSON {
     private StringBuilder builder = new StringBuilder();
     private Context c = null;
     private View v = null;
-    public  int randInt(int min, int max) {
+
+    public int randInt(int min, int max) {
         Random rand = new Random();
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
     }
 
     public JSON(Context con, View vw, String type) throws JSONException, ExecutionException, InterruptedException {
+
+            new FactsLoader(con, vw, this, type).execute().get();
+            c = con;
+            v = vw;
+            json = getQuoteArray(jsonString);
+            factAllList = getFactsList(type);
+
+    }
+    public JSON(Context con, View vw, String type, boolean internet) throws JSONException, ExecutionException, InterruptedException {
+
         new FactsLoader(con, vw, this, type).execute().get();
         c = con;
         v = vw;
         json = getQuoteArray(jsonString);
         factAllList = getFactsList(type);
+
     }
+
     public ArrayList<Fact> getGeneralFact() {
+
         ArrayList<Fact> x = new ArrayList<Fact>();
         x.add(factAllList.get(randInt(0, factAllList.size() - 1)));
         x.add(factAllList.get(randInt(0, factAllList.size() - 1)));
+
+
         return x;
     }
+
     public ArrayList<Fact> getFactAllList() {
         return factAllList;
     }
@@ -73,14 +89,15 @@ public class JSON {
         return json;
     }
 
+
+
     public ArrayList<Fact> getFactsList(String type) throws JSONException {
         int arrayLength = json.length();
         ArrayList<Fact> allFacts = new ArrayList<Fact>(arrayLength);
         for (int i = 0; i < arrayLength; i++) {
             JSONObject y = json.getJSONObject(i);
             Fact JSONextractedFact = null;
-            switch(type)
-            {
+            switch (type) {
                 case "quote":
                     JSONextractedFact = new Fact(y.get("author").toString(), y.get("content").toString());
                     break;
@@ -102,16 +119,15 @@ public class JSON {
         Log.d("allFacts : ", allFacts.toString());
         return allFacts;
     }
-    private String ageModifier(String a)
-    {
-        if(!a.contains("-")) {
+
+    private String ageModifier(String a) {
+        if (!a.contains("-")) {
             int age = Integer.parseInt(a);
             int year = Integer.parseInt(new AndroidDate().getYearNumber());
             int difference = age + ((year - 2015) + 1);
             Log.d("Age after convertion", String.valueOf(difference));
             return String.valueOf(difference);
-        }
-        else{
+        } else {
             return a;
         }
     }
@@ -146,19 +162,21 @@ public class JSON {
                     break;
             }
             // Execute HTTP Post Request
+
+
             response = httpclient.execute(httppost);
 
             respJSON = inputStreamToString(response.getEntity().getContent()).toString();
 
         } catch (ClientProtocolException e) {
 
-        }catch (IOException e) {
+        } catch (IOException e) {
 
             if (respJSON == null) {
 
             }
         }
-        Log.e("JSON Response: ", respJSON);
+//        Log.e("JSON Response: ", respJSON);
         return respJSON;
     }
 

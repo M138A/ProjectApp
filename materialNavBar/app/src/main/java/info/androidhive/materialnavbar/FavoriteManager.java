@@ -1,6 +1,7 @@
 package info.androidhive.materialnavbar;
 
 import android.content.Context;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -22,24 +23,34 @@ public class FavoriteManager implements Serializable {
     private final String FILENAME = "favorites.fav";
     private int duration = Toast.LENGTH_LONG;
 
+    /**
+     * @return THe list of all the facts saved as favorite
+     */
     public ArrayList<Fact> getFavorites() {
         return Favorites;
     }
 
     public FavoriteManager(Context x) {
         Favorites = new ArrayList<Fact>();
-
         MainContext = x;
-
         serializeRead();
 
-        Test();
     }
+    public void noInternetMessage()
+    {
+
+
+    }
+
 
     private void Test() {
         Log.i("TEST : ", String.valueOf(Favorites.size()));
     }
 
+    /**
+     * Adds a fact to the list and saves it on the device
+     * @param f The fact that needs to be added to favorites
+     */
     public void addFact(Fact f) {
         serializeRead();
         if (!removeExistingFact(f)) {
@@ -52,6 +63,12 @@ public class FavoriteManager implements Serializable {
 
         }
     }
+
+    /**
+     * Checks if a fact is a favorite
+     * @param f The fact that needs to be checked
+     * @return Returns true when the fact is a favorite.
+     */
     public boolean isFavorite(Fact f) {
 
         String description = f.getDescription();
@@ -88,6 +105,9 @@ public class FavoriteManager implements Serializable {
         return false;
     }
 
+    /**
+     * Saves the current favorites list
+     */
     private void serializeWrite() {
 
         try {
@@ -103,6 +123,9 @@ public class FavoriteManager implements Serializable {
 
     }
 
+    /**
+     * Reads the saved list and adds it to the defined ArrayList
+     */
     private void serializeRead() {
         try {
 

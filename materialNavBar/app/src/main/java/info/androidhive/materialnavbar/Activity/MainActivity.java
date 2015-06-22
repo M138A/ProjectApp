@@ -6,6 +6,9 @@ import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -49,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     private FavoriteManager favoriteManager = null;
     private Toolbar toolbar;
     private boolean isLoved = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -230,21 +232,17 @@ public class MainActivity extends AppCompatActivity {
         alert.show();
     }
 
+    /**
+     * Saves or deletes favorite when the favorite button is tapped
+     * @param view
+     */
     public void ManageFavorites(View view) {
         View favButton = (View) view.getParent().getParent();
         if(favButton == null)
         {
             throw new NullPointerException("Favbutton is null");
         }
-        //TODO
         ImageButton imgb = (ImageButton) view.findViewById(R.id.favButton);
-       /* if (isLoved) {
-            imgb.setImageResource(R.drawable.ic_heart_outline_black_36dp);
-            isLoved = false;
-        } else {
-            imgb.setImageResource(R.drawable.ic_heart_black_36dp);
-            isLoved = true;
-        }*/
 
         String Title = ((TextView) favButton.findViewById(R.id.weetjeTitel)).getText().toString();
         String description = ((TextView) favButton.findViewById(R.id.weetjeContent)).getText().toString();
@@ -262,5 +260,6 @@ public class MainActivity extends AppCompatActivity {
             informationFragment.refreshFragment();
         }
     }
+
 }
 
