@@ -12,8 +12,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,12 +90,18 @@ public class InformationFragment extends Fragment {
         }
     }
 
+    //
+    public void DownloadImageTask(ImageView imgview,String URL) {
+        UrlImageViewHelper.setUrlDrawable(imgview, URL);
+    }
+    //
     /**
      * Adds all the types of facts exept favorites to the fragment
      * @param i Photo id
      * @param u Catagory id
      */
     private void loadFactsToFragment(int i, String u) {
+
         if (facts != null) {
             CardEntry.removeAll(CardEntry);
             for (Fact fact : facts) {
@@ -100,13 +109,15 @@ public class InformationFragment extends Fragment {
                 //TextView x = new TextView(findViewById(R.id.RelaListCard).getContext());
                 String name = fact.getName();
                 String description = fact.getDescription();
-                // V title  Vcontent    V img
+ //               //test card imageloader
+               // CardEntry.add(new CardItem("test", "test",mRecyclerViewAdapter.urlDownload(this,"recyclerView"),  reporticon, R.drawable.ic_fav_black, categoryName));
+//
                 if(favMan.isFavorite(fact)) {
 
-                    CardEntry.add(new CardItem(name, description, i, reporticon, R.drawable.ic_fav_black, u));
+                    CardEntry.add(new CardItem(name, description,  reporticon, R.drawable.ic_fav_black, u));
                 }
                 else{
-                    CardEntry.add(new CardItem(name, description, i, reporticon, R.drawable.ic_favorites, u));
+                    CardEntry.add(new CardItem(name, description,  reporticon, R.drawable.ic_favorites, u));
                 }
             }
         } else {
@@ -121,6 +132,7 @@ public class InformationFragment extends Fragment {
      * @param catHeader The category of the facts
      */
     private void fillCardList(String type, int image, String catHeader) {
+
         if(hasInternetConnection()) {
             try {
                 jsonObject = new JSON(getActivity().getBaseContext(), getActivity().findViewById(R.id.progressBar), type);

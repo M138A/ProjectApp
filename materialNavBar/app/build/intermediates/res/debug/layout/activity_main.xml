@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/AppBackgroundColor">
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
-
-        <FrameLayout
-            android:id="@+id/fragment_category"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +31,19 @@
             android:scaleType="centerCrop" />
 
     </LinearLayout>
-    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/fragment_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
     <!-- DRAWER CONTENT -->
     <fragment
         android:id="@+id/drawer_fragment"
@@ -57,4 +55,4 @@
         app:layout="@layout/fragment_navigation_drawer"
         tools:layout="@layout/fragment_navigation_drawer" />
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/Users/maartencorpel/AndroidStudioProjects/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/Indi/Documents/GitHub/ProjectApp/materialNavBar/app/src/main/res/layout/activity_main.xml -->

@@ -11,6 +11,7 @@ public class CardItem {
     public int reportId;
     public int favId;
     public String catId;
+    public String photoURL;
 
     public CardItem(String name, String age, int photoId, int reportId, int favId, String catId) {
         this.name = name;
@@ -20,5 +21,19 @@ public class CardItem {
         this.favId = favId;
         this.catId = catId;
     }
-
+    public CardItem(String name, String age, String photoURL, int reportId, int favId, String catId) {
+        this.name = name;
+        this.age = age;
+        this.photoURL = photoURL;
+        this.reportId = reportId;
+        this.favId = favId;
+        this.catId = catId;
+    }
+    public CardItem(String name, String age,int reportId, int favId, String catId) {
+        this.name = name;
+        this.age = age;
+        this.reportId = reportId;
+        this.favId = favId;
+        this.catId = catId;
+    }
 }

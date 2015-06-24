@@ -9,12 +9,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+
 import java.util.List;
 
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
+
 
 
     // Recycler View Adapter
@@ -38,8 +41,15 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
             ReportBut = (ImageButton) itemView.findViewById(R.id.ReportBut);
             ReportBut = (ImageButton) itemView.findViewById(R.id.ReportBut);
             categoryHeader = (TextView) itemView.findViewById(R.id.category_name);
+           // UrlImageViewHelper.setUrlDrawable(personPhoto, "http://placehold.it/350x150");
+            //urlDownload();
 
         }
+    }
+
+    public void urlDownload(View itemView,String URL){
+        ImageView personPhoto = (ImageView) itemView.findViewById(R.id.card_picture);
+        UrlImageViewHelper.setUrlDrawable(personPhoto, URL);
     }
 
     List<CardItem> cardItems;
@@ -68,6 +78,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         PersonViewHolder pvh = new PersonViewHolder(v);
         return pvh;
     }
+
+
 
     // de 'onCreate'
     @Override
