@@ -1,7 +1,6 @@
 package info.androidhive.materialnavbar.fragment;
 
 import android.content.Context;
-import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -22,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import info.androidhive.materialnavbar.Activity.DownloadImageTask;
 import info.androidhive.materialnavbar.Activity.MainActivity;
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.Fact;
@@ -131,12 +129,7 @@ public class InformationFragment extends Fragment {
         }
     }
 
-    public ImageView downloadimg(View view,String url){
-        new DownloadImageTask((ImageView) view.findViewById(R.id.card_picture))
-                .execute(url);
 
-        return null;
-    }
     /**
      * Get the list with all the facts from the JSON class
      * @param type The type of facts
@@ -278,23 +271,27 @@ public class InformationFragment extends Fragment {
                 if (!refresh) {
                     refreshFragment();
                     refresh = true;
+                    CardEntry.removeAll(CardEntry);
+
+                    CardEntry.add(new CardItem("Ashley Tisdale", "30 Years old \n \n  TV Actress", R.drawable.tisdaleashleymedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Lindsay Lohan", "29 Years old \n \n Movie Actress", R.drawable.lohanlindsaymedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Jenni Rivera", "1969-2012 \n \n Pop Singer ", R.drawable.riverajennimedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Alex Morgan", "26 Years old\n \n Soccer Player", R.drawable.morganalexmedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Sebastian Olzanski", "16 Years old\n \n Web Video Star", R.drawable.olzanskisebastianmedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Bret Hart", "58 Years old\n \n Wrestler", R.drawable.hartbretmedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Olivia Kay", "12 Years old\n \n Pop Singer ", R.drawable.kayoliviamedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Thurgood Marshall", "1908-1993\n \n Supreme Court Justice", R.drawable.marshallthurgoodmedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Margot Robbie", "25 Years old\n \n Movie Actress", R.drawable.robbiemargotmedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Peter Kay", "42 Years old\n \n Comedian", R.drawable.kaypetermedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Larry David", "68 Years old\n \n TV Producer", R.drawable.davidlarrymedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Vince Staples", "22 Years old\n \n Rapper ", R.drawable.staplesvincemedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    CardEntry.add(new CardItem("Richard Petty", "78 Years old\n \n Race Car Driver", R.drawable.pettyrichardmedium, reporticon, R.drawable.ic_fav_black, categoryName));
+                    //recyclerView.scrollToPosition(1);
+                    recyclerView.computeScroll();
+                    refreshFragment();
+
                 }
 
-                CardEntry.removeAll(CardEntry);
-
-                CardEntry.add(new CardItem("Ashley Tisdale", "30 Years old \n \n  TV Actress", R.drawable.tisdaleashleymedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Lindsay Lohan", "29 Years old \n \n Movie Actress", R.drawable.lohanlindsaymedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Jenni Rivera", "1969-2012 \n \n Pop Singer ", R.drawable.riverajennimedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Alex Morgan", "26 Years old\n \n Soccer Player", R.drawable.morganalexmedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Sebastian Olzanski", "16 Years old\n \n Web Video Star", R.drawable.olzanskisebastianmedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Bret Hart", "58 Years old\n \n Wrestler", R.drawable.hartbretmedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Olivia Kay", "12 Years old\n \n Pop Singer ", R.drawable.kayoliviamedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Thurgood Marshall", "1908-1993\n \n Supreme Court Justice", R.drawable.marshallthurgoodmedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Margot Robbie", "25 Years old\n \n Movie Actress", R.drawable.robbiemargotmedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Peter Kay", "42 Years old\n \n Comedian", R.drawable.kaypetermedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Larry David", "68 Years old\n \n TV Producer", R.drawable.davidlarrymedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Vince Staples", "22 Years old\n \n Rapper ", R.drawable.staplesvincemedium, reporticon, R.drawable.ic_fav_black, categoryName));
-                CardEntry.add(new CardItem("Richard Petty", "78 Years old\n \n Race Car Driver", R.drawable.pettyrichardmedium, reporticon, R.drawable.ic_fav_black, categoryName));
 
                 break;
 
@@ -351,6 +348,7 @@ public class InformationFragment extends Fragment {
         mRecyclerViewAdapter = new RVAdapter(getCardData(MainActivity.cardcounter, new FavoriteManager(layout.getContext())));
         //
         recyclerView.setAdapter(mRecyclerViewAdapter);
+      //  recyclerView.smoothScrollToPosition(facts.size()-1);
         // zet hem als dit op deze activity
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         return layout;

@@ -2,95 +2,53 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
+        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-fae2ea36a98dce7cb2922e0ad17dc6ee84f79129.jar" />
+        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-67a38cd65a5b4d353fd4a0ac4748c2de5ee034ae.jar" />
     </item>
     <item
-        jar="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-058c44c9c61324792e7727fcfeb0042867e3bd30.jar" />
-    </item>
-    <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-f3f282bd95084224ccf42709c77fae9dd00b648e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\lib\urlimageviewhelper-1.0.4.jar"
+        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\lib\urlimageviewhelper-1.0.4.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="67125d743e0035a1b157ba8210c2abf1ff374e10">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\urlimageviewhelper-1.0.4-a5fd64108580f34a5eb491d09568eeb4a18492d7.jar" />
+        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\pre-dexed\debug\urlimageviewhelper-1.0.4-8e5835c6d4751bc9bf7a845a4faba9d61883d631.jar" />
     </item>
     <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-e277646a53f40dac481b3e9d2ac4013cd54f1411.jar" />
-    </item>
-    <item
-        jar="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\classes.jar"
+        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-3d7ed7ee2a867e81271a0ae8f844c20822bca5a9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\lib\urlimageviewhelper-1.0.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="67125d743e0035a1b157ba8210c2abf1ff374e10">
-        <dex dex="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\pre-dexed\debug\urlimageviewhelper-1.0.4-de94a4f1a70602200cc0b2ee6900d697a2924181.jar" />
-    </item>
-    <item
-        jar="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-edd0f426c3cf5852202e1ea7900470fa099246a8.jar" />
+        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-d32bcda23909ed5fc4a203a01cb586e2d067399c.jar" />
     </item>
     <item
         jar="C:\Users\Indi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-d42c11bcb3c6e19006632ce0a76ff72ec1bb716e.jar" />
+        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-d42c11bcb3c6e19006632ce0a76ff72ec1bb716e.jar" />
     </item>
     <item
-        jar="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-27b3fffb810e04afbc689e2a17771298989e42b7.jar" />
-    </item>
-    <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-c0dbd5c3f27be61c84b4dcc60e4fbd717b18b138.jar" />
-    </item>
-    <item
-        jar="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\classes.jar"
+        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
-        <dex dex="C:\Users\Indi\Documents\GitHub\Donderdag 8\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-7755883e790861b1c5af500a6217b6536ee496af.jar" />
+        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-2da3fdd88e85dba19321b6bc1684b1d88fa092af.jar" />
     </item>
     <item
-        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\classes.jar"
+        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-48769cb00c9b959f4596fb8c96855fe509d75375.jar" />
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\pre-dexed\debug\classes-deaaf08b07082f729add007ab92c934ab6b25a82.jar" />
+    </item>
+    <item
+        jar="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="C:\Users\Indi\Documents\GitHub\ProjectApp\Donderdag versie\materialNavBar\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-f12d6efa699e83ebc878ec8e65d8d7766b7fa3a6.jar" />
     </item>
 
 </items>

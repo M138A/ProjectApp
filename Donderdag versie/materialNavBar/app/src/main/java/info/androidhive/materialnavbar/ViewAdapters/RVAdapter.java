@@ -13,7 +13,7 @@ import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 
 import java.util.List;
 
-import info.androidhive.materialnavbar.Activity.DownloadImageTask;
+import info.androidhive.materialnavbar.Animations;
 import info.androidhive.materialnavbar.CardItem;
 import info.androidhive.materialnavbar.R;
 
@@ -43,8 +43,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
             ReportBut = (ImageButton) itemView.findViewById(R.id.ReportBut);
             categoryHeader = (TextView) itemView.findViewById(R.id.category_name);
           //  UrlImageViewHelper.setUrlDrawable(personPhoto, "http://placehold.it/350x150");
-            new DownloadImageTask((ImageView) itemView.findViewById(R.id.card_picture))
-                    .execute("http://placehold.it/350x150");
             //urlDownload();
 
         }
@@ -100,7 +98,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
 //
 
         //zet animation op dit object/element
-        //Animations.animateScatter(personViewHolder, true);
+        Animations.animateScatter(personViewHolder, true);
 
     }
 
