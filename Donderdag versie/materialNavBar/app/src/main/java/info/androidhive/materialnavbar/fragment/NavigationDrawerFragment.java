@@ -64,8 +64,8 @@ public class NavigationDrawerFragment extends Fragment {
     public void setDate() {
         TextView day_intday = (TextView) getActivity().findViewById(R.id.textView_imageOverlay_month);
         TextView month_year = (TextView) getActivity().findViewById(R.id.textView_imageOverlay_day);
-        day_intday.setText(date.getDayName() + " " + date.getDayNumber() + getSecondOrNot());
-        month_year.setText(date.getMonthName() + " " + date.getYearNumber());
+        day_intday.setText("Thursday 2nd"); //date.getDayName() + " " + date.getDayNumber() + getSecondOrNot()
+        month_year.setText("July 2015"); // date.getMonthName() + " " + date.getYearNumber()
     }
 
     public String getSecondOrNot() {
