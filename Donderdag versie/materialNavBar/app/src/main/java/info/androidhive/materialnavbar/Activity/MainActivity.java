@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         initToolbar();
         ///Set categories for the navigation drawer in a listview
         setListMenuItems();
+
+
     }
 
     private void initializeFavorites() {
